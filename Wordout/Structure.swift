@@ -1,0 +1,235 @@
+//
+//  Structure.swift
+//  Wordout
+//
+//  Created by Alasdair Casperd on 04/11/2022.
+//
+
+import SwiftUI
+
+struct Category: Identifiable {
+    
+    let id: UUID = UUID()
+    let name: String
+    let description: String?
+    let questions: [Question]
+    let emoji: String        
+    
+    var puzzle: Puzzle {
+        return Puzzle(name: name, description: nil, questions: questions, emoji: emoji, dailyStyle: false)
+    }
+    
+    static var premadeCategories: [Category] {
+        return Bundle.main.decodeCategories("Index.txt")
+    }
+    
+    static var example: Category {
+        
+        var questions = [Question]()
+        
+        questions.append(Question(id: 0, container: "canopied", insert: "pie"))
+        questions.append(Question(id: 1, container: "arpeggio", insert: "egg"))
+        questions.append(Question(id: 2, container: "impeachment", insert: "peach"))
+        questions.append(Question(id: 3, container: "matrices", insert: "rice"))
+        questions.append(Question(id: 4, container: "fortunate", insert: "tuna"))
+        questions.append(Question(id: 5, container: "wastewater", insert: "stew"))
+        questions.append(Question(id: 6, container: "sobriety", insert: "brie"))
+        questions.append(Question(id: 7, container: "temperament", insert: "ramen"))
+        
+        return Category(name: "Food", description: nil, questions: questions, emoji: "🍔")
+    }
+}
+
+class Puzzle {
+    
+    let id: UUID = UUID()
+    let name: String
+    let description: String?
+    let emoji: String
+    let dailyStyle: Bool
+    
+    var questions: [Question]
+    
+    public static let dailyPuzzleLength = 4
+    
+    public static var referenceDate: Date {
+        
+        let calendar = Calendar(identifier: .gregorian)
+        
+        var referenceDateComponents = DateComponents()
+        
+        referenceDateComponents.year = 2022
+        referenceDateComponents.month = 10
+        referenceDateComponents.day = 25
+        referenceDateComponents.timeZone = TimeZone(abbreviation: "GMT")
+        referenceDateComponents.hour = 12
+        referenceDateComponents.minute = 0
+
+        return calendar.date(from: referenceDateComponents)!
+    }
+    
+    private static var todaysSeed: Int {
+        return seedFromDate(Date())
+    }
+    
+    private static func seedFromDate(_ date: Date) -> Int {
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.countDaysBetween(start: referenceDate, end: date)
+    }
+    
+    private static func categoryForSeed(_ seed: Int) -> Category {
+        return SeededRandomnessEngine.seededChoice(Category.premadeCategories.filter({$0.questions.count > 0}), seed: seed)!
+    }
+    
+    func loadingFromProgress() -> Puzzle {
+        let newQuestions = questions
+        for q in newQuestions {
+            q.guessed = UserDefaults.standard.bool(forKey: Progress.key(for: q, in: self))
+        }
+        return Puzzle(name: name, description: description, questions: newQuestions, emoji: emoji, dailyStyle: dailyStyle)
+    }
+    
+    static var dailyPuzzle: Puzzle {
+        return puzzleForDate(Date())
+    }
+    
+    static func puzzleForDate(_ date: Date) -> Puzzle {
+        let seed = seedFromDate(date)
+        let category = categoryForSeed(seed)
+        let shuffledOptions = SeededRandomnessEngine.seededShuffle(category.questions, seed: seed)
+        let questions = Question.fixIDs(questions: Array(shuffledOptions.prefix(dailyPuzzleLength)))
+        return Puzzle(name: category.name, description: category.description, questions: questions, emoji: category.emoji, dailyStyle: true)
+    }
+    
+    init(name: String, description: String?, questions: [Question], emoji: String, dailyStyle: Bool) {
+        self.name = name
+        self.description = description
+        self.questions = questions
+        self.emoji = emoji
+        self.dailyStyle = dailyStyle
+    }
+    
+    func correctlyGuess(_ question: Question) {
+        var newQuestions = [Question]()
+        for q in questions {
+            if q == question {
+                q.guessed = true
+            }
+            newQuestions.append(q)
+        }
+        questions = newQuestions
+    }
+    
+    var totalGuessed: Int {
+        return questions.filter({ $0.guessed }).count
+    }
+}
+
+class Question: Identifiable, Equatable {
+    
+    static func == (lhs: Question, rhs: Question) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    static func fixIDs(questions: [Question]) -> [Question] {
+        var output = [Question]()
+        var i = 0
+        for question in questions {
+            let q = Question(id: i, container: question.container, insert: question.insert)
+            output.append(q)
+            i += 1
+        }
+        return output
+    }
+    
+    let id: Int
+    let container: String
+    let insert: String
+    
+    var guessed: Bool = false
+    
+    static let placeholder = "❖"
+    
+    var clue: String {
+        return left.capitalized + " ❖ " + right
+    }
+    
+    var formattedInsert: String {
+        return left == "" ? insert.lowercased().capitalized : insert.lowercased()
+    }
+    
+    var left: String {
+        let components = (" " + container + " ").components(separatedBy: insert).filter({ $0.count > 0 })
+        if components.count < 2 {
+            fatalError("Invalid question: Container \'\(container)\' does not contain \"\(insert)\"")
+        }
+        else {
+            let l = components[0].filter({!($0 == " ")})
+            return l
+        }
+    }
+    
+    var right: String {
+        let components = (" " + container + " ").components(separatedBy: insert).filter({ $0.count > 0 })
+        if components.count < 2 {
+            fatalError("Invalid question: Container \'\(container)\' does not contain \"\(insert)\"")
+        }
+        else {
+            let r = components[1].filter({!($0 == " ")})
+            return r
+        }
+    }
+    
+    var explicitAnswer: String {
+        return left + "-" + insert + "-" + right
+    }
+    
+    init(id: Int, container: String, insert: String, guessed: Bool) {
+        self.id = id
+        self.container = container
+        self.insert = insert
+        self.guessed = guessed
+    }
+    
+    init(id: Int, container: String, insert: String) {
+        self.id = id
+        self.container = container
+        self.insert = insert
+        self.guessed = false
+    }
+}
+
+struct SeededRandomnessEngine {
+    
+    struct SeededRandomNumberGenerator: RandomNumberGenerator {
+        
+        init(seed: Int) {
+            srand48(seed)
+        }
+        
+        func next() -> UInt64 {
+            return UInt64(drand48() * Double(UInt64.max))
+        }
+    }
+
+    
+    static func seededChoice<T>(_ collection: [T], seed: Int) -> T? {
+        
+        var seededGenerator = SeededRandomNumberGenerator(seed: seed)
+        
+        if  collection.count > 0 {
+            return collection.randomElement(using: &seededGenerator)
+        }
+        else {
+            return nil
+            
+        }
+    }
+    
+    static func seededShuffle<T>(_ collection: [T], seed: Int) -> [T] {
+        
+        var seededGenerator = SeededRandomNumberGenerator(seed: seed)
+        return collection.shuffled(using: &seededGenerator)
+    }
+    
+}

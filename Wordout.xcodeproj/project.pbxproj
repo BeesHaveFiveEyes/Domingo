@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD85760229144789003D4D47 /* WordoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85760129144789003D4D47 /* WordoutApp.swift */; };
+		BD85760429144789003D4D47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85760329144789003D4D47 /* ContentView.swift */; };
+		BD8576062914478B003D4D47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8576052914478B003D4D47 /* Assets.xcassets */; };
+		BD8576092914478B003D4D47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8576082914478B003D4D47 /* Preview Assets.xcassets */; };
+		BD857610291447D0003D4D47 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85760F291447D0003D4D47 /* MainMenuView.swift */; };
+		BD857612291447FA003D4D47 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD857611291447FA003D4D47 /* WelcomeView.swift */; };
+		BD85761629144818003D4D47 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85761529144818003D4D47 /* CompleteView.swift */; };
+		BD85761829144828003D4D47 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85761729144828003D4D47 /* CategoriesView.swift */; };
+		BD85761A2914482F003D4D47 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8576192914482F003D4D47 /* CategoryView.swift */; };
+		BD85762229144E1C003D4D47 /* PlayModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85762129144E1C003D4D47 /* PlayModes.swift */; };
+		BD8576242914554E003D4D47 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8576232914554E003D4D47 /* DailyView.swift */; };
+		BD9B382929152D1500B6B042 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B382829152D1500B6B042 /* Structure.swift */; };
+		BD9B38542915537F00B6B042 /* Vehicles.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382B2915537E00B6B042 /* Vehicles.txt */; };
+		BD9B38552915537F00B6B042 /* Containers.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382C2915537E00B6B042 /* Containers.txt */; };
+		BD9B38562915537F00B6B042 /* Drinks.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382D2915537E00B6B042 /* Drinks.txt */; };
+		BD9B38572915537F00B6B042 /* Animals.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382E2915537E00B6B042 /* Animals.txt */; };
+		BD9B38582915537F00B6B042 /* Food.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382F2915537E00B6B042 /* Food.txt */; };
+		BD9B38592915537F00B6B042 /* Books.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38302915537E00B6B042 /* Books.txt */; };
+		BD9B385A2915537F00B6B042 /* Colours.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38312915537E00B6B042 /* Colours.txt */; };
+		BD9B385B2915537F00B6B042 /* Imperial Units.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38322915537E00B6B042 /* Imperial Units.txt */; };
+		BD9B385C2915537F00B6B042 /* Weapons.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38332915537E00B6B042 /* Weapons.txt */; };
+		BD9B385D2915537F00B6B042 /* Bodies of Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38342915537E00B6B042 /* Bodies of Water.txt */; };
+		BD9B385E2915537F00B6B042 /* Sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38352915537E00B6B042 /* Sports.txt */; };
+		BD9B385F2915537F00B6B042 /* Trees.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38362915537E00B6B042 /* Trees.txt */; };
+		BD9B38602915537F00B6B042 /* Companies.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38372915537E00B6B042 /* Companies.txt */; };
+		BD9B38612915537F00B6B042 /* Numbers.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38382915537E00B6B042 /* Numbers.txt */; };
+		BD9B38622915537F00B6B042 /* Buildings.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38392915537E00B6B042 /* Buildings.txt */; };
+		BD9B38632915537F00B6B042 /* Titles.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383A2915537E00B6B042 /* Titles.txt */; };
+		BD9B38642915537F00B6B042 /* Chemical Elements.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383B2915537E00B6B042 /* Chemical Elements.txt */; };
+		BD9B38652915537F00B6B042 /* Herbs and Spices.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383C2915537E00B6B042 /* Herbs and Spices.txt */; };
+		BD9B38662915537F00B6B042 /* Musical Instruments.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383D2915537E00B6B042 /* Musical Instruments.txt */; };
+		BD9B38672915537F00B6B042 /* Jobs.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383E2915537E00B6B042 /* Jobs.txt */; };
+		BD9B38682915537F00B6B042 /* Nature.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383F2915537E00B6B042 /* Nature.txt */; };
+		BD9B38692915537F00B6B042 /* Clothing.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38402915537E00B6B042 /* Clothing.txt */; };
+		BD9B386A2915537F00B6B042 /* Family Members.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38412915537E00B6B042 /* Family Members.txt */; };
+		BD9B386B2915537F00B6B042 /* Kitchen Utensils.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */; };
+		BD9B386C2915537F00B6B042 /* Greek Letters.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38432915537E00B6B042 /* Greek Letters.txt */; };
+		BD9B386D2915537F00B6B042 /* Metric Units.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38442915537E00B6B042 /* Metric Units.txt */; };
+		BD9B386E2915537F00B6B042 /* Cities.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38452915537E00B6B042 /* Cities.txt */; };
+		BD9B386F2915537F00B6B042 /* Space.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38462915537E00B6B042 /* Space.txt */; };
+		BD9B38702915537F00B6B042 /* Countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38472915537F00B6B042 /* Countries.txt */; };
+		BD9B38712915537F00B6B042 /* Christmas.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38482915537F00B6B042 /* Christmas.txt */; };
+		BD9B38722915537F00B6B042 /* Apps.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38492915537F00B6B042 /* Apps.txt */; };
+		BD9B38732915537F00B6B042 /* Materials.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384A2915537F00B6B042 /* Materials.txt */; };
+		BD9B38742915537F00B6B042 /* Time Periods.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384B2915537F00B6B042 /* Time Periods.txt */; };
+		BD9B38752915537F00B6B042 /* Tools.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384C2915537F00B6B042 /* Tools.txt */; };
+		BD9B38762915537F00B6B042 /* Weather.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384D2915537F00B6B042 /* Weather.txt */; };
+		BD9B38772915537F00B6B042 /* Furniture.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384E2915537F00B6B042 /* Furniture.txt */; };
+		BD9B38782915537F00B6B042 /* Body Parts.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384F2915537F00B6B042 /* Body Parts.txt */; };
+		BD9B38792915537F00B6B042 /* Sports Items.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38502915537F00B6B042 /* Sports Items.txt */; };
+		BD9B387A2915537F00B6B042 /* Stationery.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38512915537F00B6B042 /* Stationery.txt */; };
+		BD9B387B2915537F00B6B042 /* Board Games.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38522915537F00B6B042 /* Board Games.txt */; };
+		BD9B387C2915537F00B6B042 /* Romance.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38532915537F00B6B042 /* Romance.txt */; };
+		BD9B387E291553C600B6B042 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B387D291553C500B6B042 /* Extensions.swift */; };
+		BD9B388029155AB800B6B042 /* Index.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B387F29155AB800B6B042 /* Index.txt */; };
+		BD9B38822915A7E400B6B042 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B38812915A7E400B6B042 /* QuestionView.swift */; };
+		BD9B38842915B41700B6B042 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B38832915B41700B6B042 /* ArchiveView.swift */; };
+		BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F94291975A900DD65B2 /* TopBarView.swift */; };
+		BDEE3F992919778900DD65B2 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F982919778900DD65B2 /* PuzzleView.swift */; };
+		BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */; };
+		BDEE3F9D29198EF600DD65B2 /* PuzzleOptionsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F9C29198EF600DD65B2 /* PuzzleOptionsButton.swift */; };
+		BDEE3F9F2919929800DD65B2 /* YesterdayAnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F9E2919929800DD65B2 /* YesterdayAnswersView.swift */; };
+		BDEE3FA12919C56100DD65B2 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3FA02919C56100DD65B2 /* Modifiers.swift */; };
+		BDEE3FA3291BB01B00DD65B2 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3FA2291BB01B00DD65B2 /* Progress.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD8575FE29144789003D4D47 /* Wordout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD85760129144789003D4D47 /* WordoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordoutApp.swift; sourceTree = "<group>"; };
+		BD85760329144789003D4D47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BD8576052914478B003D4D47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD8576082914478B003D4D47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BD85760F291447D0003D4D47 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		BD857611291447FA003D4D47 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		BD85761529144818003D4D47 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
+		BD85761729144828003D4D47 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		BD8576192914482F003D4D47 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		BD85762129144E1C003D4D47 /* PlayModes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayModes.swift; sourceTree = "<group>"; };
+		BD8576232914554E003D4D47 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
+		BD9B382829152D1500B6B042 /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		BD9B382B2915537E00B6B042 /* Vehicles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vehicles.txt; sourceTree = "<group>"; };
+		BD9B382C2915537E00B6B042 /* Containers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Containers.txt; sourceTree = "<group>"; };
+		BD9B382D2915537E00B6B042 /* Drinks.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drinks.txt; sourceTree = "<group>"; };
+		BD9B382E2915537E00B6B042 /* Animals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Animals.txt; sourceTree = "<group>"; };
+		BD9B382F2915537E00B6B042 /* Food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Food.txt; sourceTree = "<group>"; };
+		BD9B38302915537E00B6B042 /* Books.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Books.txt; sourceTree = "<group>"; };
+		BD9B38312915537E00B6B042 /* Colours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colours.txt; sourceTree = "<group>"; };
+		BD9B38322915537E00B6B042 /* Imperial Units.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Imperial Units.txt"; sourceTree = "<group>"; };
+		BD9B38332915537E00B6B042 /* Weapons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weapons.txt; sourceTree = "<group>"; };
+		BD9B38342915537E00B6B042 /* Bodies of Water.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Bodies of Water.txt"; sourceTree = "<group>"; };
+		BD9B38352915537E00B6B042 /* Sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sports.txt; sourceTree = "<group>"; };
+		BD9B38362915537E00B6B042 /* Trees.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Trees.txt; sourceTree = "<group>"; };
+		BD9B38372915537E00B6B042 /* Companies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Companies.txt; sourceTree = "<group>"; };
+		BD9B38382915537E00B6B042 /* Numbers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Numbers.txt; sourceTree = "<group>"; };
+		BD9B38392915537E00B6B042 /* Buildings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buildings.txt; sourceTree = "<group>"; };
+		BD9B383A2915537E00B6B042 /* Titles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Titles.txt; sourceTree = "<group>"; };
+		BD9B383B2915537E00B6B042 /* Chemical Elements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Chemical Elements.txt"; sourceTree = "<group>"; };
+		BD9B383C2915537E00B6B042 /* Herbs and Spices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Herbs and Spices.txt"; sourceTree = "<group>"; };
+		BD9B383D2915537E00B6B042 /* Musical Instruments.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Musical Instruments.txt"; sourceTree = "<group>"; };
+		BD9B383E2915537E00B6B042 /* Jobs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Jobs.txt; sourceTree = "<group>"; };
+		BD9B383F2915537E00B6B042 /* Nature.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nature.txt; sourceTree = "<group>"; };
+		BD9B38402915537E00B6B042 /* Clothing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Clothing.txt; sourceTree = "<group>"; };
+		BD9B38412915537E00B6B042 /* Family Members.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Family Members.txt"; sourceTree = "<group>"; };
+		BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Kitchen Utensils.txt"; sourceTree = "<group>"; };
+		BD9B38432915537E00B6B042 /* Greek Letters.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Greek Letters.txt"; sourceTree = "<group>"; };
+		BD9B38442915537E00B6B042 /* Metric Units.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Metric Units.txt"; sourceTree = "<group>"; };
+		BD9B38452915537E00B6B042 /* Cities.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cities.txt; sourceTree = "<group>"; };
+		BD9B38462915537E00B6B042 /* Space.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Space.txt; sourceTree = "<group>"; };
+		BD9B38472915537F00B6B042 /* Countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countries.txt; sourceTree = "<group>"; };
+		BD9B38482915537F00B6B042 /* Christmas.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Christmas.txt; sourceTree = "<group>"; };
+		BD9B38492915537F00B6B042 /* Apps.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Apps.txt; sourceTree = "<group>"; };
+		BD9B384A2915537F00B6B042 /* Materials.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Materials.txt; sourceTree = "<group>"; };
+		BD9B384B2915537F00B6B042 /* Time Periods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Time Periods.txt"; sourceTree = "<group>"; };
+		BD9B384C2915537F00B6B042 /* Tools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tools.txt; sourceTree = "<group>"; };
+		BD9B384D2915537F00B6B042 /* Weather.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.txt; sourceTree = "<group>"; };
+		BD9B384E2915537F00B6B042 /* Furniture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Furniture.txt; sourceTree = "<group>"; };
+		BD9B384F2915537F00B6B042 /* Body Parts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Body Parts.txt"; sourceTree = "<group>"; };
+		BD9B38502915537F00B6B042 /* Sports Items.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sports Items.txt"; sourceTree = "<group>"; };
+		BD9B38512915537F00B6B042 /* Stationery.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stationery.txt; sourceTree = "<group>"; };
+		BD9B38522915537F00B6B042 /* Board Games.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Board Games.txt"; sourceTree = "<group>"; };
+		BD9B38532915537F00B6B042 /* Romance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Romance.txt; sourceTree = "<group>"; };
+		BD9B387D291553C500B6B042 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BD9B387F29155AB800B6B042 /* Index.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Index.txt; sourceTree = "<group>"; };
+		BD9B38812915A7E400B6B042 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		BD9B38832915B41700B6B042 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		BDEE3F94291975A900DD65B2 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
+		BDEE3F982919778900DD65B2 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		BDEE3F9C29198EF600DD65B2 /* PuzzleOptionsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleOptionsButton.swift; sourceTree = "<group>"; };
+		BDEE3F9E2919929800DD65B2 /* YesterdayAnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesterdayAnswersView.swift; sourceTree = "<group>"; };
+		BDEE3FA02919C56100DD65B2 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		BDEE3FA2291BB01B00DD65B2 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD8575FB29144789003D4D47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD8575F529144789003D4D47 = {
+			isa = PBXGroup;
+			children = (
+				BD85760029144789003D4D47 /* Wordout */,
+				BD8575FF29144789003D4D47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD8575FF29144789003D4D47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD8575FE29144789003D4D47 /* Wordout.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD85760029144789003D4D47 /* Wordout */ = {
+			isa = PBXGroup;
+			children = (
+				BD85760129144789003D4D47 /* WordoutApp.swift */,
+				BD85760329144789003D4D47 /* ContentView.swift */,
+				BD85760F291447D0003D4D47 /* MainMenuView.swift */,
+				BD85761729144828003D4D47 /* CategoriesView.swift */,
+				BD8576192914482F003D4D47 /* CategoryView.swift */,
+				BD9B38852917132600B6B042 /* Play Modes */,
+				BD85762529145554003D4D47 /* Puzzle */,
+				BD9B382829152D1500B6B042 /* Structure.swift */,
+				BD85762129144E1C003D4D47 /* PlayModes.swift */,
+				BD9B387D291553C500B6B042 /* Extensions.swift */,
+				BDEE3FA02919C56100DD65B2 /* Modifiers.swift */,
+				BDEE3FA2291BB01B00DD65B2 /* Progress.swift */,
+				BD9B382A29154DFC00B6B042 /* Puzzle Data */,
+				BD8576052914478B003D4D47 /* Assets.xcassets */,
+				BD8576072914478B003D4D47 /* Preview Content */,
+			);
+			path = Wordout;
+			sourceTree = "<group>";
+		};
+		BD8576072914478B003D4D47 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BD8576082914478B003D4D47 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BD85762529145554003D4D47 /* Puzzle */ = {
+			isa = PBXGroup;
+			children = (
+				BDEE3F982919778900DD65B2 /* PuzzleView.swift */,
+				BDEE3F9C29198EF600DD65B2 /* PuzzleOptionsButton.swift */,
+				BDEE3F94291975A900DD65B2 /* TopBarView.swift */,
+				BD857611291447FA003D4D47 /* WelcomeView.swift */,
+				BD9B38812915A7E400B6B042 /* QuestionView.swift */,
+				BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */,
+				BDEE3F9E2919929800DD65B2 /* YesterdayAnswersView.swift */,
+				BD85761529144818003D4D47 /* CompleteView.swift */,
+			);
+			path = Puzzle;
+			sourceTree = "<group>";
+		};
+		BD9B382A29154DFC00B6B042 /* Puzzle Data */ = {
+			isa = PBXGroup;
+			children = (
+				BD9B387F29155AB800B6B042 /* Index.txt */,
+				BD9B382E2915537E00B6B042 /* Animals.txt */,
+				BD9B38492915537F00B6B042 /* Apps.txt */,
+				BD9B38522915537F00B6B042 /* Board Games.txt */,
+				BD9B38342915537E00B6B042 /* Bodies of Water.txt */,
+				BD9B384F2915537F00B6B042 /* Body Parts.txt */,
+				BD9B38302915537E00B6B042 /* Books.txt */,
+				BD9B38392915537E00B6B042 /* Buildings.txt */,
+				BD9B383B2915537E00B6B042 /* Chemical Elements.txt */,
+				BD9B38482915537F00B6B042 /* Christmas.txt */,
+				BD9B38452915537E00B6B042 /* Cities.txt */,
+				BD9B38402915537E00B6B042 /* Clothing.txt */,
+				BD9B38312915537E00B6B042 /* Colours.txt */,
+				BD9B38372915537E00B6B042 /* Companies.txt */,
+				BD9B382C2915537E00B6B042 /* Containers.txt */,
+				BD9B38472915537F00B6B042 /* Countries.txt */,
+				BD9B382D2915537E00B6B042 /* Drinks.txt */,
+				BD9B38412915537E00B6B042 /* Family Members.txt */,
+				BD9B382F2915537E00B6B042 /* Food.txt */,
+				BD9B384E2915537F00B6B042 /* Furniture.txt */,
+				BD9B38432915537E00B6B042 /* Greek Letters.txt */,
+				BD9B383C2915537E00B6B042 /* Herbs and Spices.txt */,
+				BD9B38322915537E00B6B042 /* Imperial Units.txt */,
+				BD9B383E2915537E00B6B042 /* Jobs.txt */,
+				BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */,
+				BD9B384A2915537F00B6B042 /* Materials.txt */,
+				BD9B38442915537E00B6B042 /* Metric Units.txt */,
+				BD9B383D2915537E00B6B042 /* Musical Instruments.txt */,
+				BD9B383F2915537E00B6B042 /* Nature.txt */,
+				BD9B38382915537E00B6B042 /* Numbers.txt */,
+				BD9B38532915537F00B6B042 /* Romance.txt */,
+				BD9B38462915537E00B6B042 /* Space.txt */,
+				BD9B38502915537F00B6B042 /* Sports Items.txt */,
+				BD9B38352915537E00B6B042 /* Sports.txt */,
+				BD9B38512915537F00B6B042 /* Stationery.txt */,
+				BD9B384B2915537F00B6B042 /* Time Periods.txt */,
+				BD9B383A2915537E00B6B042 /* Titles.txt */,
+				BD9B384C2915537F00B6B042 /* Tools.txt */,
+				BD9B38362915537E00B6B042 /* Trees.txt */,
+				BD9B382B2915537E00B6B042 /* Vehicles.txt */,
+				BD9B38332915537E00B6B042 /* Weapons.txt */,
+				BD9B384D2915537F00B6B042 /* Weather.txt */,
+			);
+			path = "Puzzle Data";
+			sourceTree = "<group>";
+		};
+		BD9B38852917132600B6B042 /* Play Modes */ = {
+			isa = PBXGroup;
+			children = (
+				BD8576232914554E003D4D47 /* DailyView.swift */,
+				BD9B38832915B41700B6B042 /* ArchiveView.swift */,
+			);
+			path = "Play Modes";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD8575FD29144789003D4D47 /* Wordout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD85760C2914478B003D4D47 /* Build configuration list for PBXNativeTarget "Wordout" */;
+			buildPhases = (
+				BD8575FA29144789003D4D47 /* Sources */,
+				BD8575FB29144789003D4D47 /* Frameworks */,
+				BD8575FC29144789003D4D47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wordout;
+			productName = Wordout;
+			productReference = BD8575FE29144789003D4D47 /* Wordout.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD8575F629144789003D4D47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					BD8575FD29144789003D4D47 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = BD8575F929144789003D4D47 /* Build configuration list for PBXProject "Wordout" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD8575F529144789003D4D47;
+			productRefGroup = BD8575FF29144789003D4D47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD8575FD29144789003D4D47 /* Wordout */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD8575FC29144789003D4D47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9B38782915537F00B6B042 /* Body Parts.txt in Resources */,
+				BD9B38762915537F00B6B042 /* Weather.txt in Resources */,
+				BD8576092914478B003D4D47 /* Preview Assets.xcassets in Resources */,
+				BD8576062914478B003D4D47 /* Assets.xcassets in Resources */,
+				BD9B38572915537F00B6B042 /* Animals.txt in Resources */,
+				BD9B38552915537F00B6B042 /* Containers.txt in Resources */,
+				BD9B38772915537F00B6B042 /* Furniture.txt in Resources */,
+				BD9B38682915537F00B6B042 /* Nature.txt in Resources */,
+				BD9B38652915537F00B6B042 /* Herbs and Spices.txt in Resources */,
+				BD9B387C2915537F00B6B042 /* Romance.txt in Resources */,
+				BD9B386C2915537F00B6B042 /* Greek Letters.txt in Resources */,
+				BD9B38622915537F00B6B042 /* Buildings.txt in Resources */,
+				BD9B38582915537F00B6B042 /* Food.txt in Resources */,
+				BD9B387B2915537F00B6B042 /* Board Games.txt in Resources */,
+				BD9B38712915537F00B6B042 /* Christmas.txt in Resources */,
+				BD9B38612915537F00B6B042 /* Numbers.txt in Resources */,
+				BD9B385A2915537F00B6B042 /* Colours.txt in Resources */,
+				BD9B386F2915537F00B6B042 /* Space.txt in Resources */,
+				BD9B385C2915537F00B6B042 /* Weapons.txt in Resources */,
+				BD9B38632915537F00B6B042 /* Titles.txt in Resources */,
+				BD9B385B2915537F00B6B042 /* Imperial Units.txt in Resources */,
+				BD9B38592915537F00B6B042 /* Books.txt in Resources */,
+				BD9B38732915537F00B6B042 /* Materials.txt in Resources */,
+				BD9B38722915537F00B6B042 /* Apps.txt in Resources */,
+				BD9B38542915537F00B6B042 /* Vehicles.txt in Resources */,
+				BD9B386B2915537F00B6B042 /* Kitchen Utensils.txt in Resources */,
+				BD9B386D2915537F00B6B042 /* Metric Units.txt in Resources */,
+				BD9B38672915537F00B6B042 /* Jobs.txt in Resources */,
+				BD9B386A2915537F00B6B042 /* Family Members.txt in Resources */,
+				BD9B38792915537F00B6B042 /* Sports Items.txt in Resources */,
+				BD9B38752915537F00B6B042 /* Tools.txt in Resources */,
+				BD9B388029155AB800B6B042 /* Index.txt in Resources */,
+				BD9B38562915537F00B6B042 /* Drinks.txt in Resources */,
+				BD9B38662915537F00B6B042 /* Musical Instruments.txt in Resources */,
+				BD9B38692915537F00B6B042 /* Clothing.txt in Resources */,
+				BD9B38742915537F00B6B042 /* Time Periods.txt in Resources */,
+				BD9B38702915537F00B6B042 /* Countries.txt in Resources */,
+				BD9B387A2915537F00B6B042 /* Stationery.txt in Resources */,
+				BD9B38602915537F00B6B042 /* Companies.txt in Resources */,
+				BD9B386E2915537F00B6B042 /* Cities.txt in Resources */,
+				BD9B385D2915537F00B6B042 /* Bodies of Water.txt in Resources */,
+				BD9B385F2915537F00B6B042 /* Trees.txt in Resources */,
+				BD9B385E2915537F00B6B042 /* Sports.txt in Resources */,
+				BD9B38642915537F00B6B042 /* Chemical Elements.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD8575FA29144789003D4D47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9B38822915A7E400B6B042 /* QuestionView.swift in Sources */,
+				BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */,
+				BD85762229144E1C003D4D47 /* PlayModes.swift in Sources */,
+				BD857610291447D0003D4D47 /* MainMenuView.swift in Sources */,
+				BD8576242914554E003D4D47 /* DailyView.swift in Sources */,
+				BDEE3FA3291BB01B00DD65B2 /* Progress.swift in Sources */,
+				BD9B382929152D1500B6B042 /* Structure.swift in Sources */,
+				BDEE3F9D29198EF600DD65B2 /* PuzzleOptionsButton.swift in Sources */,
+				BDEE3FA12919C56100DD65B2 /* Modifiers.swift in Sources */,
+				BDEE3F9F2919929800DD65B2 /* YesterdayAnswersView.swift in Sources */,
+				BDEE3F992919778900DD65B2 /* PuzzleView.swift in Sources */,
+				BD85761829144828003D4D47 /* CategoriesView.swift in Sources */,
+				BD85760429144789003D4D47 /* ContentView.swift in Sources */,
+				BD85760229144789003D4D47 /* WordoutApp.swift in Sources */,
+				BD9B387E291553C600B6B042 /* Extensions.swift in Sources */,
+				BD85761629144818003D4D47 /* CompleteView.swift in Sources */,
+				BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */,
+				BD857612291447FA003D4D47 /* WelcomeView.swift in Sources */,
+				BD85761A2914482F003D4D47 /* CategoryView.swift in Sources */,
+				BD9B38842915B41700B6B042 /* ArchiveView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BD85760A2914478B003D4D47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BD85760B2914478B003D4D47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD85760D2914478B003D4D47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wordout/Preview Content\"";
+				DEVELOPMENT_TEAM = 9XW35Y79U2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WordSplit;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD85760E2914478B003D4D47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wordout/Preview Content\"";
+				DEVELOPMENT_TEAM = 9XW35Y79U2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WordSplit;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD8575F929144789003D4D47 /* Build configuration list for PBXProject "Wordout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD85760A2914478B003D4D47 /* Debug */,
+				BD85760B2914478B003D4D47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD85760C2914478B003D4D47 /* Build configuration list for PBXNativeTarget "Wordout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD85760D2914478B003D4D47 /* Debug */,
+				BD85760E2914478B003D4D47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD8575F629144789003D4D47 /* Project object */;
+}
