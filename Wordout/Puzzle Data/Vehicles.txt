@@ -1,3 +1,16 @@
 Vehicles
 🚗
+box.truck.fill
 1
+amicable cab
+moonstruck truck
+strikers trike
+contractors tractor
+ultramodern tram
+volcanoes canoe
+unconstrained train
+incarnate car
+ambush bus
+interplanetary plane
+taxidermy taxi
+worshipping ship

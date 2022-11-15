@@ -23,9 +23,11 @@ struct YesterdayAnswersView: View {
                     ForEach(puzzle.questions) { question in
                         HStack {
                             Text(question.left.capitalized)
-                            + Text(question.left == "" ? "" : "-")
-                            + Text(question.formattedInsert).font(.body.weight(.bold))
-                            + Text(question.right == "" ? "" : "-")
+                            + Text(question.left == "" ? "" : "")
+                            + Text(question.formattedInsert)
+                                .font(.body.weight(.bold))
+                                .foregroundColor(.accentColor)
+                            + Text(question.right == "" ? "" : "")
                             + Text(question.right)
                             Spacer()
                             Text(question.clue)
@@ -42,7 +44,11 @@ struct YesterdayAnswersView: View {
                 )
                 .padding(.vertical)
                 
-                (Text("The theme was \(puzzle.emoji) ") + Text(puzzle.name))
+                (HStack {
+                    Text("The category was")
+                    Image(systemName: puzzle.symbolName)
+                    Text(puzzle.name)
+                })
                     .foregroundColor(.secondary)
                     .padding()
                 

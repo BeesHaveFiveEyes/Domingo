@@ -15,10 +15,10 @@ struct QuestionView: View {
     
     var placeholder: String {
         if question.guessed {
-            return " " + question.formattedInsert + " "
+            return question.formattedInsert
         }
         else {
-            return " " + Question.placeholder + " "
+            return " " + WordoutApp.placeholder + " "
         }
     }
     

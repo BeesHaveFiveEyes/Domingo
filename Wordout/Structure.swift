@@ -13,14 +13,24 @@ struct Category: Identifiable {
     let name: String
     let description: String?
     let questions: [Question]
-    let emoji: String        
+    let symbolName: String
+    let emoji: String
+    var custom: Bool = false
     
     var puzzle: Puzzle {
-        return Puzzle(name: name, description: nil, questions: questions, emoji: emoji, dailyStyle: false)
+        return Puzzle(name: name, description: nil, questions: questions, symbolName: symbolName, emoji: emoji, dailyStyle: false, custom: custom)
     }
     
     static var premadeCategories: [Category] {
         return Bundle.main.decodeCategories("Index.txt")
+    }
+    
+    static var freeCategories: [Category] {
+        return Array(premadeCategories.prefix(6))
+    }
+    
+    static var paidCategories: [Category] {
+        return Array(premadeCategories.suffix(from: 6))
     }
     
     static var example: Category {
@@ -36,7 +46,7 @@ struct Category: Identifiable {
         questions.append(Question(id: 6, container: "sobriety", insert: "brie"))
         questions.append(Question(id: 7, container: "temperament", insert: "ramen"))
         
-        return Category(name: "Food", description: nil, questions: questions, emoji: "🍔")
+        return Category(name: "Food", description: nil, questions: questions, symbolName: "carrot", emoji: "🍔", custom: false)
     }
 }
 
@@ -45,36 +55,17 @@ class Puzzle {
     let id: UUID = UUID()
     let name: String
     let description: String?
+    let symbolName: String
     let emoji: String
     let dailyStyle: Bool
+    let custom: Bool = false
     
     var questions: [Question]
     
     public static let dailyPuzzleLength = 4
     
-    public static var referenceDate: Date {
-        
-        let calendar = Calendar(identifier: .gregorian)
-        
-        var referenceDateComponents = DateComponents()
-        
-        referenceDateComponents.year = 2022
-        referenceDateComponents.month = 10
-        referenceDateComponents.day = 25
-        referenceDateComponents.timeZone = TimeZone(abbreviation: "GMT")
-        referenceDateComponents.hour = 12
-        referenceDateComponents.minute = 0
-
-        return calendar.date(from: referenceDateComponents)!
-    }
-    
     private static var todaysSeed: Int {
-        return seedFromDate(Date())
-    }
-    
-    private static func seedFromDate(_ date: Date) -> Int {
-        let calendar = Calendar(identifier: .gregorian)
-        return calendar.countDaysBetween(start: referenceDate, end: date)
+        return Date().seed
     }
     
     private static func categoryForSeed(_ seed: Int) -> Category {
@@ -86,7 +77,7 @@ class Puzzle {
         for q in newQuestions {
             q.guessed = UserDefaults.standard.bool(forKey: Progress.key(for: q, in: self))
         }
-        return Puzzle(name: name, description: description, questions: newQuestions, emoji: emoji, dailyStyle: dailyStyle)
+        return Puzzle(name: name, description: description, questions: newQuestions, symbolName: symbolName, emoji: emoji, dailyStyle: dailyStyle)
     }
     
     static var dailyPuzzle: Puzzle {
@@ -94,17 +85,18 @@ class Puzzle {
     }
     
     static func puzzleForDate(_ date: Date) -> Puzzle {
-        let seed = seedFromDate(date)
+        let seed = date.seed
         let category = categoryForSeed(seed)
         let shuffledOptions = SeededRandomnessEngine.seededShuffle(category.questions, seed: seed)
         let questions = Question.fixIDs(questions: Array(shuffledOptions.prefix(dailyPuzzleLength)))
-        return Puzzle(name: category.name, description: category.description, questions: questions, emoji: category.emoji, dailyStyle: true)
+        return Puzzle(name: category.name, description: category.description, questions: questions, symbolName: category.symbolName, emoji: category.emoji, dailyStyle: true)
     }
     
-    init(name: String, description: String?, questions: [Question], emoji: String, dailyStyle: Bool) {
+    init(name: String, description: String?, questions: [Question], symbolName: String, emoji: String, dailyStyle: Bool, custom: Bool = false) {
         self.name = name
         self.description = description
         self.questions = questions
+        self.symbolName = symbolName
         self.emoji = emoji
         self.dailyStyle = dailyStyle
     }
@@ -122,6 +114,10 @@ class Puzzle {
     
     var totalGuessed: Int {
         return questions.filter({ $0.guessed }).count
+    }
+    
+    var completed: Bool {
+        return totalGuessed == questions.count
     }
 }
 
@@ -148,10 +144,8 @@ class Question: Identifiable, Equatable {
     
     var guessed: Bool = false
     
-    static let placeholder = "❖"
-    
     var clue: String {
-        return left.capitalized + " ❖ " + right
+        return left.capitalized + " \(WordoutApp.placeholder) " + right
     }
     
     var formattedInsert: String {

@@ -1,5 +1,6 @@
 Companies
 🏦
+cart.fill
 1
 likeable ikea
 solidly lidl

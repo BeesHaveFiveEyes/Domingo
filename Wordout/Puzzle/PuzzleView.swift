@@ -67,7 +67,7 @@ struct PuzzleView: View {
             question.guessed = false
         }
         
-        puzzle = Puzzle(name: puzzle.name, description: puzzle.description, questions: newQuestions, emoji: puzzle.emoji, dailyStyle: puzzle.dailyStyle)
+        puzzle = Puzzle(name: puzzle.name, description: puzzle.description, questions: newQuestions, symbolName: puzzle.symbolName, emoji: puzzle.emoji, dailyStyle: puzzle.dailyStyle)
         
         Progress.storeProgress(puzzle: puzzle)
     }
@@ -89,8 +89,6 @@ struct PuzzleView: View {
     
     func onIncorrectGuess() {
         failiureHaptic()
-        withAnimation {
-        }
     }
     
     func focusTextField() {
@@ -110,7 +108,7 @@ struct PuzzleView: View {
         if correct {
             onCorrectGuess()
         }
-        else {
+        else if input != "" {
             onIncorrectGuess()
         }
         
@@ -119,6 +117,7 @@ struct PuzzleView: View {
         }
         
         Progress.storeProgress(puzzle: puzzle)
+        Progress.logGuess()
     }
     
     func successHaptic() {
@@ -142,18 +141,30 @@ struct PuzzleView: View {
                     TopBarView(title: title, namespace: namespace, backAction: backAction, menuActions: menuActions)
                     
                     ForEach($puzzle.questions) { $question in
-                        Button(action: focusTextField) {
+                        Button(action: {if !question.guessed{focusTextField()}}) {
                             QuestionView(category: category, question: question, guessed: question.guessed)
-                                .scaleInAfter(Double(question.id) * WordoutApp.animationIncrement + WordoutApp.animationDelay)
+                                .scaleInAfter(offset: question.id)
                         }
                     }
                     
-                    (Text("The theme is \(puzzle.emoji) ") + Text(puzzle.name))
-                        .foregroundColor(.secondary)
-                        .padding()
-                        .scaleInAfter(WordoutApp.longAnimationDelay)
+                    Group {
+                        if !Progress.hardModeOn {
+                            HStack {
+                                Text("The category \(puzzle.completed ? "was" : "is")")
+                                Image(systemName: puzzle.symbolName)
+                                Text(puzzle.name)
+                            }
+//                            Text("The category \(puzzle.completed ? "was" : "is") \(puzzle.emoji) ") + Text(puzzle.name)
+                        }
+                        else {
+                            Text("The category is hidden in Hard Mode")
+                        }
+                    }
+                    .foregroundColor(.secondary)
+                    .padding()
+                    .fadeInAfter(offset: Puzzle.dailyPuzzleLength)
                     
-                    Spacer()
+                    Spacer()                    
                     
 //                    VStack(spacing: 0) {
 //                        Divider()
@@ -192,9 +203,10 @@ struct PuzzleView: View {
 
                     VStack {
                         ForEach($puzzle.questions) { $question in
-                            Button(action: focusTextField) {
+                            Button(action: {if !question.guessed{focusTextField()}}) {
                                 QuestionView(category: category, question: question, guessed: question.guessed)
                             }
+                            .padding(.vertical, 3)
                         }
                     }
                     .padding(.bottom, 100)
@@ -236,7 +248,7 @@ struct PuzzleView: View {
                     .background(Color(UIColor.secondarySystemGroupedBackground))
 
             }
-            .opacity(textFieldFocused || input != "" || playMode.showTopBar ? 1 : 0)
+            .opacity(!allQuestionsGuessed && (textFieldFocused || input != "" || playMode.showTopBar) ? 1 : 0)
         }
         .sheet(isPresented: $showingInstructions) {
             InstructionsView()
@@ -258,7 +270,7 @@ struct PuzzleView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
         NavigationView {
-            PuzzleView(namespace: namespace, playMode: PlayMode.categories, backAction: {}, complete: {}, puzzle: Puzzle.dailyPuzzle)
+            PuzzleView(namespace: namespace, playMode: PlayMode.dailyPuzzle, backAction: {}, complete: {}, puzzle: Puzzle.dailyPuzzle)
         }
     }
 }

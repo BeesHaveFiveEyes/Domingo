@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "Untitled (1) 05 Artboard 1 copy Copy 3.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Untitled (1) 06 Artboard 1 copy Copy 4.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

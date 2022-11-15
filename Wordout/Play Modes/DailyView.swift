@@ -26,12 +26,14 @@ struct DailyView: View {
     }
     
     func begin() {
+        Progress.logDailyAttempt()
         withAnimation {
             state = .inProgress
         }
     }
     
     func complete() {
+        Progress.logDailyCompletion()
         withAnimation {
             state = .complete
         }

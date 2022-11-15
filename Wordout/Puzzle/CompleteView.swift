@@ -37,9 +37,9 @@ struct CompleteView: View {
                 ForEach(puzzle.questions) { question in
                     HStack {
                         Text(question.left.capitalized)
-                        + Text(question.left == "" ? "" : "-")
+                        + Text(question.left == "" ? "" : "")
                         + Text(question.formattedInsert).font(.body.weight(.bold))
-                        + Text(question.right == "" ? "" : "-")
+                        + Text(question.right == "" ? "" : "")
                         + Text(question.right)
                         Spacer()
                         Image(systemName: "checkmark.circle")

@@ -1,3 +1,18 @@
 Colours
 🎨
+paintbrush.fill
 1
+seaquake aqua
+creditor red
+blueprints blue
+evergreens green
+stealthy teal
+blacksmith black
+fashionable ash
+beigels beige
+unimpeachable peach
+microsecond rose
+advisable sable
+salmonella salmon
+blatant tan
+compliment lime

@@ -13,8 +13,8 @@ struct PlayMode: Equatable {
     var menuTitle: String
     var symbolName: String
     var menuAccent: Bool
-    var welcomeViewCaption: String?
-    var welcomeViewPrimaryButtonText: String?
+    var welcomeViewCaption: [String]?
+    var welcomeViewPrimaryButtonText: [String]?
     var welcomeViewSecondaryButtonText: String?
     var completeViewTitleExtension: String?
     var completeViewCaption: String?
@@ -28,8 +28,8 @@ struct PlayMode: Equatable {
         menuTitle: "Daily Puzzle",
         symbolName: "calendar",
         menuAccent: true,
-        welcomeViewCaption: "Ready for your daily puzzle?",
-        welcomeViewPrimaryButtonText: "Play",
+        welcomeViewCaption: ["Ready for your daily puzzle?", "Will you solve today's puzzle?", "You've already completed today's puzzle."],
+        welcomeViewPrimaryButtonText: ["Play", "Resume", "Review"],
         welcomeViewSecondaryButtonText: "Quit",
         completeViewTitleExtension: "Complete!",
         completeViewCaption: "Congratulations! You've completed today's daily puzzle. Check back tomorrow for a new one!",
@@ -50,8 +50,8 @@ struct PlayMode: Equatable {
         menuTitle: "Archived Puzzles",
         symbolName: "archivebox.fill",
         menuAccent: false,
-        welcomeViewCaption: "Choose a date below to replay the daily puzzle from any day of your choice.",
-        welcomeViewPrimaryButtonText: "Select",
+        welcomeViewCaption: ["Choose a date below to replay the daily puzzle from any day of your choice."],
+        welcomeViewPrimaryButtonText: ["Select"],
         welcomeViewSecondaryButtonText: "Quit",
         completeViewTitleExtension: "Complete!",
         completeViewCaption: "Congratulations! You've finished this puzzle.",
@@ -64,6 +64,9 @@ struct PlayMode: Equatable {
         menuTitle: "Create Puzzle",
         symbolName: "paintbrush.fill",
         menuAccent: false,
+        welcomeViewCaption: ["Want to create your own puzzle?"],
+        welcomeViewPrimaryButtonText: ["Begin"],
+        welcomeViewSecondaryButtonText: "Quit",
         color: WordoutApp.themeColor,
         showTopBar: false)
     
@@ -71,6 +74,22 @@ struct PlayMode: Equatable {
         name: "Import Puzzle",
         menuTitle: "Import Puzzle",
         symbolName: "square.and.arrow.down.fill",
+        menuAccent: false,
+        color: WordoutApp.themeColor,
+        showTopBar: false)
+    
+    static let statistics = PlayMode(
+        name: "Statistics",
+        menuTitle: "Statistics",
+        symbolName: "list.clipboard.fill",
+        menuAccent: false,
+        color: WordoutApp.themeColor,
+        showTopBar: false)
+    
+    static let settings = PlayMode(
+        name: "Settings",
+        menuTitle: "Settings",
+        symbolName: "gearshape.fill",
         menuAccent: false,
         color: WordoutApp.themeColor,
         showTopBar: false)

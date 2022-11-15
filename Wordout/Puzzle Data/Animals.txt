@@ -1,5 +1,6 @@
 Animals
 🐝
+tortoise.fill
 1
 unbearable bear
 beetroot bee
@@ -7,3 +8,11 @@ dismantle ant
 benevolent vole
 cowardliness cow
 caricature cat
+cupboard boar
+lotteries otter
+epigraph pig
+backstage stag
+millionaire lion
+amulet mule
+selfishness fish
+expandable panda

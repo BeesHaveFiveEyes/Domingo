@@ -1,3 +1,18 @@
 Buildings
 🏡
+house.fill
 1
+grasshopper shop
+fathomed home
+comfortable fort
+bestower tower
+infestation station
+furnished shed
+smallpox mall
+embankment bank
+barnacles barn
+amphitheatre theatre
+cinematography cinema
+multistorey store
+dissatisfactory factory
+challenge hall

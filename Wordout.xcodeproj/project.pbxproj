@@ -26,25 +26,22 @@
 		BD9B38582915537F00B6B042 /* Food.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382F2915537E00B6B042 /* Food.txt */; };
 		BD9B38592915537F00B6B042 /* Books.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38302915537E00B6B042 /* Books.txt */; };
 		BD9B385A2915537F00B6B042 /* Colours.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38312915537E00B6B042 /* Colours.txt */; };
-		BD9B385B2915537F00B6B042 /* Imperial Units.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38322915537E00B6B042 /* Imperial Units.txt */; };
+		BD9B385B2915537F00B6B042 /* Units.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38322915537E00B6B042 /* Units.txt */; };
 		BD9B385C2915537F00B6B042 /* Weapons.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38332915537E00B6B042 /* Weapons.txt */; };
-		BD9B385D2915537F00B6B042 /* Bodies of Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38342915537E00B6B042 /* Bodies of Water.txt */; };
-		BD9B385E2915537F00B6B042 /* Sports.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38352915537E00B6B042 /* Sports.txt */; };
+		BD9B385D2915537F00B6B042 /* Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38342915537E00B6B042 /* Water.txt */; };
+		BD9B385E2915537F00B6B042 /* Sport.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38352915537E00B6B042 /* Sport.txt */; };
 		BD9B385F2915537F00B6B042 /* Trees.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38362915537E00B6B042 /* Trees.txt */; };
 		BD9B38602915537F00B6B042 /* Companies.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38372915537E00B6B042 /* Companies.txt */; };
-		BD9B38612915537F00B6B042 /* Numbers.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38382915537E00B6B042 /* Numbers.txt */; };
+		BD9B38612915537F00B6B042 /* Maths.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38382915537E00B6B042 /* Maths.txt */; };
 		BD9B38622915537F00B6B042 /* Buildings.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38392915537E00B6B042 /* Buildings.txt */; };
 		BD9B38632915537F00B6B042 /* Titles.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383A2915537E00B6B042 /* Titles.txt */; };
-		BD9B38642915537F00B6B042 /* Chemical Elements.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383B2915537E00B6B042 /* Chemical Elements.txt */; };
-		BD9B38652915537F00B6B042 /* Herbs and Spices.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383C2915537E00B6B042 /* Herbs and Spices.txt */; };
-		BD9B38662915537F00B6B042 /* Musical Instruments.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383D2915537E00B6B042 /* Musical Instruments.txt */; };
+		BD9B38642915537F00B6B042 /* Chemistry.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383B2915537E00B6B042 /* Chemistry.txt */; };
+		BD9B38662915537F00B6B042 /* Music.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383D2915537E00B6B042 /* Music.txt */; };
 		BD9B38672915537F00B6B042 /* Jobs.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383E2915537E00B6B042 /* Jobs.txt */; };
 		BD9B38682915537F00B6B042 /* Nature.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383F2915537E00B6B042 /* Nature.txt */; };
 		BD9B38692915537F00B6B042 /* Clothing.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38402915537E00B6B042 /* Clothing.txt */; };
-		BD9B386A2915537F00B6B042 /* Family Members.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38412915537E00B6B042 /* Family Members.txt */; };
+		BD9B386A2915537F00B6B042 /* Family.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38412915537E00B6B042 /* Family.txt */; };
 		BD9B386B2915537F00B6B042 /* Kitchen Utensils.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */; };
-		BD9B386C2915537F00B6B042 /* Greek Letters.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38432915537E00B6B042 /* Greek Letters.txt */; };
-		BD9B386D2915537F00B6B042 /* Metric Units.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38442915537E00B6B042 /* Metric Units.txt */; };
 		BD9B386E2915537F00B6B042 /* Cities.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38452915537E00B6B042 /* Cities.txt */; };
 		BD9B386F2915537F00B6B042 /* Space.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38462915537E00B6B042 /* Space.txt */; };
 		BD9B38702915537F00B6B042 /* Countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38472915537F00B6B042 /* Countries.txt */; };
@@ -56,7 +53,6 @@
 		BD9B38762915537F00B6B042 /* Weather.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384D2915537F00B6B042 /* Weather.txt */; };
 		BD9B38772915537F00B6B042 /* Furniture.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384E2915537F00B6B042 /* Furniture.txt */; };
 		BD9B38782915537F00B6B042 /* Body Parts.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384F2915537F00B6B042 /* Body Parts.txt */; };
-		BD9B38792915537F00B6B042 /* Sports Items.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38502915537F00B6B042 /* Sports Items.txt */; };
 		BD9B387A2915537F00B6B042 /* Stationery.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38512915537F00B6B042 /* Stationery.txt */; };
 		BD9B387B2915537F00B6B042 /* Board Games.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38522915537F00B6B042 /* Board Games.txt */; };
 		BD9B387C2915537F00B6B042 /* Romance.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38532915537F00B6B042 /* Romance.txt */; };
@@ -64,6 +60,10 @@
 		BD9B388029155AB800B6B042 /* Index.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B387F29155AB800B6B042 /* Index.txt */; };
 		BD9B38822915A7E400B6B042 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B38812915A7E400B6B042 /* QuestionView.swift */; };
 		BD9B38842915B41700B6B042 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B38832915B41700B6B042 /* ArchiveView.swift */; };
+		BDA77945291D93770032EB52 /* NewCategoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA77944291D93770032EB52 /* NewCategoryViews.swift */; };
+		BDA77947291E659D0032EB52 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA77946291E659D0032EB52 /* CreateView.swift */; };
+		BDA7794929200FC40032EB52 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7794829200FC40032EB52 /* StatisticsView.swift */; };
+		BDA7794B292019810032EB52 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7794A292019810032EB52 /* SettingsView.swift */; };
 		BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F94291975A900DD65B2 /* TopBarView.swift */; };
 		BDEE3F992919778900DD65B2 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F982919778900DD65B2 /* PuzzleView.swift */; };
 		BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */; };
@@ -94,25 +94,22 @@
 		BD9B382F2915537E00B6B042 /* Food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Food.txt; sourceTree = "<group>"; };
 		BD9B38302915537E00B6B042 /* Books.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Books.txt; sourceTree = "<group>"; };
 		BD9B38312915537E00B6B042 /* Colours.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colours.txt; sourceTree = "<group>"; };
-		BD9B38322915537E00B6B042 /* Imperial Units.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Imperial Units.txt"; sourceTree = "<group>"; };
+		BD9B38322915537E00B6B042 /* Units.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Units.txt; sourceTree = "<group>"; };
 		BD9B38332915537E00B6B042 /* Weapons.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weapons.txt; sourceTree = "<group>"; };
-		BD9B38342915537E00B6B042 /* Bodies of Water.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Bodies of Water.txt"; sourceTree = "<group>"; };
-		BD9B38352915537E00B6B042 /* Sports.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sports.txt; sourceTree = "<group>"; };
+		BD9B38342915537E00B6B042 /* Water.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Water.txt; sourceTree = "<group>"; };
+		BD9B38352915537E00B6B042 /* Sport.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sport.txt; sourceTree = "<group>"; };
 		BD9B38362915537E00B6B042 /* Trees.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Trees.txt; sourceTree = "<group>"; };
 		BD9B38372915537E00B6B042 /* Companies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Companies.txt; sourceTree = "<group>"; };
-		BD9B38382915537E00B6B042 /* Numbers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Numbers.txt; sourceTree = "<group>"; };
+		BD9B38382915537E00B6B042 /* Maths.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Maths.txt; sourceTree = "<group>"; };
 		BD9B38392915537E00B6B042 /* Buildings.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Buildings.txt; sourceTree = "<group>"; };
 		BD9B383A2915537E00B6B042 /* Titles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Titles.txt; sourceTree = "<group>"; };
-		BD9B383B2915537E00B6B042 /* Chemical Elements.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Chemical Elements.txt"; sourceTree = "<group>"; };
-		BD9B383C2915537E00B6B042 /* Herbs and Spices.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Herbs and Spices.txt"; sourceTree = "<group>"; };
-		BD9B383D2915537E00B6B042 /* Musical Instruments.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Musical Instruments.txt"; sourceTree = "<group>"; };
+		BD9B383B2915537E00B6B042 /* Chemistry.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Chemistry.txt; sourceTree = "<group>"; };
+		BD9B383D2915537E00B6B042 /* Music.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Music.txt; sourceTree = "<group>"; };
 		BD9B383E2915537E00B6B042 /* Jobs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Jobs.txt; sourceTree = "<group>"; };
 		BD9B383F2915537E00B6B042 /* Nature.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Nature.txt; sourceTree = "<group>"; };
 		BD9B38402915537E00B6B042 /* Clothing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Clothing.txt; sourceTree = "<group>"; };
-		BD9B38412915537E00B6B042 /* Family Members.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Family Members.txt"; sourceTree = "<group>"; };
+		BD9B38412915537E00B6B042 /* Family.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Family.txt; sourceTree = "<group>"; };
 		BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Kitchen Utensils.txt"; sourceTree = "<group>"; };
-		BD9B38432915537E00B6B042 /* Greek Letters.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Greek Letters.txt"; sourceTree = "<group>"; };
-		BD9B38442915537E00B6B042 /* Metric Units.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Metric Units.txt"; sourceTree = "<group>"; };
 		BD9B38452915537E00B6B042 /* Cities.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cities.txt; sourceTree = "<group>"; };
 		BD9B38462915537E00B6B042 /* Space.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Space.txt; sourceTree = "<group>"; };
 		BD9B38472915537F00B6B042 /* Countries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Countries.txt; sourceTree = "<group>"; };
@@ -124,7 +121,6 @@
 		BD9B384D2915537F00B6B042 /* Weather.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.txt; sourceTree = "<group>"; };
 		BD9B384E2915537F00B6B042 /* Furniture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Furniture.txt; sourceTree = "<group>"; };
 		BD9B384F2915537F00B6B042 /* Body Parts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Body Parts.txt"; sourceTree = "<group>"; };
-		BD9B38502915537F00B6B042 /* Sports Items.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Sports Items.txt"; sourceTree = "<group>"; };
 		BD9B38512915537F00B6B042 /* Stationery.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stationery.txt; sourceTree = "<group>"; };
 		BD9B38522915537F00B6B042 /* Board Games.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Board Games.txt"; sourceTree = "<group>"; };
 		BD9B38532915537F00B6B042 /* Romance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Romance.txt; sourceTree = "<group>"; };
@@ -132,6 +128,10 @@
 		BD9B387F29155AB800B6B042 /* Index.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Index.txt; sourceTree = "<group>"; };
 		BD9B38812915A7E400B6B042 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		BD9B38832915B41700B6B042 /* ArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		BDA77944291D93770032EB52 /* NewCategoryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViews.swift; sourceTree = "<group>"; };
+		BDA77946291E659D0032EB52 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		BDA7794829200FC40032EB52 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		BDA7794A292019810032EB52 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BDEE3F94291975A900DD65B2 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		BDEE3F982919778900DD65B2 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
@@ -174,6 +174,7 @@
 				BD85760129144789003D4D47 /* WordoutApp.swift */,
 				BD85760329144789003D4D47 /* ContentView.swift */,
 				BD85760F291447D0003D4D47 /* MainMenuView.swift */,
+				BDA7794829200FC40032EB52 /* StatisticsView.swift */,
 				BD85761729144828003D4D47 /* CategoriesView.swift */,
 				BD8576192914482F003D4D47 /* CategoryView.swift */,
 				BD9B38852917132600B6B042 /* Play Modes */,
@@ -182,6 +183,7 @@
 				BD85762129144E1C003D4D47 /* PlayModes.swift */,
 				BD9B387D291553C500B6B042 /* Extensions.swift */,
 				BDEE3FA02919C56100DD65B2 /* Modifiers.swift */,
+				BDA7794A292019810032EB52 /* SettingsView.swift */,
 				BDEE3FA2291BB01B00DD65B2 /* Progress.swift */,
 				BD9B382A29154DFC00B6B042 /* Puzzle Data */,
 				BD8576052914478B003D4D47 /* Assets.xcassets */,
@@ -216,15 +218,16 @@
 		BD9B382A29154DFC00B6B042 /* Puzzle Data */ = {
 			isa = PBXGroup;
 			children = (
+				BDE9E2022923F0A5008577DF /* Other */,
 				BD9B387F29155AB800B6B042 /* Index.txt */,
 				BD9B382E2915537E00B6B042 /* Animals.txt */,
 				BD9B38492915537F00B6B042 /* Apps.txt */,
 				BD9B38522915537F00B6B042 /* Board Games.txt */,
-				BD9B38342915537E00B6B042 /* Bodies of Water.txt */,
+				BD9B38342915537E00B6B042 /* Water.txt */,
 				BD9B384F2915537F00B6B042 /* Body Parts.txt */,
 				BD9B38302915537E00B6B042 /* Books.txt */,
 				BD9B38392915537E00B6B042 /* Buildings.txt */,
-				BD9B383B2915537E00B6B042 /* Chemical Elements.txt */,
+				BD9B383B2915537E00B6B042 /* Chemistry.txt */,
 				BD9B38482915537F00B6B042 /* Christmas.txt */,
 				BD9B38452915537E00B6B042 /* Cities.txt */,
 				BD9B38402915537E00B6B042 /* Clothing.txt */,
@@ -233,30 +236,21 @@
 				BD9B382C2915537E00B6B042 /* Containers.txt */,
 				BD9B38472915537F00B6B042 /* Countries.txt */,
 				BD9B382D2915537E00B6B042 /* Drinks.txt */,
-				BD9B38412915537E00B6B042 /* Family Members.txt */,
+				BD9B38412915537E00B6B042 /* Family.txt */,
 				BD9B382F2915537E00B6B042 /* Food.txt */,
 				BD9B384E2915537F00B6B042 /* Furniture.txt */,
-				BD9B38432915537E00B6B042 /* Greek Letters.txt */,
-				BD9B383C2915537E00B6B042 /* Herbs and Spices.txt */,
-				BD9B38322915537E00B6B042 /* Imperial Units.txt */,
-				BD9B383E2915537E00B6B042 /* Jobs.txt */,
-				BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */,
+				BD9B38322915537E00B6B042 /* Units.txt */,
 				BD9B384A2915537F00B6B042 /* Materials.txt */,
-				BD9B38442915537E00B6B042 /* Metric Units.txt */,
-				BD9B383D2915537E00B6B042 /* Musical Instruments.txt */,
+				BD9B383D2915537E00B6B042 /* Music.txt */,
 				BD9B383F2915537E00B6B042 /* Nature.txt */,
-				BD9B38382915537E00B6B042 /* Numbers.txt */,
+				BD9B38382915537E00B6B042 /* Maths.txt */,
 				BD9B38532915537F00B6B042 /* Romance.txt */,
 				BD9B38462915537E00B6B042 /* Space.txt */,
-				BD9B38502915537F00B6B042 /* Sports Items.txt */,
-				BD9B38352915537E00B6B042 /* Sports.txt */,
-				BD9B38512915537F00B6B042 /* Stationery.txt */,
-				BD9B384B2915537F00B6B042 /* Time Periods.txt */,
+				BD9B38352915537E00B6B042 /* Sport.txt */,
 				BD9B383A2915537E00B6B042 /* Titles.txt */,
 				BD9B384C2915537F00B6B042 /* Tools.txt */,
 				BD9B38362915537E00B6B042 /* Trees.txt */,
 				BD9B382B2915537E00B6B042 /* Vehicles.txt */,
-				BD9B38332915537E00B6B042 /* Weapons.txt */,
 				BD9B384D2915537F00B6B042 /* Weather.txt */,
 			);
 			path = "Puzzle Data";
@@ -266,9 +260,23 @@
 			isa = PBXGroup;
 			children = (
 				BD8576232914554E003D4D47 /* DailyView.swift */,
+				BDA77944291D93770032EB52 /* NewCategoryViews.swift */,
+				BDA77946291E659D0032EB52 /* CreateView.swift */,
 				BD9B38832915B41700B6B042 /* ArchiveView.swift */,
 			);
 			path = "Play Modes";
+			sourceTree = "<group>";
+		};
+		BDE9E2022923F0A5008577DF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BD9B38422915537E00B6B042 /* Kitchen Utensils.txt */,
+				BD9B384B2915537F00B6B042 /* Time Periods.txt */,
+				BD9B383E2915537E00B6B042 /* Jobs.txt */,
+				BD9B38512915537F00B6B042 /* Stationery.txt */,
+				BD9B38332915537E00B6B042 /* Weapons.txt */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,42 +345,38 @@
 				BD9B38552915537F00B6B042 /* Containers.txt in Resources */,
 				BD9B38772915537F00B6B042 /* Furniture.txt in Resources */,
 				BD9B38682915537F00B6B042 /* Nature.txt in Resources */,
-				BD9B38652915537F00B6B042 /* Herbs and Spices.txt in Resources */,
 				BD9B387C2915537F00B6B042 /* Romance.txt in Resources */,
-				BD9B386C2915537F00B6B042 /* Greek Letters.txt in Resources */,
 				BD9B38622915537F00B6B042 /* Buildings.txt in Resources */,
 				BD9B38582915537F00B6B042 /* Food.txt in Resources */,
 				BD9B387B2915537F00B6B042 /* Board Games.txt in Resources */,
 				BD9B38712915537F00B6B042 /* Christmas.txt in Resources */,
-				BD9B38612915537F00B6B042 /* Numbers.txt in Resources */,
+				BD9B38612915537F00B6B042 /* Maths.txt in Resources */,
 				BD9B385A2915537F00B6B042 /* Colours.txt in Resources */,
 				BD9B386F2915537F00B6B042 /* Space.txt in Resources */,
 				BD9B385C2915537F00B6B042 /* Weapons.txt in Resources */,
 				BD9B38632915537F00B6B042 /* Titles.txt in Resources */,
-				BD9B385B2915537F00B6B042 /* Imperial Units.txt in Resources */,
+				BD9B385B2915537F00B6B042 /* Units.txt in Resources */,
 				BD9B38592915537F00B6B042 /* Books.txt in Resources */,
 				BD9B38732915537F00B6B042 /* Materials.txt in Resources */,
 				BD9B38722915537F00B6B042 /* Apps.txt in Resources */,
 				BD9B38542915537F00B6B042 /* Vehicles.txt in Resources */,
 				BD9B386B2915537F00B6B042 /* Kitchen Utensils.txt in Resources */,
-				BD9B386D2915537F00B6B042 /* Metric Units.txt in Resources */,
 				BD9B38672915537F00B6B042 /* Jobs.txt in Resources */,
-				BD9B386A2915537F00B6B042 /* Family Members.txt in Resources */,
-				BD9B38792915537F00B6B042 /* Sports Items.txt in Resources */,
+				BD9B386A2915537F00B6B042 /* Family.txt in Resources */,
 				BD9B38752915537F00B6B042 /* Tools.txt in Resources */,
 				BD9B388029155AB800B6B042 /* Index.txt in Resources */,
 				BD9B38562915537F00B6B042 /* Drinks.txt in Resources */,
-				BD9B38662915537F00B6B042 /* Musical Instruments.txt in Resources */,
+				BD9B38662915537F00B6B042 /* Music.txt in Resources */,
 				BD9B38692915537F00B6B042 /* Clothing.txt in Resources */,
 				BD9B38742915537F00B6B042 /* Time Periods.txt in Resources */,
 				BD9B38702915537F00B6B042 /* Countries.txt in Resources */,
 				BD9B387A2915537F00B6B042 /* Stationery.txt in Resources */,
 				BD9B38602915537F00B6B042 /* Companies.txt in Resources */,
 				BD9B386E2915537F00B6B042 /* Cities.txt in Resources */,
-				BD9B385D2915537F00B6B042 /* Bodies of Water.txt in Resources */,
+				BD9B385D2915537F00B6B042 /* Water.txt in Resources */,
 				BD9B385F2915537F00B6B042 /* Trees.txt in Resources */,
-				BD9B385E2915537F00B6B042 /* Sports.txt in Resources */,
-				BD9B38642915537F00B6B042 /* Chemical Elements.txt in Resources */,
+				BD9B385E2915537F00B6B042 /* Sport.txt in Resources */,
+				BD9B38642915537F00B6B042 /* Chemistry.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +388,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9B38822915A7E400B6B042 /* QuestionView.swift in Sources */,
+				BDA7794B292019810032EB52 /* SettingsView.swift in Sources */,
 				BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */,
+				BDA7794929200FC40032EB52 /* StatisticsView.swift in Sources */,
 				BD85762229144E1C003D4D47 /* PlayModes.swift in Sources */,
 				BD857610291447D0003D4D47 /* MainMenuView.swift in Sources */,
 				BD8576242914554E003D4D47 /* DailyView.swift in Sources */,
@@ -397,7 +403,9 @@
 				BD85761829144828003D4D47 /* CategoriesView.swift in Sources */,
 				BD85760429144789003D4D47 /* ContentView.swift in Sources */,
 				BD85760229144789003D4D47 /* WordoutApp.swift in Sources */,
+				BDA77945291D93770032EB52 /* NewCategoryViews.swift in Sources */,
 				BD9B387E291553C600B6B042 /* Extensions.swift in Sources */,
+				BDA77947291E659D0032EB52 /* CreateView.swift in Sources */,
 				BD85761629144818003D4D47 /* CompleteView.swift in Sources */,
 				BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */,
 				BD857612291447FA003D4D47 /* WelcomeView.swift in Sources */,
@@ -534,12 +542,12 @@
 				DEVELOPMENT_TEAM = 9XW35Y79U2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WordSplit;
+				INFOPLIST_KEY_CFBundleDisplayName = Domingo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,9 +556,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -565,12 +576,12 @@
 				DEVELOPMENT_TEAM = 9XW35Y79U2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WordSplit;
+				INFOPLIST_KEY_CFBundleDisplayName = Domingo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,9 +590,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

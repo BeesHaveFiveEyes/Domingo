@@ -18,6 +18,46 @@ struct WelcomeView: View {
     
     var namespace: Namespace.ID
     
+    var caption: String {
+        
+        if playMode == .dailyPuzzle {
+            let p = Puzzle.dailyPuzzle.loadingFromProgress()
+            
+            if p.completed {
+                return playMode.welcomeViewCaption![2]
+            }
+            else if p.totalGuessed > 0 {
+                return playMode.welcomeViewCaption![1]
+            }
+            else {
+                return playMode.welcomeViewCaption![0]
+            }
+        }
+        else {
+            return (playMode.welcomeViewCaption ?? ["Missing Caption"])[0]
+        }
+    }
+    
+    var primaryButtonText: String {
+        
+        if playMode == .dailyPuzzle {
+            let p = Puzzle.dailyPuzzle.loadingFromProgress()
+            
+            if p.completed {
+                return playMode.welcomeViewPrimaryButtonText![2]
+            }
+            else if p.totalGuessed > 0 {
+                return playMode.welcomeViewPrimaryButtonText![1]
+            }
+            else {
+                return playMode.welcomeViewPrimaryButtonText![0]
+            }
+        }
+        else {
+            return (playMode.welcomeViewPrimaryButtonText ?? ["Button"])[0]
+        }
+    }
+    
     var body: some View {
         
         VStack {
@@ -43,7 +83,7 @@ struct WelcomeView: View {
             
             // Caption
             
-            Text(playMode.welcomeViewCaption ?? "Caption")
+            Text(caption)
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -52,7 +92,7 @@ struct WelcomeView: View {
             // Date Picker
             
             if playMode == .archive {
-                DatePicker("Puzzle date", selection: $date, in: (Puzzle.referenceDate...Date()), displayedComponents: [.date])
+                DatePicker("Puzzle date", selection: $date, in: (Date.referenceDate...Date()), displayedComponents: [.date])
                     .padding()
                     .datePickerStyle(.compact)
                     .colorScheme(.dark)
@@ -62,7 +102,7 @@ struct WelcomeView: View {
             
             // Primary button
             
-            WelcomeViewButton(text: playMode.welcomeViewPrimaryButtonText ?? "Button 1", action: {primaryAction(date)}, primary: true)
+            WelcomeViewButton(text: primaryButtonText, action: {primaryAction(date)}, primary: true)
                 .transition(.asymmetric(insertion: .opacity, removal: .scale))
                 .padding(.top, 40)
             

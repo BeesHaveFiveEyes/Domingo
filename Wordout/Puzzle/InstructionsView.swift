@@ -22,7 +22,7 @@ struct InstructionsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 40) {
                     
-                    Text("Each clue in a \(WordoutApp.appName) puzzle consists of a word in which some letters have been obscurred by a star. To solve the puzzle, replace each star with a word from the puzzle's category to recover the original word.")
+                    Text("\(WordoutApp.appName.capitalized) is a game about words within words. To solve a puzzle, replace each of the stars (\(WordoutApp.placeholder)) with a word to form a new, longer word.")
                     VStack {
                         InstructionsExamplesView(questions: exampleQuestions)
                             .padding()
@@ -31,7 +31,7 @@ struct InstructionsView: View {
                                 .foregroundColor(Color(UIColor.secondarySystemGroupedBackground)))
                     }
                     
-                    Text("In the example above, the category is ") + Text("compass points").font(.body.italic()) + Text(".")
+                    Text("To make things easier, each puzzle has a category. The words you use to replace the stars will all be related to this theme. In the example above, the category is compass points.")
                     
                     
 //                    VStack(alignment: .leading, spacing: 15) {

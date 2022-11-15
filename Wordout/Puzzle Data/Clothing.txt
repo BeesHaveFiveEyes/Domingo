@@ -1,5 +1,6 @@
 Clothing
 👖
+tshirt.fill
 1
 emphatic hat
 algebra bra
@@ -10,5 +11,8 @@ ensuite suit
 socket sock
 addressee dress
 gravestone vest
+landscape cap
 outskirts skirt
 twentieth tie
+intermittent mitten
+

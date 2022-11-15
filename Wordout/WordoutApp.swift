@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct WordoutApp: App {
     
-    static public let appName = "Hoshi"
+    static public let appName = "Domingo"
     static public let themeColor = Color("ThemeColor")
+    static let placeholder = "❖"
     
     static public let animationIncrement = 0.06
     static public let animationDelay = 0.3
