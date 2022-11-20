@@ -13,6 +13,13 @@ struct MainMenuView: View {
     var enterArchiveView: () -> ()
     var enterCategoryView: () -> ()
     var enterCreateView: () -> ()
+    var showPurchaseView: () -> ()
+    
+    @EnvironmentObject var unlockManager: UnlockManager
+    
+    var fullAppUnlocked: Bool {
+        return unlockManager.fullVersionUnlocked
+    }
     
     @State private var titleTapped = false
     @State private var showingCategoriesView = false
@@ -46,6 +53,13 @@ struct MainMenuView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         
+//                        Text("Welcome Back, \(name).")
+//                            .font(.largeTitle)
+//                            .fontWeight(.heavy)
+//                            .foregroundColor(.accentColor)
+//                        Text("A new daily puzzle is waiting for you.")
+//                            .font(.body)
+//                            .foregroundColor(.secondary)
                         Text("\(WordoutApp.appName)")
                             .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.4, weight: .bold))
                             .fontWeight(.heavy)
@@ -55,14 +69,14 @@ struct MainMenuView: View {
 //                            .scaledToFit()
 //                            .frame(height: 80)
 //                            .slideInAfter(0)
-                            .scaleEffect(titleTapped ? 1.04 : 1)
+//                            .scaleEffect(titleTapped ? 1.04 : 1)
 //                            .animation(.spring(response: 0.4, dampingFraction: 0.6))
-                            .onTapGesture {
-                                titleTapped = true
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                    titleTapped = false
-                                }
-                            }
+//                            .onTapGesture {
+//                                titleTapped = true
+//                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                                    titleTapped = false
+//                                }
+//                            }
                         Text("A Puzzle Game by Alasdair Casperd")
                             .font(.body)
                             .foregroundColor(.secondary)
@@ -81,7 +95,7 @@ struct MainMenuView: View {
                 }
 //                .slideInAfter(offset: 0, withDelay: 2)
                 
-                NavigationLink(destination: CategoriesView(), isActive: $showingCategoriesView) {
+                NavigationLink(destination: CategoriesView(showPurchaseView: showPurchaseView), isActive: $showingCategoriesView) {
                     MenuItemView(playMode: .categories)
                 }
 //                .slideInAfter(offset: 0, withDelay: 2)
@@ -95,14 +109,19 @@ struct MainMenuView: View {
 ////                }
 //                    .slideInAfter(offset: 0, withDelay: 2)
                 
-                Button(action: enterArchiveView) {
-                    MenuItemView(playMode: .archive)
+                NavigationLink(destination: StatisticsView()) {
+                    MenuItemView(playMode: .statistics)
                 }
 //                .slideInAfter(offset: 0, withDelay: 2)
                 
-                
-                NavigationLink(destination: StatisticsView()) {
-                    MenuItemView(playMode: .statistics)
+                Button {
+                    if fullAppUnlocked {
+                        enterArchiveView()
+                    } else {
+                        showPurchaseView()
+                    }
+                } label: {
+                    MenuItemView(playMode: .archive, locked: !fullAppUnlocked)
                 }
 //                .slideInAfter(offset: 0, withDelay: 2)
                 
@@ -120,7 +139,7 @@ struct MainMenuView: View {
 
 struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView(enterDailyView: {}, enterArchiveView: {}, enterCategoryView: {}, enterCreateView: {}, dailyPuzzle: Puzzle.dailyPuzzle.loadingFromProgress())
+        MainMenuView(enterDailyView: {}, enterArchiveView: {}, enterCategoryView: {}, enterCreateView: {}, showPurchaseView: {}, dailyPuzzle: Puzzle.dailyPuzzle.loadingFromDailyProgress())
             .accentColor(WordoutApp.themeColor)
     }
 }

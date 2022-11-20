@@ -44,7 +44,7 @@ struct DailyView: View {
         case .welcome:
             WelcomeView(playMode: .dailyPuzzle, primaryAction: {date in begin()}, secondaryAction: quit, namespace: namespace)
         case .inProgress:
-            PuzzleView(namespace: namespace, playMode: .dailyPuzzle, backAction: quit, complete: complete, puzzle: Puzzle.dailyPuzzle.loadingFromProgress())
+            PuzzleView(namespace: namespace, playMode: .dailyPuzzle, backAction: quit, complete: complete, puzzle: Puzzle.dailyPuzzle.loadingFromDailyProgress())
         case .complete:
             CompleteView(primaryButtonAction: quit, puzzle: .dailyPuzzle, playMode: .dailyPuzzle, namespace: namespace)
         }

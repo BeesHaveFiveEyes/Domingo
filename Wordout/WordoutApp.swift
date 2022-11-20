@@ -10,9 +10,18 @@ import SwiftUI
 @main
 struct WordoutApp: App {
     
+    init() {        
+        let unlockManager = UnlockManager()
+        _unlockManager = StateObject(wrappedValue: unlockManager)
+    }
+    
+    @StateObject var unlockManager: UnlockManager
+    
     static public let appName = "Domingo"
     static public let themeColor = Color("ThemeColor")
     static let placeholder = "❖"
+    
+    static let freePuzzles = 4
     
     static public let animationIncrement = 0.06
     static public let animationDelay = 0.3
@@ -22,6 +31,7 @@ struct WordoutApp: App {
         WindowGroup {
             ContentView()
                 .accentColor(WordoutApp.themeColor)
+                .environmentObject(unlockManager)
         }
     }
 }

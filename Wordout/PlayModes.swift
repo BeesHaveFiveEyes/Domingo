@@ -81,7 +81,7 @@ struct PlayMode: Equatable {
     static let statistics = PlayMode(
         name: "Statistics",
         menuTitle: "Statistics",
-        symbolName: "list.clipboard.fill",
+        symbolName: "trophy.fill",
         menuAccent: false,
         color: WordoutApp.themeColor,
         showTopBar: false)

@@ -26,11 +26,11 @@ struct Category: Identifiable {
     }
     
     static var freeCategories: [Category] {
-        return Array(premadeCategories.prefix(6))
+        return Array(premadeCategories.prefix(WordoutApp.freePuzzles))
     }
     
     static var paidCategories: [Category] {
-        return Array(premadeCategories.suffix(from: 6))
+        return Array(premadeCategories.suffix(from: WordoutApp.freePuzzles))
     }
     
     static var example: Category {
@@ -72,11 +72,45 @@ class Puzzle {
         return SeededRandomnessEngine.seededChoice(Category.premadeCategories.filter({$0.questions.count > 0}), seed: seed)!
     }
     
-    func loadingFromProgress() -> Puzzle {
+    func loadingFromCategoryProgress() -> Puzzle {
         let newQuestions = questions
         for q in newQuestions {
             q.guessed = UserDefaults.standard.bool(forKey: Progress.key(for: q, in: self))
         }
+        return Puzzle(name: name, description: description, questions: newQuestions, symbolName: symbolName, emoji: emoji, dailyStyle: dailyStyle)
+    }
+    
+    func loadingFromDailyProgress() -> Puzzle {
+        
+        print("loadingFromDailyProgress() called")
+        
+        let newQuestions = questions
+        
+        print("Current seed: \(Date().seed)")
+        print("Last seen seed: \(Progress.lastSeenSeed)")
+        
+        if Progress.lastSeenSeed == Date().seed {
+            print("lastSeenSeed in UserDefaults matches the current seed. Attempting to load saved progress.")
+            for q in newQuestions {
+                let key = Progress.key(for: q, in: self)
+                let storedValue = UserDefaults.standard.bool(forKey: key)
+                q.guessed = storedValue
+                print("Reading '\(storedValue)' from key '\(key)'")
+            }
+        }
+        else {
+            print("lastSeenSeed found in UserDefaults does not match the current seed. Resetting progress.")
+            for q in newQuestions {
+                q.guessed = false
+                let key = Progress.key(for: q, in: self)
+                let value = false
+                UserDefaults.standard.set(value, forKey: key)
+                print("Setting key '\(key)' to '\(value)'")
+            }
+        }
+        
+        Progress.storeLastSeed()
+        
         return Puzzle(name: name, description: description, questions: newQuestions, symbolName: symbolName, emoji: emoji, dailyStyle: dailyStyle)
     }
     
@@ -127,6 +161,7 @@ class Question: Identifiable, Equatable {
         return lhs.id == rhs.id
     }
     
+    // Relabels the ID's of a list of questions to be 0,...,n for some n
     static func fixIDs(questions: [Question]) -> [Question] {
         var output = [Question]()
         var i = 0

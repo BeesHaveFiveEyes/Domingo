@@ -26,7 +26,7 @@ struct CategoryView: View {
     }
     
     var body: some View {
-        PuzzleView(namespace: namespace, playMode: .categories, backAction: quit, complete: {}, category: category, puzzle: category.puzzle.loadingFromProgress())
+        PuzzleView(namespace: namespace, playMode: .categories, backAction: quit, complete: {}, category: category, puzzle: category.puzzle.loadingFromCategoryProgress())
     }
 }
 

@@ -10,10 +10,13 @@ import SwiftUI
 struct CategoriesView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var unlockManager: UnlockManager
     
     func back() {
         presentationMode.wrappedValue.dismiss()
     }
+    
+    var showPurchaseView: () -> ()
     
     var body: some View {
 //        Form {
@@ -51,15 +54,16 @@ struct CategoriesView: View {
 //        }
         GeometryReader { geometry in
             ScrollView {
-                Text("Browse the categories below to attempt any of the puzzles from our enormous catalogue.")
-                    .padding(.horizontal)
-                    .padding(.top)
-                CategoryGridView(categories: Category.freeCategories)
-                Text("Browse the categories below to attempt any of the puzzles from our enormous catalogue.")
-                    .padding(.horizontal)
-                    .padding(.top)
-                CategoryGridView(categories: Category.paidCategories)
-                Spacer()
+                VStack(alignment: .leading) {
+                    Text("Browse the categories below to attempt any of the puzzles from \(WordoutApp.appName)'s enormous catalogue.")
+                        .padding(.horizontal)
+                        .padding(.top)
+                    CategoryGridView(showPurchaseView: showPurchaseView, categories: Category.freeCategories)
+                    Divider()
+                        .padding()
+                    CategoryGridView(showPurchaseView: showPurchaseView, categories: Category.paidCategories, disabled: !unlockManager.fullVersionUnlocked)
+                    Spacer()
+                }
             }
         }
         .navigationTitle("Categories")
@@ -72,7 +76,7 @@ struct CategoriesView: View {
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CategoriesView()
+            CategoriesView(showPurchaseView: {})
                 .accentColor(WordoutApp.themeColor)
         }
     }
@@ -90,39 +94,78 @@ struct HeaderView: View {
 
 struct CategoryGridView: View {
     
+    var showPurchaseView: () -> ()
+    
     var categories: [Category]
+    var disabled = false
+    
     let columns = [GridItem(.adaptive(minimum: 150), spacing: 14)]
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 14) {
             ForEach(categories) { category in
-                NavigationLink {
-                    CategoryView(category: category)
-                } label: {
-                    VStack(alignment: .leading) {
-                        Spacer()
-                        HStack {
-                            Image(systemName: category.symbolName)
-                                .font(.title)
-                                .frame(width: 50, height: 50, alignment: .leading)
-                                .foregroundColor(.accentColor)
-                            Spacer()
-                        }
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(category.name)
-                                .foregroundColor(.primary)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.leading)
-                            Text(category.questions.count == 0 ? "Coming Soon" : "\(category.puzzle.loadingFromProgress().totalGuessed) / \(category.questions.count)")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    .padding()
-                }
-                .background(RoundedRectangle(cornerRadius: 14).foregroundColor(Color(UIColor.secondarySystemGroupedBackground)))
-                .disabled(category.questions.count == 0)
+                CategoryGridItem(showPurchaseView: showPurchaseView, category: category, disabled: disabled)
             }
         }
-        .padding()
+        .padding(.horizontal)
+    }
+}
+
+struct CategoryGridItem: View {
+    
+    var showPurchaseView: () -> ()
+    
+    @State private var showingCategoryView = false
+    
+    var category: Category
+    var disabled: Bool
+    
+    var subtitle: String {
+        let n = category.questions.count
+        let m = category.puzzle.loadingFromCategoryProgress().totalGuessed
+        
+        if n == 0 {
+            return "Coming Soon"
+        }
+        else {
+            return "\(m) / \(n)"
+        }
+    }
+    
+    var body: some View {
+        Button {
+            if disabled {
+                showPurchaseView()
+            } else {
+                showingCategoryView = true
+            }
+        } label: {
+            VStack(alignment: .leading) {
+                Spacer()
+                HStack {
+                    Image(systemName: category.symbolName)
+                        .font(.title)
+                        .frame(width: 50, height: 50, alignment: .leading)
+                        .foregroundColor(.accentColor)
+                    Spacer()
+                }
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(category.name)
+                        .foregroundColor(.primary)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                    Text(subtitle)
+                        .foregroundColor(.secondary)
+                }
+                NavigationLink(isActive: $showingCategoryView) {
+                    CategoryView(category: category)
+                } label: {
+                    EmptyView()
+                }
+                .disabled(category.questions.count == 0)
+            }
+            .padding()
+            .background(RoundedRectangle(cornerRadius: 14).foregroundColor(Color(UIColor.secondarySystemGroupedBackground)))
+        }
     }
 }

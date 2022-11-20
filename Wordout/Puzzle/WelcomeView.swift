@@ -21,7 +21,7 @@ struct WelcomeView: View {
     var caption: String {
         
         if playMode == .dailyPuzzle {
-            let p = Puzzle.dailyPuzzle.loadingFromProgress()
+            let p = Puzzle.dailyPuzzle.loadingFromDailyProgress()
             
             if p.completed {
                 return playMode.welcomeViewCaption![2]
@@ -41,7 +41,7 @@ struct WelcomeView: View {
     var primaryButtonText: String {
         
         if playMode == .dailyPuzzle {
-            let p = Puzzle.dailyPuzzle.loadingFromProgress()
+            let p = Puzzle.dailyPuzzle.loadingFromDailyProgress()
             
             if p.completed {
                 return playMode.welcomeViewPrimaryButtonText![2]

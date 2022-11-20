@@ -9,12 +9,17 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @EnvironmentObject var unlockManager: UnlockManager
+    
     @AppStorage("HARDMODE") private var hardMode = false
     
     @State private var showingAlert = false
+    @State private var showingAcknowledgements = false
     
     private let alertTitle = "Reset all puzzles?"
     private let alertMessage = "This action cannot be undone."
+    
+    private let contactEmail = "domingo.puzzle@gmail.com"
     
     func resetProgress() {
         
@@ -37,19 +42,27 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Daily Puzzle Difficulty"),
-                    footer: Text("When Hard Mode is enabled, the theme is category during daily and archived puzzles.")) {
+                    footer: Text("When Hard Mode is enabled, the theme is hidden during daily and archived puzzles.").padding(.vertical)) {
                 Toggle("Hard Mode", isOn: $hardMode)
             }
             Section(header: Text("Categories")) {
                 Button("Reset Progress", role: .destructive) { showingAlert = true}
             }
-            Section(header: Text("Other")) {
-                Button("Restore Purchases") {}
+            Section(header: Text("Other Links")) {
+                Button("Restore Purchases") { unlockManager.restore() }
                     .icon("arrow.counterclockwise")
-                Button("Contact the Developer") {}
+                Button("Contact the Developer") {
+                    EmailManager.shared.sendEmail(subject: "\(WordoutApp.appName) Feedback", body: "", to: contactEmail)
+                }
                     .icon("hand.wave.fill")
-                Button("Submit a Puzzle Suggestion") {}
+                Button("Submit a Puzzle Suggestion") {
+                    EmailManager.shared.sendEmail(subject: "\(WordoutApp.appName) Suggestion", body: "", to: contactEmail)
+                }
                     .icon("lightbulb.fill")
+//                Button("Acknowledgements") {
+//                    showingAcknowledgements.toggle()
+//                }
+//                .icon("heart.fill")
             }
         }
         .navigationTitle("Settings")
@@ -58,6 +71,12 @@ struct SettingsView: View {
         } message: {
             Text(alertMessage)
         }
+//        .sheet(isPresented: $showingAcknowledgements) {
+//            VStack(alignment: .leading) {
+//                Text("Thanks to all the amazing people who helped make \(WordoutApp.appName) a reality.)
+//            }
+//            .padding()
+//        }
     }
 }
 

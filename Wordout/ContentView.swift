@@ -16,11 +16,19 @@ struct ContentView: View {
     @State private var showingArchiveView: Bool = false
     @State private var showingCreateView: Bool = false
     @State private var showingImportView: Bool = false
+    @State private var showingInAppPurchaseView: Bool = false
     
-    @State private var dailyPuzzle = Puzzle.dailyPuzzle.loadingFromProgress()
+    @State private var dailyPuzzle = Puzzle.dailyPuzzle.loadingFromDailyProgress()
+    
+    @State private var welcomeTitle = ""
+    @State private var welcomeCaption = ""
+    
+    func onReturnToApp() {
+        onReturnToMenu()
+    }
     
     func onReturnToMenu() {
-        dailyPuzzle = Puzzle.dailyPuzzle.loadingFromProgress()
+        dailyPuzzle = Puzzle.dailyPuzzle.loadingFromDailyProgress()
     }
     
     func enterDailyView() {
@@ -35,8 +43,12 @@ struct ContentView: View {
         showingCreateView = true
     }
     
+    func showPurchaseView() {
+        showingInAppPurchaseView = true
+    }
+    
     var body: some View {
-        MainMenuView(enterDailyView: enterDailyView, enterArchiveView: enterArchiveView, enterCategoryView: {}, enterCreateView: enterCreateView, dailyPuzzle: dailyPuzzle)
+        MainMenuView(enterDailyView: enterDailyView, enterArchiveView: enterArchiveView, enterCategoryView: {}, enterCreateView: enterCreateView, showPurchaseView: showPurchaseView, dailyPuzzle: dailyPuzzle)
             .fullScreenCover(isPresented: $showingDailyView, onDismiss: onReturnToMenu) {
                 DailyView()
                     .accentColor(PlayMode.dailyPuzzle.color)
@@ -49,9 +61,13 @@ struct ContentView: View {
                 CreateView()
                     .accentColor(PlayMode.archive.color)
             }
+            .sheet(isPresented: $showingInAppPurchaseView) {
+                InAppPurchaseView()
+                    .accentColor(PlayMode.archive.color)
+            }
             .onChange(of: scenePhase) { newPhase in
                 if newPhase == .active {
-                    onReturnToMenu()
+                    onReturnToApp()
                 }
             }
     }

@@ -14,7 +14,7 @@ struct StatisticsView: View {
     private var categoriesCompleted: Int {
         var i = 0
         for category in Category.premadeCategories {
-            let puzzle = category.puzzle.loadingFromProgress()
+            let puzzle = category.puzzle.loadingFromCategoryProgress()
             if puzzle.completed && puzzle.questions.count > 0 {
                 i += 1
             }
@@ -29,7 +29,7 @@ struct StatisticsView: View {
     private var questionsCompleted: Int {
         var i = 0
         for category in Category.premadeCategories {
-            for question in category.puzzle.loadingFromProgress().questions {
+            for question in category.puzzle.loadingFromCategoryProgress().questions {
                 if question.guessed {
                     i += 1
                 }

@@ -18,7 +18,7 @@ class Progress {
         
         if puzzle.dailyStyle {
             if question.id < Puzzle.dailyPuzzleLength {
-                return "\(dailyPath)/\(puzzle.name.uppercased())/\(question.id)"
+                return "\(dailyPath)/\(question.id)"
             }
             else {
                 fatalError("Daily puzzle id out of range for storing in UserDefaults")
