@@ -170,6 +170,12 @@ class Progress {
         return UserDefaults.standard.integer(forKey: "LASTATTEMPT")
     }
     
+    public static func resetStatistics() {
+        UserDefaults.standard.set(0, forKey: "TOTALCOMPLETIONS")
+        UserDefaults.standard.set(0, forKey: "TOTALATTEMPTS")
+        UserDefaults.standard.set(0, forKey: "TOTALGUESSES")
+    }
+    
     // Settings
     
     // Harmode setting store via @AppStorage

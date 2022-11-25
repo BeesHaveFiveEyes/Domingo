@@ -9,20 +9,25 @@ import SwiftUI
 
 struct MainMenuView: View {
     
+    static public let smallWidthLimit: CGFloat = 400
+    static public let mediumWidthLimit: CGFloat = 800
+    
     var enterDailyView: () -> ()
     var enterArchiveView: () -> ()
     var enterCategoryView: () -> ()
     var enterCreateView: () -> ()
     var showPurchaseView: () -> ()
     
-    @EnvironmentObject var unlockManager: UnlockManager
+//!!!!!    @EnvironmentObject var unlockManager: UnlockManager
     
-    var fullAppUnlocked: Bool {
-        return unlockManager.fullVersionUnlocked
-    }
+//    var fullAppUnlocked: Bool {
+//        return unlockManager.fullVersionUnlocked
+//    }
     
     @State private var titleTapped = false
     @State private var showingCategoriesView = false
+    
+    private let animationDelay = 1.0
     
     var formattedDate: String {
         return Date().formatted(.dateTime.day().month(.wide))
@@ -46,94 +51,94 @@ struct MainMenuView: View {
         showingCategoriesView = true
     }
     
+    var menuItems: some View {
+        
+        Group {
+            // Daily Puzzle
+            
+            Button(action: enterDailyView) {
+                MenuItemView(playMode: .dailyPuzzle, subtitle: dailySubtitle)
+            }
+            .fadeInAfter(offset: 0, withDelay: animationDelay)
+            
+            // Categories
+            
+            NavigationLink(destination: CategoriesView(showPurchaseView: showPurchaseView), isActive: $showingCategoriesView) {
+                MenuItemView(playMode: .categories)
+            }
+            .fadeInAfter(offset: 1, withDelay: animationDelay)
+            
+            // Statistics
+            
+            NavigationLink(destination: StatisticsView()) {
+                MenuItemView(playMode: .statistics)
+            }
+            .fadeInAfter(offset: 2, withDelay: animationDelay)
+            
+            // Archived Puzzles
+            
+            Button {
+                if true {
+    //!!!!!                    if fullAppUnlocked {
+                    enterArchiveView()
+                } else {
+                    showPurchaseView()
+                }
+            } label: {
+                MenuItemView(playMode: .archive)
+    //!!!!!                locked: !fullAppUnlocked)
+            }
+            .fadeInAfter(offset: 3, withDelay: animationDelay)
+            
+            // Settings
+            
+            NavigationLink(destination: SettingsView()) {
+                MenuItemView(playMode: .settings)
+            }
+            .fadeInAfter(offset: 4, withDelay: animationDelay)
+        }
+    }
+    
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 15) {
-                Spacer()
-                HStack {
-                    VStack(alignment: .leading) {
-                        
-//                        Text("Welcome Back, \(name).")
-//                            .font(.largeTitle)
-//                            .fontWeight(.heavy)
-//                            .foregroundColor(.accentColor)
-//                        Text("A new daily puzzle is waiting for you.")
-//                            .font(.body)
-//                            .foregroundColor(.secondary)
-                        Text("\(WordoutApp.appName)")
-                            .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.4, weight: .bold))
-                            .fontWeight(.heavy)
-                            .foregroundColor(.accentColor)
-//                        Image("Coda")
-//                            .resizable()
-//                            .scaledToFit()
-//                            .frame(height: 80)
-//                            .slideInAfter(0)
-//                            .scaleEffect(titleTapped ? 1.04 : 1)
-//                            .animation(.spring(response: 0.4, dampingFraction: 0.6))
-//                            .onTapGesture {
-//                                titleTapped = true
-//                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                                    titleTapped = false
-//                                }
-//                            }
-                        Text("A Puzzle Game by Alasdair Casperd")
-                            .font(.body)
-                            .foregroundColor(.secondary)
-//                            .offset(x: 14, y:-10)
-//                            .slideInAfter(0.3)
-//                            .animation(.spring(response: 0.4, dampingFraction: 0.6))
-                    }
+            GeometryReader { geometry in
+                VStack(alignment: .leading, spacing: 15) {
+                
                     Spacer()
-                }
-                .padding(.leading)
-                
-                Spacer()                
-                
-                Button(action: enterDailyView) {
-                    MenuItemView(playMode: .dailyPuzzle, subtitle: dailySubtitle)
-                }
-//                .slideInAfter(offset: 0, withDelay: 2)
-                
-                NavigationLink(destination: CategoriesView(showPurchaseView: showPurchaseView), isActive: $showingCategoriesView) {
-                    MenuItemView(playMode: .categories)
-                }
-//                .slideInAfter(offset: 0, withDelay: 2)
-                
-//                Button(action: enterCreateView) {
-//                MenuItemView(playMode: .createPuzzle)
-//                }
-//                    .slideInAfter(offset: 0, withDelay: 2)
-////                Button(action: {}) {
-//                MenuItemView(playMode: .importPuzzle, locked: true)
-////                }
-//                    .slideInAfter(offset: 0, withDelay: 2)
-                
-                NavigationLink(destination: StatisticsView()) {
-                    MenuItemView(playMode: .statistics)
-                }
-//                .slideInAfter(offset: 0, withDelay: 2)
-                
-                Button {
-                    if fullAppUnlocked {
-                        enterArchiveView()
-                    } else {
-                        showPurchaseView()
+                    
+                    // App Logo
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+
+                            Text("\(WordoutApp.appName)")
+                                .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.4, weight: .bold))
+                                .fontWeight(.heavy)
+                                .foregroundColor(.accentColor)
+                                .slideInAfter(offset: 0)
+                            Text("A Puzzle Game by Alasdair Casperd")
+                                .font(.body)
+                                .foregroundColor(.secondary)
+                                .slideInAfter(offset: 1)
+                        }
+                        .animation(.spring())
+                        Spacer()
                     }
-                } label: {
-                    MenuItemView(playMode: .archive, locked: !fullAppUnlocked)
+                    .padding(.leading)
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .leading, spacing: 15){
+                        menuItems
+                    }
                 }
-//                .slideInAfter(offset: 0, withDelay: 2)
                 
-                NavigationLink(destination: SettingsView()) {
-                    MenuItemView(playMode: .settings)
-                }
-//                .slideInAfter(offset: 0, withDelay: 2)
             }
             .padding()
             .background(Color(UIColor.systemGroupedBackground)
                 .edgesIgnoringSafeArea(.all))
         }
+        .navigationViewStyle(.stack)
     }
 }
 
@@ -150,6 +155,33 @@ struct MenuItemView: View {
     var subtitle: String?
     var locked: Bool = false
     
+    var iconColor: Color {
+        if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
+            return playMode.menuAccent ? Color.white : playMode.color
+        }
+        else {
+            return .accentColor
+        }
+    }
+    
+    var textColor: Color {
+        if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
+            return playMode.menuAccent ? .white : .primary
+        }
+        else {
+            return .primary
+        }
+    }
+    
+    var secondaryTextColor: Color {
+        if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
+            return playMode.menuAccent ? .white : .secondary
+        }
+        else {
+            return .secondary
+        }
+    }
+    
     var body: some View {
         HStack {
             Group {
@@ -163,23 +195,39 @@ struct MenuItemView: View {
                 }
             }
             .frame(width: 40, height: 20, alignment: .leading)
-            .foregroundColor(playMode.menuAccent ? Color.white : playMode.color)
+            .foregroundColor(iconColor)
             VStack(alignment: .leading) {
-                Text(playMode.menuTitle)
-                    .font(subtitle != nil ? .title2.weight(.bold) : .body)
-                    .foregroundColor(playMode.menuAccent ? .white : .primary)
-                if subtitle != nil {
-                    Text(subtitle ?? "")
-                        .foregroundColor(playMode.menuAccent ? .white : .primary)
+                if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
+                    Text(playMode.menuTitle)
+                        .font(subtitle != nil ? .title2.weight(.bold) : .body)
+                        .foregroundColor(textColor)
+                    if subtitle != nil {
+                        Text(subtitle ?? "")
+                            .foregroundColor(textColor)
+                    }
+                }
+                else {
+                    Text("\(playMode.menuTitle)\(subtitle == nil ? "" : ", \(subtitle!)")")
+                        .foregroundColor(textColor)
+                        .font(.title3)
                 }
             }
             Spacer()
             Image(systemName: locked ? "lock.fill" : "chevron.right")
-                .foregroundColor(playMode.menuAccent ? .white : .secondary)
+                .foregroundColor(secondaryTextColor)
         }
         .padding()
         .background(
-        RoundedRectangle(cornerRadius: 15)
-            .foregroundColor(playMode.menuAccent ? playMode.color : Color(UIColor.secondarySystemGroupedBackground)))
+            Group {
+                if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
+                    RoundedRectangle(cornerRadius: 15)
+                        .foregroundColor(playMode.menuAccent ? playMode.color : Color(UIColor.secondarySystemGroupedBackground))
+                }
+                else {
+                    EmptyView()
+                }
+            }
+        )
+            
     }
 }

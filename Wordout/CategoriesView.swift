@@ -16,53 +16,32 @@ struct CategoriesView: View {
         presentationMode.wrappedValue.dismiss()
     }
     
+    func enterCategory(_ category: Category)
+    {
+        selectedCategory = category
+        showingCategoryView = true
+    }
+    
+    @State private var selectedCategory = Category.premadeCategories[0]
+    @State private var showingCategoryView = false
+    
     var showPurchaseView: () -> ()
     
     var body: some View {
-//        Form {
-//            Section(header: HeaderView()) {
-//                ForEach(categories) { category in
-//                    Section {
-//                        NavigationLink {
-//                            CategoryView(category: category)
-//                        } label: {
-//                            HStack {
-//                                Image(systemName: category.symbolName)
-//                                    .font(.title)
-//                                    .frame(width: 30, height: 30)
-//                                    .padding()
-//                                    .padding(.trailing, 5)
-//                                    .foregroundColor(.accentColor)
-////                                Text(category.emoji)
-////                                    .font(.largeTitle)
-////                                    .frame(width: 35)
-////                                    .padding(.trailing, 8)
-//                                HStack {
-//                                    Text(category.name)
-//                                        .fontWeight(.semibold)
-//                                    Spacer()
-//                                    Text(category.questions.count == 0 ? "Coming Soon" : "\(category.puzzle.loadingFromProgress().totalGuessed) / \(category.questions.count)")
-//                                        .foregroundColor(.secondary)
-//                                }
-//                                Spacer()
-//                            }
-//                        }
-//                        .disabled(category.questions.count == 0)
-//                    }
-//                }
-//            }
-//        }
         GeometryReader { geometry in
             ScrollView {
                 VStack(alignment: .leading) {
                     Text("Browse the categories below to attempt any of the puzzles from \(WordoutApp.appName)'s enormous catalogue.")
                         .padding(.horizontal)
                         .padding(.top)
-                    CategoryGridView(showPurchaseView: showPurchaseView, categories: Category.freeCategories)
-                    Divider()
-                        .padding()
-                    CategoryGridView(showPurchaseView: showPurchaseView, categories: Category.paidCategories, disabled: !unlockManager.fullVersionUnlocked)
+                    CategoryGridView(showPurchaseView: showPurchaseView, enterCategory: enterCategory, fullUnlockEnabled: unlockManager.fullVersionUnlocked)
                     Spacer()
+                    NavigationLink(isActive: $showingCategoryView) {
+                        CategoryView(category: selectedCategory)
+                    } label: {
+                        EmptyView()
+                    }
+                    .disabled(selectedCategory.questions.count == 0)
                 }
             }
         }
@@ -95,16 +74,18 @@ struct HeaderView: View {
 struct CategoryGridView: View {
     
     var showPurchaseView: () -> ()
-    
-    var categories: [Category]
-    var disabled = false
-    
+    var enterCategory: (Category) -> ()
     let columns = [GridItem(.adaptive(minimum: 150), spacing: 14)]
+    
+    var fullUnlockEnabled: Bool
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 14) {
-            ForEach(categories) { category in
-                CategoryGridItem(showPurchaseView: showPurchaseView, category: category, disabled: disabled)
+            ForEach(Category.freeCategories) { category in
+                CategoryGridItem(showPurchaseView: showPurchaseView, enterCategory: enterCategory, category: category, disabled: false)
+            }
+            ForEach(Category.paidCategories) { category in
+                CategoryGridItem(showPurchaseView: showPurchaseView, enterCategory: enterCategory, category: category, disabled: !fullUnlockEnabled)
             }
         }
         .padding(.horizontal)
@@ -114,6 +95,7 @@ struct CategoryGridView: View {
 struct CategoryGridItem: View {
     
     var showPurchaseView: () -> ()
+    var enterCategory: (Category) -> ()
     
     @State private var showingCategoryView = false
     
@@ -126,7 +108,7 @@ struct CategoryGridItem: View {
         
         if n == 0 {
             return "Coming Soon"
-        }
+        }        
         else {
             return "\(m) / \(n)"
         }
@@ -137,7 +119,7 @@ struct CategoryGridItem: View {
             if disabled {
                 showPurchaseView()
             } else {
-                showingCategoryView = true
+                enterCategory(category)
             }
         } label: {
             VStack(alignment: .leading) {
@@ -154,8 +136,13 @@ struct CategoryGridItem: View {
                         .foregroundColor(.primary)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
-                    Text(subtitle)
-                        .foregroundColor(.secondary)
+                    HStack(spacing: 4) {
+                        if disabled {
+                            Image(systemName: "lock.fill")
+                        }
+                        Text(subtitle)
+                    }
+                    .foregroundColor(.secondary)
                 }
                 NavigationLink(isActive: $showingCategoryView) {
                     CategoryView(category: category)

@@ -65,7 +65,7 @@ struct StatisticsView: View {
             }
             
             Section(header: Text("Categories")) {
-                Statistic(name: "Categories Completed", detail: "\(categoriesCompleted) / \(totalCategories)", symbolName: "archivebox")
+                Statistic(name: "Categories Completed", detail: "\(categoriesCompleted) / \(totalCategories)", symbolName: "books.vertical")
                 Statistic(name: "Overall Completion", detail: "\(overallCompletionPercent)%", symbolName: "checkmark.circle")
             }
             

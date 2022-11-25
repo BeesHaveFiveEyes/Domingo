@@ -38,13 +38,7 @@ struct FadeIn: ViewModifier {
     
     func body(content: Content) -> some View {
         
-        VStack {
-            EmptyView()
-            if showingContent {
-                content
-                    .transition(.opacity)
-            }
-        }
+        content.opacity(showingContent ? 1 : 0)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 withAnimation {
@@ -82,13 +76,14 @@ struct SlideIn: ViewModifier {
 struct Icon: ViewModifier {
     
     var systemName: String
+    var color: Color
     
     func body(content: Content) -> some View {
         HStack {
             Image(systemName: systemName)
                 .frame(width: 20)
                 .padding(.trailing, 5)
-                .foregroundColor(.accentColor)
+                .foregroundColor(color)
             content
         }
     }
@@ -121,7 +116,7 @@ extension View {
         modifier(SlideIn(delay: WordoutApp.animationIncrement * Double(offset) + delay))
     }
     
-    func icon(_ systemName: String) -> some View {
-        modifier(Icon(systemName: systemName))
+    func icon(_ systemName: String, color: Color = .accentColor) -> some View {
+        modifier(Icon(systemName: systemName, color: color))
     }
 }

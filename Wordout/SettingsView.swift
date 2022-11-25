@@ -45,8 +45,16 @@ struct SettingsView: View {
                     footer: Text("When Hard Mode is enabled, the theme is hidden during daily and archived puzzles.").padding(.vertical)) {
                 Toggle("Hard Mode", isOn: $hardMode)
             }
-            Section(header: Text("Categories")) {
-                Button("Reset Progress", role: .destructive) { showingAlert = true}
+            Section(header: Text("App Progress")) {
+                Button("Reset Statistics", role: .destructive) {
+                    Progress.resetStatistics()
+                    
+                }
+                .icon("trophy", color: .red)
+                Button("Reset Categories Progress", role: .destructive) { showingAlert = true
+                    
+                }
+                .icon("books.vertical", color: .red)
             }
             Section(header: Text("Other Links")) {
                 Button("Restore Purchases") { unlockManager.restore() }
