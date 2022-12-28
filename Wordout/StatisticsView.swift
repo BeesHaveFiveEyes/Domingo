@@ -11,66 +11,22 @@ struct StatisticsView: View {
     
     private let playMode = PlayMode.statistics
     
-    private var categoriesCompleted: Int {
-        var i = 0
-        for category in Category.premadeCategories {
-            let puzzle = category.puzzle.loadingFromCategoryProgress()
-            if puzzle.completed && puzzle.questions.count > 0 {
-                i += 1
-            }
-        }
-        return i
-    }
-    
-    private var totalCategories: Int {
-        return Category.premadeCategories.filter({$0.questions.count > 0}).count
-    }
-    
-    private var questionsCompleted: Int {
-        var i = 0
-        for category in Category.premadeCategories {
-            for question in category.puzzle.loadingFromCategoryProgress().questions {
-                if question.guessed {
-                    i += 1
-                }
-            }
-        }
-        return i
-    }
-    
-    private var overallCompletionPercent: Int {
-        return Int(100 * questionsCompleted / totalQuestions)
-    }
-    
-    private var totalQuestions: Int {
-        var i = 0
-        for category in Category.premadeCategories {
-            i += category.questions.count
-        }
-        return i
-    }
-    
-    public var successRate: Int? {
-        if Progress.attempts == 0 {
-            return nil
-        }
-        return Int(100 * Progress.completions / Progress.attempts)
-    }
-    
     var body: some View {
         Form {
             Section(header: Text("Daily Puzzles")) {
-                Statistic(name: "Daily Puzzles Completed", detail: "\(Progress.completions)", symbolName: "calendar")
-                Statistic(name: "Success Rate", detail: successRate == nil ? "N/A" : "\(successRate!)%", symbolName: "scope")
+                Statistic(name: "Daily Puzzles Completed", detail: "\(Statistics.dailyPuzzlesCompleted.value)", symbolName: "calendar")
+                Statistic(name: "Success Rate", detail: Statistics.successRate == nil ? "N/A" : "\(Statistics.successRate!)%", symbolName: "scope")
+                Statistic(name: "Current Streak", detail: "\(Statistics.streak.value)", symbolName: "flame")
+                Statistic(name: "Longest Streak", detail: "\(Statistics.longestStreak.value)", symbolName: "medal")
             }
             
             Section(header: Text("Categories")) {
-                Statistic(name: "Categories Completed", detail: "\(categoriesCompleted) / \(totalCategories)", symbolName: "books.vertical")
-                Statistic(name: "Overall Completion", detail: "\(overallCompletionPercent)%", symbolName: "checkmark.circle")
+                Statistic(name: "Categories Completed", detail: "\(Statistics.categoriesCompleted) / \(Statistics.totalCategories)", symbolName: "books.vertical")
+                Statistic(name: "Overall Completion", detail: "\(Statistics.questionCompletionPercentage)%", symbolName: "checkmark.circle")
             }
             
             Section(header: Text("Other")) {
-                Statistic(name: "Total Guesses", detail: "\(Progress.totalGuesses)", symbolName: "lightbulb")
+                Statistic(name: "Total Guesses", detail: "\(Statistics.guesses.value)", symbolName: "lightbulb")
             }
         }
         .navigationBarTitle(playMode.name)

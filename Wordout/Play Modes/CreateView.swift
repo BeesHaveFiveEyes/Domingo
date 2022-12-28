@@ -45,7 +45,7 @@ struct CreateView: View {
     var body: some View {
         switch state {
         case .welcome:
-            WelcomeView(playMode: .createPuzzle, primaryAction: {date in begin()}, secondaryAction: quit, namespace: namespace)
+            WelcomeView(playMode: .createPuzzle, primaryAction: {date in begin()}, secondaryAction: quit, puzzle: Puzzle.dailyPuzzle, namespace: namespace)
         case .creating:
             NewCategoryView(dismiss: quit)
         case .complete:

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import WidgetKit
+import UniformTypeIdentifiers
 
 struct PuzzleView: View {
     
@@ -48,15 +50,23 @@ struct PuzzleView: View {
         
         // Yesterday's Answers
         if playMode == .dailyPuzzle {
-            output.append(MenuAction(id: 1, description: "Yesterday's Answers", symbolName: "doc.text.magnifyingglass", action: {showingYesterdaysAnswers = true}))
+            
+            output.append(MenuAction(id: 1, description: "Yesterday's Answers", symbolName: "clock.badge.checkmark", action: {showingYesterdaysAnswers = true}))
+            
+            output.append(MenuAction(id: 2, description: "Copy Puzzle", symbolName: "doc.on.doc", action: copyPuzzleAsText))
         }
         
         // Reset progress
         if puzzle.totalGuessed > 0 {
-            output.append(MenuAction(id: 2, description: "Reset Progress", symbolName: "arrow.counterclockwise", action: {showingResetWarning = true}))
+            output.append(MenuAction(id: 3, description: "Reset Progress", symbolName: "arrow.counterclockwise", action: {showingResetWarning = true}))
         }
         
         return output
+    }
+    
+    func copyPuzzleAsText() {
+        UIPasteboard.general.setValue(puzzle.generateTextDescription(),
+                    forPasteboardType: UTType.plainText.identifier)
     }
     
     func resetProgress() {
@@ -85,6 +95,7 @@ struct PuzzleView: View {
     func onCorrectGuess() {
         successHaptic()
         input = ""
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func onIncorrectGuess() {
@@ -117,7 +128,7 @@ struct PuzzleView: View {
         }
         
         Progress.storeProgress(puzzle: puzzle)
-        Progress.logGuess()
+        Statistics.guesses.increment()
     }
     
     func successHaptic() {
@@ -138,7 +149,7 @@ struct PuzzleView: View {
             
             if playMode.showTopBar {
                 VStack {
-                    TopBarView(title: title, namespace: namespace, backAction: backAction, menuActions: menuActions)
+                    TopBarView(title: title, namespace: namespace, backAction: backAction, menuActions: menuActions)                         
                     
                     ForEach($puzzle.questions) { $question in
                         Button(action: {if !question.guessed{focusTextField()}}) {
@@ -148,7 +159,7 @@ struct PuzzleView: View {
                     }
                     
                     Group {
-                        if !Progress.hardModeOn {
+                        if !Settings.hardModeOn {
                             HStack {
                                 Text("The category \(puzzle.completed ? "was" : "is")")
                                 Image(systemName: puzzle.symbolName)
@@ -164,7 +175,7 @@ struct PuzzleView: View {
                     .padding()
                     .fadeInAfter(offset: Puzzle.dailyPuzzleLength)
                     
-                    Spacer()                    
+                    Spacer()
                     
 //                    VStack(spacing: 0) {
 //                        Divider()
@@ -213,7 +224,7 @@ struct PuzzleView: View {
                     
                     Spacer()
                 }
-                .background(Color(UIColor.systemGroupedBackground)
+                .background(Domingo.backgroundColor
                     .edgesIgnoringSafeArea(.all))
                 .navigationTitle(title)
                 .toolbar {
@@ -253,11 +264,17 @@ struct PuzzleView: View {
         .onAppear {
             let key = "SEENBEFORE"
             if !UserDefaults.standard.bool(forKey: key) {
+                Settings.streaksEnabled = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     showingInstructions = true
                 }
                 UserDefaults.standard.set(true, forKey: key)
             }
+            
+//            if #available(iOS 16.1, *) {
+//                sharingImage = generateSnapshot()
+//                print("Generated Snapshot")
+//            }
         }
         .sheet(isPresented: $showingInstructions) {
             InstructionsView()
@@ -283,29 +300,3 @@ struct PuzzleView_Previews: PreviewProvider {
         }
     }
 }
-
-
-//    .overlay {
-//        VStack(spacing: 0) {
-//            Spacer()
-//            if textField2Focused {
-//                Divider()
-//                HStack {
-//                    TextField("Enter a guess...", text: $input)
-//                        .padding(.horizontal)
-//                        .padding(.vertical, 7)
-//                        .background(
-//                            RoundedRectangle(cornerRadius: 9)
-//                                .foregroundColor(Color(UIColor.systemGroupedBackground))
-//                        )
-//                        .keyboardType(.alphabet)
-//                        .autocorrectionDisabled(true)
-//                        .padding()
-//                        .onSubmit{onSubmitGuess()}
-//                        .focused($textField2Focused)
-//                }
-//                .background(Color(UIColor.secondarySystemGroupedBackground))
-////                            .transition(.move(edge: .bottom).combined(with: .opacity))
-//            }
-//        }
-//    }

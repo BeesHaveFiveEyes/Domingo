@@ -31,10 +31,12 @@ struct PuzzleOptionsButton: View {
         else {
             Menu {
                 ForEach(menuActions) { menuAction in
+
                     Button(action: menuAction.action) {
                         Label(menuAction.description, systemImage: menuAction.symbolName)
                     }
                 }
+                
             } label: {
                 Image(systemName: "ellipsis.circle")
             }

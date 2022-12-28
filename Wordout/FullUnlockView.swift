@@ -90,7 +90,7 @@ struct FullUnlockRowView: View {
         HStack {
             Group{
                 if symbolName == nil {
-                    Text(WordoutApp.placeholder)
+                    Text(Domingo.placeholder)
                         .font(.largeTitle)
                 }
                 else {

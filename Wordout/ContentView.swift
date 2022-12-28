@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
     
@@ -17,18 +18,33 @@ struct ContentView: View {
     @State private var showingCreateView: Bool = false
     @State private var showingImportView: Bool = false
     @State private var showingInAppPurchaseView: Bool = false
+    @State private var showingWidgetInstructionsView: Bool = false
     
-    @State private var dailyPuzzle = Puzzle.dailyPuzzle.loadingFromDailyProgress()
+    @State private var dailyPuzzle = Progress.loadStoredPuzzle(for: Puzzle.dailyPuzzle)
     
     @State private var welcomeTitle = ""
     @State private var welcomeCaption = ""
+    
+    @State private var showingStreak = false
     
     func onReturnToApp() {
         onReturnToMenu()
     }
     
     func onReturnToMenu() {
-        dailyPuzzle = Puzzle.dailyPuzzle.loadingFromDailyProgress()
+        dailyPuzzle = Progress.loadStoredPuzzle(for: Puzzle.dailyPuzzle)
+        WidgetCenter.shared.reloadAllTimelines()
+        Statistics.checkStreak()
+        showingStreak = Settings.streaksEnabled
+        
+        let key = "HASSEENWIDGETINTRO"
+        if !UserDefaults.standard.bool(forKey: key) && Statistics.dailyPuzzlesAttempted.value > 3 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                showingWidgetInstructionsView = true
+            }
+            UserDefaults.standard.set(true, forKey: key)
+        }
+        
     }
     
     func enterDailyView() {
@@ -48,7 +64,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        MainMenuView(enterDailyView: enterDailyView, enterArchiveView: enterArchiveView, enterCategoryView: {}, enterCreateView: enterCreateView, showPurchaseView: showPurchaseView, dailyPuzzle: dailyPuzzle)
+        MainMenuView(enterDailyView: enterDailyView, enterArchiveView: enterArchiveView, enterCategoryView: {}, enterCreateView: enterCreateView, showPurchaseView: showPurchaseView, onReturnToMenu: onReturnToMenu, showingStreak: showingStreak, dailyPuzzle: dailyPuzzle)
             .fullScreenCover(isPresented: $showingDailyView, onDismiss: onReturnToMenu) {
                 DailyView()
                     .accentColor(PlayMode.dailyPuzzle.color)
@@ -65,6 +81,10 @@ struct ContentView: View {
                 InAppPurchaseView()
                     .accentColor(PlayMode.archive.color)
             }
+            .sheet(isPresented: $showingWidgetInstructionsView, onDismiss: onReturnToMenu) {
+                WidgetInstructionsView()
+                    .accentColor(PlayMode.archive.color)
+            }
             .onChange(of: scenePhase) { newPhase in
                 if newPhase == .active {
                     onReturnToApp()
@@ -76,6 +96,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .accentColor(WordoutApp.themeColor)
+            .accentColor(Domingo.themeColor)
     }
 }

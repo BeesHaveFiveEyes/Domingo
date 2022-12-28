@@ -27,7 +27,7 @@ struct InAppPurchaseView: View {
                     Spacer()
                     Button("Dismiss", action: dismiss)
                 case .purchased:
-                    Text("Thank you for supporting \(WordoutApp.appName)!")
+                    Text("Thank you for supporting \(Domingo.appName)!")
                     Spacer()
                     Button("Dismiss", action: dismiss)
                 case .deferred:

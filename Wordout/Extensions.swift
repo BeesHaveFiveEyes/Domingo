@@ -169,6 +169,10 @@ extension Date {
         let calendar = Calendar(identifier: .gregorian)
         return calendar.countDaysBetween(start: Date.referenceDate, end: self)
     }
+    
+    static func dateForSeed(_ seed: Int) -> Date {
+        return Date.referenceDate.addingTimeInterval(60*60*24*Double(seed))
+    }
 }
 
 extension UIFont {
@@ -190,4 +194,21 @@ extension UIScreen{
    static let screenWidth = UIScreen.main.bounds.size.width
    static let screenHeight = UIScreen.main.bounds.size.height
    static let screenSize = UIScreen.main.bounds.size
+}
+
+extension View {
+    func snapshot() -> UIImage {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+
+        let targetSize = controller.view.intrinsicContentSize
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
+    }
 }

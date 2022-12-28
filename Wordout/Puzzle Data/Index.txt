@@ -18,7 +18,7 @@ Buildings
 Christmas
 Countries
 Family
-Furniture
+Home Items
 Books
 Units
 Materials
@@ -29,4 +29,4 @@ Titles
 Tools
 Trees
 Weather
-Board Games
+Games

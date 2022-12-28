@@ -43,7 +43,7 @@ struct ArchiveView: View {
     var body: some View {
         switch state {
         case .welcome:
-            WelcomeView(playMode: .archive, primaryAction: begin, secondaryAction: quit, namespace: namespace)
+            WelcomeView(playMode: .archive, primaryAction: begin, secondaryAction: quit, puzzle: puzzle, namespace: namespace)
         case .inProgress:
             PuzzleView(namespace: namespace, playMode: .archive, backAction: quit, complete: complete, puzzle: puzzle)
         case .complete:

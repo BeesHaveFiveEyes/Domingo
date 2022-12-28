@@ -16,17 +16,34 @@ struct WelcomeView: View {
     
     @State var date: Date = Date().addingTimeInterval(-1 * 24 * 60 * 60)
     
+    var puzzle: Puzzle
+    
     var namespace: Namespace.ID
     
     var caption: String {
         
         if playMode == .dailyPuzzle {
-            let p = Puzzle.dailyPuzzle.loadingFromDailyProgress()
             
-            if p.completed {
+            if Statistics.streak.value > 0 && Settings.streaksEnabled {
+                if puzzle.completed {
+                    return playMode.welcomeViewCaption![2]
+                }
+                else if puzzle.totalGuessed > 0 {
+                    return "Don't lose your \(Statistics.streak.value) day streak!"
+                }
+                else {
+                    return "Continue your \(Statistics.streak.value) day streak!"
+                }
+            }
+            
+            else {
+                
+            }
+            
+            if puzzle.completed {
                 return playMode.welcomeViewCaption![2]
             }
-            else if p.totalGuessed > 0 {
+            else if puzzle.totalGuessed > 0 {
                 return playMode.welcomeViewCaption![1]
             }
             else {
@@ -41,12 +58,11 @@ struct WelcomeView: View {
     var primaryButtonText: String {
         
         if playMode == .dailyPuzzle {
-            let p = Puzzle.dailyPuzzle.loadingFromDailyProgress()
-            
-            if p.completed {
+
+            if puzzle.completed {
                 return playMode.welcomeViewPrimaryButtonText![2]
             }
-            else if p.totalGuessed > 0 {
+            else if puzzle.totalGuessed > 0 {
                 return playMode.welcomeViewPrimaryButtonText![1]
             }
             else {
@@ -69,8 +85,9 @@ struct WelcomeView: View {
             HStack {
                 Spacer()
                 Image(systemName: playMode.symbolName)
-                    .foregroundColor(.white)
+                .foregroundColor(.white)
                 .font(.system(size: 60))
+                .padding(.bottom, 1)
                 Spacer()
             }
             
@@ -123,7 +140,8 @@ struct WelcomeView: View {
 struct WelcomeView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
-        WelcomeView(playMode: .dailyPuzzle, primaryAction: {date in}, secondaryAction: {}, namespace: namespace)
+        WelcomeView(playMode: .dailyPuzzle, primaryAction: {date in}, secondaryAction: {}, puzzle: Puzzle.dailyPuzzle, namespace: namespace)
+            .accentColor(Domingo.themeColor)
     }
 }
 

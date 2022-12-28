@@ -22,7 +22,7 @@ struct InstructionsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 40) {
                     
-                    Text("\(WordoutApp.appName.capitalized) is a game about words within words. To solve a puzzle, replace each of the stars (\(WordoutApp.placeholder)) with a word to form a new, longer word.")
+                    Text("\(Domingo.appName.capitalized) is a game about words within words. To solve a puzzle, replace each of the codas (\(Domingo.placeholder)) with a word to form a new, longer word.")
                     VStack {
                         InstructionsExamplesView(questions: exampleQuestions)
                             .padding()
@@ -33,6 +33,9 @@ struct InstructionsView: View {
                     
                     Text("To make things easier, each puzzle has a category. The words you use to replace the stars will all be related to this theme. In the example above, the category is compass points.")
                     
+                    InstructionsSectionView(title: "Yesterday's Answers", text: "If you don't manage to solve a daily puzzle in time, don't panic! You can always check yesterday's answers from the menu at the top right hand of the puzzle screen.")
+                    
+                    InstructionsSectionView(title: "Stuck?", text: "If you've forgotten the rules, you can always find them again in the same menu at the top right corner of each puzzle. If you're still struggling after that, feel free to reach out for a hint on any of our social media channels!")
                     
 //                    VStack(alignment: .leading, spacing: 15) {
 //                        Text("Stuck?")
@@ -92,6 +95,20 @@ struct InstructionsExamplesView: View {
                 + Text(question.right)).frame(width: 100)
                 Spacer()
             }
+        }
+    }
+}
+
+struct InstructionsSectionView: View {
+    
+    var title: String
+    var text: String
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(title)
+                .font(.headline)
+            
+            Text(text)
         }
     }
 }

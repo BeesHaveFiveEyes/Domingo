@@ -12,7 +12,7 @@ struct TopBarView: View {
     var title: String
     var namespace: Namespace.ID
     var backAction: () -> ()
-    var menuActions: [MenuAction]
+    var menuActions: [MenuAction]        
     
     var body: some View {
         HStack {

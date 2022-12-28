@@ -89,6 +89,18 @@ struct Icon: ViewModifier {
     }
 }
 
+struct GlobalPosition: ViewModifier {
+
+    var point: CGPoint
+    
+    func body(content: Content) -> some View {
+        GeometryReader { proxy in
+            content
+                .position(x: proxy.size.width / 2 + (point.x - proxy.frame(in: CoordinateSpace.global).midX),
+                          y: proxy.size.height / 2 + (point.y - proxy.frame(in: CoordinateSpace.global).midY))
+        }
+    }
+}
 
 extension View {
         
@@ -96,27 +108,58 @@ extension View {
         modifier(ScaleIn(delay: delay))
     }
     
-    func scaleInAfter(offset: Int, withDelay delay: Double = WordoutApp.animationDelay) -> some View {
-        modifier(ScaleIn(delay: WordoutApp.animationIncrement * Double(offset) + delay))
+    func scaleInAfter(offset: Int, withDelay delay: Double = Domingo.animationDelay) -> some View {
+        modifier(ScaleIn(delay: Domingo.animationIncrement * Double(offset) + delay))
     }
     
     func fadeInAfter(_ delay: Double) -> some View {
         modifier(FadeIn(delay: delay))
     }
     
-    func fadeInAfter(offset: Int, withDelay delay: Double = WordoutApp.animationDelay) -> some View {
-        modifier(FadeIn(delay: WordoutApp.animationIncrement * Double(offset) + delay))
+    func fadeInAfter(offset: Int, withDelay delay: Double = Domingo.animationDelay) -> some View {
+        modifier(FadeIn(delay: Domingo.animationIncrement * Double(offset) + delay))
     }
     
     func slideInAfter(_ delay: Double) -> some View {
         modifier(SlideIn(delay: delay))
     }
     
-    func slideInAfter(offset: Int, withDelay delay: Double = WordoutApp.animationDelay) -> some View {
-        modifier(SlideIn(delay: WordoutApp.animationIncrement * Double(offset) + delay))
+    func slideInAfter(offset: Int, withDelay delay: Double = Domingo.animationDelay) -> some View {
+        modifier(SlideIn(delay: Domingo.animationIncrement * Double(offset) + delay))
     }
     
     func icon(_ systemName: String, color: Color = .accentColor) -> some View {
         modifier(Icon(systemName: systemName, color: color))
+    }
+    
+    func globalPosition (_ point: CGPoint) -> some View {
+        self.modifier(GlobalPosition(point: point))
+    }
+}
+
+struct InfiniteScroller<Content: View>: View {
+    
+    var contentWidth: CGFloat
+    var content: (() -> Content)
+    
+    var animationLength = 5.0
+    
+    @State
+    var xOffset: CGFloat = 0
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 0) {
+                    content()
+                    content()
+                }
+                .offset(x: xOffset, y: 0)
+        }
+        .disabled(true)
+        .onAppear {
+            withAnimation(.linear(duration: animationLength).repeatForever(autoreverses: false)) {
+                xOffset = -contentWidth
+            }
+        }
     }
 }

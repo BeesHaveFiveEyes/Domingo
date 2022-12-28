@@ -26,11 +26,11 @@ struct Category: Identifiable {
     }
     
     static var freeCategories: [Category] {
-        return Array(premadeCategories.prefix(WordoutApp.freePuzzles))
+        return Array(premadeCategories.prefix(Domingo.freePuzzles))
     }
     
     static var paidCategories: [Category] {
-        return Array(premadeCategories.suffix(from: WordoutApp.freePuzzles))
+        return Array(premadeCategories.suffix(from: Domingo.freePuzzles))
     }
     
     static var example: Category {
@@ -72,48 +72,6 @@ class Puzzle {
         return SeededRandomnessEngine.seededChoice(Category.premadeCategories.filter({$0.questions.count > 0}), seed: seed)!
     }
     
-    func loadingFromCategoryProgress() -> Puzzle {
-        let newQuestions = questions
-        for q in newQuestions {
-            q.guessed = UserDefaults.standard.bool(forKey: Progress.key(for: q, in: self))
-        }
-        return Puzzle(name: name, description: description, questions: newQuestions, symbolName: symbolName, emoji: emoji, dailyStyle: dailyStyle)
-    }
-    
-    func loadingFromDailyProgress() -> Puzzle {
-        
-        print("loadingFromDailyProgress() called")
-        
-        let newQuestions = questions
-        
-        print("Current seed: \(Date().seed)")
-        print("Last seen seed: \(Progress.lastSeenSeed)")
-        
-        if Progress.lastSeenSeed == Date().seed {
-            print("lastSeenSeed in UserDefaults matches the current seed. Attempting to load saved progress.")
-            for q in newQuestions {
-                let key = Progress.key(for: q, in: self)
-                let storedValue = UserDefaults.standard.bool(forKey: key)
-                q.guessed = storedValue
-                print("Reading '\(storedValue)' from key '\(key)'")
-            }
-        }
-        else {
-            print("lastSeenSeed found in UserDefaults does not match the current seed. Resetting progress.")
-            for q in newQuestions {
-                q.guessed = false
-                let key = Progress.key(for: q, in: self)
-                let value = false
-                UserDefaults.standard.set(value, forKey: key)
-                print("Setting key '\(key)' to '\(value)'")
-            }
-        }
-        
-        Progress.storeLastSeed()
-        
-        return Puzzle(name: name, description: description, questions: newQuestions, symbolName: symbolName, emoji: emoji, dailyStyle: dailyStyle)
-    }
-    
     static var dailyPuzzle: Puzzle {
         return puzzleForDate(Date())
     }
@@ -153,6 +111,18 @@ class Puzzle {
     var completed: Bool {
         return totalGuessed == questions.count
     }
+    
+    public func generateTextDescription() -> String {
+        var output = "Domingo Daily Puzzle\n"
+        output += Date().formatted(.dateTime.day().month(.wide).year())
+        output += "\n"
+        for question in questions {
+            output += "\n"
+            output += question.clue
+        }
+        output += "\n\nThe category is \(name.capitalized)"
+        return output
+    }
 }
 
 class Question: Identifiable, Equatable {
@@ -180,7 +150,7 @@ class Question: Identifiable, Equatable {
     var guessed: Bool = false
     
     var clue: String {
-        return left.capitalized + " \(WordoutApp.placeholder) " + right
+        return left.capitalized + " \(Domingo.placeholder) " + right
     }
     
     var formattedInsert: String {

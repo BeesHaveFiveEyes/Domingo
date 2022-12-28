@@ -20,20 +20,24 @@ struct DailyView: View {
     @Namespace var namespace
     
     @State private var state: DailyViewState = .welcome
+    @State private var puzzle = Progress.loadStoredPuzzle(for: Puzzle.dailyPuzzle)
     
     func quit() {
         presentationMode.wrappedValue.dismiss()
     }
     
     func begin() {
-        Progress.logDailyAttempt()
+        
+        puzzle = Progress.loadStoredPuzzle(for: Puzzle.dailyPuzzle)
+        Statistics.logDailyAttempt()
+        
         withAnimation {
             state = .inProgress
         }
     }
     
     func complete() {
-        Progress.logDailyCompletion()
+        Statistics.logDailyCompletion()
         withAnimation {
             state = .complete
         }
@@ -42,11 +46,11 @@ struct DailyView: View {
     var body: some View {
         switch state {
         case .welcome:
-            WelcomeView(playMode: .dailyPuzzle, primaryAction: {date in begin()}, secondaryAction: quit, namespace: namespace)
+            WelcomeView(playMode: .dailyPuzzle, primaryAction: {date in begin()}, secondaryAction: quit, puzzle: puzzle, namespace: namespace)
         case .inProgress:
-            PuzzleView(namespace: namespace, playMode: .dailyPuzzle, backAction: quit, complete: complete, puzzle: Puzzle.dailyPuzzle.loadingFromDailyProgress())
+            PuzzleView(namespace: namespace, playMode: .dailyPuzzle, backAction: quit, complete: complete, puzzle: puzzle)
         case .complete:
-            CompleteView(primaryButtonAction: quit, puzzle: .dailyPuzzle, playMode: .dailyPuzzle, namespace: namespace)
+            CompleteView(primaryButtonAction: quit, puzzle: puzzle, playMode: .dailyPuzzle, namespace: namespace)
         }
     }
 }

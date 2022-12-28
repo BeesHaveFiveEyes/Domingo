@@ -17,15 +17,20 @@ struct MainMenuView: View {
     var enterCategoryView: () -> ()
     var enterCreateView: () -> ()
     var showPurchaseView: () -> ()
+    var onReturnToMenu: () -> ()
     
-//!!!!!    @EnvironmentObject var unlockManager: UnlockManager
+    var showingStreak: Bool
     
-//    var fullAppUnlocked: Bool {
-//        return unlockManager.fullVersionUnlocked
-//    }
+    @EnvironmentObject var unlockManager: UnlockManager
+    
+    var fullAppUnlocked: Bool {
+        return unlockManager.fullVersionUnlocked
+    }
     
     @State private var titleTapped = false
     @State private var showingCategoriesView = false
+    @State private var showingStatisticsView = false
+    @State private var showingSettingsView = false
     
     private let animationDelay = 1.0
     
@@ -36,14 +41,28 @@ struct MainMenuView: View {
     var dailyPuzzle: Puzzle
     
     var dailySubtitle: String {
-        if dailyPuzzle.completed {
-            return "Completed for Today"
-        }
-        else if dailyPuzzle.totalGuessed > 0 {
-            return "\(dailyPuzzle.totalGuessed) / \(Puzzle.dailyPuzzleLength) Complete"
+        let streak = Statistics.streak.value
+        if Settings.streaksEnabled && streak > 0 {
+            if dailyPuzzle.completed {
+                return "\(streak) Day Streak"
+            }
+            else if dailyPuzzle.totalGuessed > 0 {
+                return "\(dailyPuzzle.totalGuessed) / \(Puzzle.dailyPuzzleLength) Complete"
+            }
+            else {
+                return "Continue your \(streak) day streak"
+            }
         }
         else {
-            return formattedDate
+            if dailyPuzzle.completed {
+                return "Completed for Today"
+            }
+            else if dailyPuzzle.totalGuessed > 0 {
+                return "\(dailyPuzzle.totalGuessed) / \(Puzzle.dailyPuzzleLength) Complete"
+            }
+            else {
+                return formattedDate
+            }
         }
     }
     
@@ -54,10 +73,11 @@ struct MainMenuView: View {
     var menuItems: some View {
         
         Group {
+            
             // Daily Puzzle
             
             Button(action: enterDailyView) {
-                MenuItemView(playMode: .dailyPuzzle, subtitle: dailySubtitle)
+                MenuItemView(playMode: .dailyPuzzle, subtitle: dailySubtitle, completed: dailyPuzzle.completed, showingStreaks: showingStreak)
             }
             .fadeInAfter(offset: 0, withDelay: animationDelay)
             
@@ -66,34 +86,47 @@ struct MainMenuView: View {
             NavigationLink(destination: CategoriesView(showPurchaseView: showPurchaseView), isActive: $showingCategoriesView) {
                 MenuItemView(playMode: .categories)
             }
+            .onChange(of: showingCategoriesView) { newValue in
+                if newValue == false {
+                    onReturnToMenu()
+                }
+            }
             .fadeInAfter(offset: 1, withDelay: animationDelay)
             
             // Statistics
             
-            NavigationLink(destination: StatisticsView()) {
+            NavigationLink(destination: StatisticsView(), isActive: $showingStatisticsView) {
                 MenuItemView(playMode: .statistics)
+            }
+            .onChange(of: showingStatisticsView) { newValue in
+                if newValue == false {
+                    onReturnToMenu()
+                }
             }
             .fadeInAfter(offset: 2, withDelay: animationDelay)
             
             // Archived Puzzles
             
             Button {
-                if true {
-    //!!!!!                    if fullAppUnlocked {
+                if fullAppUnlocked {
                     enterArchiveView()
                 } else {
                     showPurchaseView()
                 }
             } label: {
-                MenuItemView(playMode: .archive)
-    //!!!!!                locked: !fullAppUnlocked)
+                MenuItemView(playMode: .archive, locked: !fullAppUnlocked)
             }
             .fadeInAfter(offset: 3, withDelay: animationDelay)
             
             // Settings
             
-            NavigationLink(destination: SettingsView()) {
+            NavigationLink(destination: SettingsView(), isActive: $showingSettingsView) {
                 MenuItemView(playMode: .settings)
+            }
+            .onChange(of: showingSettingsView) { newValue in
+                if newValue == false {
+                    onReturnToMenu()
+                }
             }
             .fadeInAfter(offset: 4, withDelay: animationDelay)
         }
@@ -103,15 +136,13 @@ struct MainMenuView: View {
         NavigationView {
             GeometryReader { geometry in
                 VStack(alignment: .leading, spacing: 15) {
-                
-                    Spacer()
                     
-                    // App Logo
+                    Spacer()
                     
                     HStack {
                         VStack(alignment: .leading) {
 
-                            Text("\(WordoutApp.appName)")
+                            Text("\(Domingo.appName)")
                                 .font(.system(size: UIFont.textStyleSize(.largeTitle) * 1.4, weight: .bold))
                                 .fontWeight(.heavy)
                                 .foregroundColor(.accentColor)
@@ -135,7 +166,7 @@ struct MainMenuView: View {
                 
             }
             .padding()
-            .background(Color(UIColor.systemGroupedBackground)
+            .background(Domingo.backgroundColor
                 .edgesIgnoringSafeArea(.all))
         }
         .navigationViewStyle(.stack)
@@ -144,8 +175,8 @@ struct MainMenuView: View {
 
 struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView(enterDailyView: {}, enterArchiveView: {}, enterCategoryView: {}, enterCreateView: {}, showPurchaseView: {}, dailyPuzzle: Puzzle.dailyPuzzle.loadingFromDailyProgress())
-            .accentColor(WordoutApp.themeColor)
+        MainMenuView(enterDailyView: {}, enterArchiveView: {}, enterCategoryView: {}, enterCreateView: {}, showPurchaseView: {}, onReturnToMenu: {}, showingStreak: true, dailyPuzzle: Puzzle.dailyPuzzle)
+            .accentColor(Domingo.themeColor)
     }
 }
 
@@ -154,79 +185,70 @@ struct MenuItemView: View {
     var playMode: PlayMode
     var subtitle: String?
     var locked: Bool = false
+    var completed: Bool = false
+    var showingStreaks: Bool = false
     
     var iconColor: Color {
-        if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
-            return playMode.menuAccent ? Color.white : playMode.color
-        }
-        else {
-            return .accentColor
-        }
+        playMode.menuAccent ? Color.white : playMode.color
     }
     
     var textColor: Color {
-        if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
-            return playMode.menuAccent ? .white : .primary
-        }
-        else {
-            return .primary
-        }
+        playMode.menuAccent ? .white : .primary
     }
     
     var secondaryTextColor: Color {
-        if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
-            return playMode.menuAccent ? .white : .secondary
-        }
-        else {
-            return .secondary
-        }
+        playMode.menuAccent ? .white : .secondary
     }
     
     var body: some View {
         HStack {
+            
+            // Icon
+            
             Group {
                 if playMode == .dailyPuzzle {
-                    Text(WordoutApp.placeholder)
-                        .font(.largeTitle)
+//                    if showingStreaks {
+//                        Image(systemName: "flame.fill")
+//                    }
+//                    else {
+                        Image("coda")
+//                    }
                 }
                 else {
                     Image(systemName: playMode.symbolName)
-                        .font(.title2)
                 }
             }
-            .frame(width: 40, height: 20, alignment: .leading)
+            .font(.title2)
+            .frame(width: 30, height: 20, alignment: .center)
             .foregroundColor(iconColor)
+            .padding(.trailing, 10)
+            
+            // Text
+            
             VStack(alignment: .leading) {
-                if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
-                    Text(playMode.menuTitle)
-                        .font(subtitle != nil ? .title2.weight(.bold) : .body)
+                Text(playMode.menuTitle)
+                    .font(subtitle != nil ? .title2.weight(.bold) : .body)
+                    .foregroundColor(textColor)
+                if subtitle != nil {
+                    Text(subtitle ?? "")
                         .foregroundColor(textColor)
-                    if subtitle != nil {
-                        Text(subtitle ?? "")
-                            .foregroundColor(textColor)
-                    }
-                }
-                else {
-                    Text("\(playMode.menuTitle)\(subtitle == nil ? "" : ", \(subtitle!)")")
-                        .foregroundColor(textColor)
-                        .font(.title3)
                 }
             }
+            
             Spacer()
-            Image(systemName: locked ? "lock.fill" : "chevron.right")
+            
+            // Disclosure indicator
+            
+            Image(systemName: locked ? "lock.fill" : (completed ? "checkmark" : "chevron.right"))
                 .foregroundColor(secondaryTextColor)
         }
         .padding()
+        
+        // Background
+        
         .background(
-            Group {
-                if UIScreen.screenWidth < MainMenuView.smallWidthLimit {
-                    RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(playMode.menuAccent ? playMode.color : Color(UIColor.secondarySystemGroupedBackground))
-                }
-                else {
-                    EmptyView()
-                }
-            }
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundColor(playMode.menuAccent ? playMode.color : Color(UIColor.secondarySystemGroupedBackground))
         )
             
     }

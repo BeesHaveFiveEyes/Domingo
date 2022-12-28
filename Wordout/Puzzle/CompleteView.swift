@@ -30,8 +30,27 @@ struct CompleteView: View {
                 Spacer()
             }
             .padding(.bottom)
-            Text(playMode.completeViewCaption ?? "")
-                .multilineTextAlignment(.center)
+            
+            if playMode == .dailyPuzzle && Statistics.streak .value > 1 {
+                HStack {
+                    Image(systemName: "flame.fill")
+                    Text("\(Statistics.streak.value) Day Streak")
+                }
+                .font(.body.weight(.bold))
+                .padding(8)
+                .background {
+                    Capsule()
+                        .foregroundColor(.black)
+                        .opacity(0.1)
+                }
+                .padding(.bottom)
+            }
+            
+            HStack {                
+                Text(playMode.completeViewCaption ?? "")
+            }
+            .multilineTextAlignment(.center)
+            .padding(.horizontal)
             
             VStack {
                 ForEach(puzzle.questions) { question in

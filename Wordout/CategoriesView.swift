@@ -31,7 +31,7 @@ struct CategoriesView: View {
         GeometryReader { geometry in
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Browse the categories below to attempt any of the puzzles from \(WordoutApp.appName)'s enormous catalogue.")
+                    Text("Browse the categories below to attempt any of the puzzles from \(Domingo.appName)'s enormous catalogue.")
                         .padding(.horizontal)
                         .padding(.top)
                     CategoryGridView(showPurchaseView: showPurchaseView, enterCategory: enterCategory, fullUnlockEnabled: unlockManager.fullVersionUnlocked)
@@ -56,7 +56,7 @@ struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             CategoriesView(showPurchaseView: {})
-                .accentColor(WordoutApp.themeColor)
+                .accentColor(Domingo.themeColor)
         }
     }
 }
@@ -104,7 +104,7 @@ struct CategoryGridItem: View {
     
     var subtitle: String {
         let n = category.questions.count
-        let m = category.puzzle.loadingFromCategoryProgress().totalGuessed
+        let m = Progress.loadStoredPuzzle(for: category.puzzle).totalGuessed
         
         if n == 0 {
             return "Coming Soon"

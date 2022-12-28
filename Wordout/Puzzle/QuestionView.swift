@@ -13,12 +13,17 @@ struct QuestionView: View {
     var question: Question
     var guessed: Bool
     
+    var textColor: Color = .primary
+    var placeholderColor: Color = .accentColor
+    var backgroundColor: Color = Color(UIColor.secondarySystemGroupedBackground)
+    var backgroundOpacity = 1.0
+    
     var placeholder: String {
         if question.guessed {
             return question.formattedInsert
         }
         else {
-            return " " + WordoutApp.placeholder + " "
+            return " " + Domingo.placeholder + " "
         }
     }
     
@@ -31,11 +36,11 @@ struct QuestionView: View {
                 .padding()
             Spacer()
             (Text(question.left.capitalized)
-                .foregroundColor(.primary)
+                .foregroundColor(textColor)
             + Text(placeholder)
-                .foregroundColor(guessed ? .secondary : .accentColor)
+                .foregroundColor(guessed ? .secondary : placeholderColor)
             + Text(question.right)
-                .foregroundColor(.primary))
+                .foregroundColor(textColor))
                 .padding()
             Spacer()
             Image(systemName: "checkmark.circle.fill")
@@ -45,7 +50,7 @@ struct QuestionView: View {
                 .padding()
         }
         .opacity(guessed ? 0.5 : 1)
-        .background(RoundedRectangle(cornerRadius: 14).foregroundColor(Color(UIColor.secondarySystemGroupedBackground)))
+        .background(RoundedRectangle(cornerRadius: 14).foregroundColor(backgroundColor).opacity(backgroundOpacity))
         .padding(.horizontal)
     }
 }

@@ -11,6 +11,61 @@
 		BD36CB9F29265A8C00BC93E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD36CB9E29265A8C00BC93E2 /* StoreKit.framework */; };
 		BD36CBA1292675F600BC93E2 /* FullUnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD36CBA0292675F600BC93E2 /* FullUnlockView.swift */; };
 		BD36CBA32926768300BC93E2 /* InAppPurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD36CBA22926768300BC93E2 /* InAppPurchaseView.swift */; };
+		BD44D89B29317D0D009130D3 /* ThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD44D89A29317D0D009130D3 /* ThanksView.swift */; };
+		BD44D89D2932629E009130D3 /* StoredInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD44D89C2932629D009130D3 /* StoredInteger.swift */; };
+		BD44D89F293262B4009130D3 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD44D89E293262B4009130D3 /* Statistics.swift */; };
+		BD44D8A1293262C3009130D3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD44D8A0293262C3009130D3 /* Settings.swift */; };
+		BD8461C82937832700451323 /* SharePuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461C72937832700451323 /* SharePuzzleView.swift */; };
+		BD8461CC2937AD3100451323 /* SharePuzzleViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461CB2937AD3100451323 /* SharePuzzleViewPreview.swift */; };
+		BD8461D32937E43400451323 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8461D22937E43400451323 /* WidgetKit.framework */; };
+		BD8461D52937E43400451323 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8461D42937E43400451323 /* SwiftUI.framework */; };
+		BD8461D82937E43400451323 /* DomingoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461D72937E43400451323 /* DomingoWidgetBundle.swift */; };
+		BD8461DA2937E43400451323 /* DomingoWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461D92937E43400451323 /* DomingoWidgetLiveActivity.swift */; };
+		BD8461DC2937E43400451323 /* DomingoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461DB2937E43400451323 /* DomingoWidget.swift */; };
+		BD8461DF2937E43700451323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8461DE2937E43700451323 /* Assets.xcassets */; };
+		BD8461E12937E43700451323 /* DomingoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BD8461DD2937E43500451323 /* DomingoWidget.intentdefinition */; };
+		BD8461E22937E43700451323 /* DomingoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BD8461DD2937E43500451323 /* DomingoWidget.intentdefinition */; };
+		BD8461E52937E43700451323 /* DomingoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BD8461D12937E43400451323 /* DomingoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BD8461EA2937E57D00451323 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B382829152D1500B6B042 /* Structure.swift */; };
+		BD8461EB2937E58700451323 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B387D291553C500B6B042 /* Extensions.swift */; };
+		BD8461ED2937E70D00451323 /* Domingo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461EC2937E70D00451323 /* Domingo.swift */; };
+		BD8461EE2937E71800451323 /* Domingo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8461EC2937E70D00451323 /* Domingo.swift */; };
+		BD8461EF2937E7D600451323 /* Containers.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382C2915537E00B6B042 /* Containers.txt */; };
+		BD8461F02937E7D600451323 /* Music.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383D2915537E00B6B042 /* Music.txt */; };
+		BD8461F12937E7D600451323 /* Tools.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384C2915537F00B6B042 /* Tools.txt */; };
+		BD8461F22937E7D600451323 /* Titles.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383A2915537E00B6B042 /* Titles.txt */; };
+		BD8461F32937E7D600451323 /* Maths.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38382915537E00B6B042 /* Maths.txt */; };
+		BD8461F42937E7D600451323 /* Materials.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384A2915537F00B6B042 /* Materials.txt */; };
+		BD8461F52937E7D600451323 /* Family.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38412915537E00B6B042 /* Family.txt */; };
+		BD8461F62937E7D600451323 /* Colours.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38312915537E00B6B042 /* Colours.txt */; };
+		BD8461F72937E7D600451323 /* Units.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38322915537E00B6B042 /* Units.txt */; };
+		BD8461F82937E7D600451323 /* Clothing.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38402915537E00B6B042 /* Clothing.txt */; };
+		BD8461F92937E7D600451323 /* Chemistry.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383B2915537E00B6B042 /* Chemistry.txt */; };
+		BD8461FA2937E7D600451323 /* Countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38472915537F00B6B042 /* Countries.txt */; };
+		BD8461FB2937E7D600451323 /* Romance.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38532915537F00B6B042 /* Romance.txt */; };
+		BD8461FC2937E7D600451323 /* Cities.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38452915537E00B6B042 /* Cities.txt */; };
+		BD8461FD2937E7D600451323 /* Home Items.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384E2915537F00B6B042 /* Home Items.txt */; };
+		BD8461FE2937E7D600451323 /* Companies.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38372915537E00B6B042 /* Companies.txt */; };
+		BD8461FF2937E7D600451323 /* Nature.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B383F2915537E00B6B042 /* Nature.txt */; };
+		BD8462002937E7D600451323 /* Trees.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38362915537E00B6B042 /* Trees.txt */; };
+		BD8462012937E7D600451323 /* Food.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382F2915537E00B6B042 /* Food.txt */; };
+		BD8462022937E7D600451323 /* Sport.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38352915537E00B6B042 /* Sport.txt */; };
+		BD8462032937E7D600451323 /* Cooking.txt in Resources */ = {isa = PBXBuildFile; fileRef = BDE9E2072925427F008577DF /* Cooking.txt */; };
+		BD8462042937E7D600451323 /* Vehicles.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382B2915537E00B6B042 /* Vehicles.txt */; };
+		BD8462052937E7D600451323 /* Drinks.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382D2915537E00B6B042 /* Drinks.txt */; };
+		BD8462062937E7D600451323 /* Water.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38342915537E00B6B042 /* Water.txt */; };
+		BD8462072937E7D600451323 /* Index.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B387F29155AB800B6B042 /* Index.txt */; };
+		BD8462082937E7D600451323 /* Space.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38462915537E00B6B042 /* Space.txt */; };
+		BD8462092937E7D600451323 /* Christmas.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38482915537F00B6B042 /* Christmas.txt */; };
+		BD84620A2937E7D600451323 /* Weather.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384D2915537F00B6B042 /* Weather.txt */; };
+		BD84620B2937E7D600451323 /* Animals.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382E2915537E00B6B042 /* Animals.txt */; };
+		BD84620C2937E7D600451323 /* Books.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38302915537E00B6B042 /* Books.txt */; };
+		BD84620D2937E7D600451323 /* Games.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38522915537F00B6B042 /* Games.txt */; };
+		BD84620E2937E7D600451323 /* Buildings.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38392915537E00B6B042 /* Buildings.txt */; };
+		BD84620F2937E7D600451323 /* Body Parts.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384F2915537F00B6B042 /* Body Parts.txt */; };
+		BD8462102937E81C00451323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8576052914478B003D4D47 /* Assets.xcassets */; };
+		BD8462112937EBF400451323 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3FA2291BB01B00DD65B2 /* Progress.swift */; };
+		BD8462122937EC2A00451323 /* StoredInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD44D89C2932629D009130D3 /* StoredInteger.swift */; };
 		BD85760229144789003D4D47 /* WordoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85760129144789003D4D47 /* WordoutApp.swift */; };
 		BD85760429144789003D4D47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85760329144789003D4D47 /* ContentView.swift */; };
 		BD8576062914478B003D4D47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8576052914478B003D4D47 /* Assets.xcassets */; };
@@ -55,10 +110,10 @@
 		BD9B38742915537F00B6B042 /* Time Periods.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384B2915537F00B6B042 /* Time Periods.txt */; };
 		BD9B38752915537F00B6B042 /* Tools.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384C2915537F00B6B042 /* Tools.txt */; };
 		BD9B38762915537F00B6B042 /* Weather.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384D2915537F00B6B042 /* Weather.txt */; };
-		BD9B38772915537F00B6B042 /* Furniture.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384E2915537F00B6B042 /* Furniture.txt */; };
+		BD9B38772915537F00B6B042 /* Home Items.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384E2915537F00B6B042 /* Home Items.txt */; };
 		BD9B38782915537F00B6B042 /* Body Parts.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B384F2915537F00B6B042 /* Body Parts.txt */; };
 		BD9B387A2915537F00B6B042 /* Stationery.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38512915537F00B6B042 /* Stationery.txt */; };
-		BD9B387B2915537F00B6B042 /* Board Games.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38522915537F00B6B042 /* Board Games.txt */; };
+		BD9B387B2915537F00B6B042 /* Games.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38522915537F00B6B042 /* Games.txt */; };
 		BD9B387C2915537F00B6B042 /* Romance.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B38532915537F00B6B042 /* Romance.txt */; };
 		BD9B387E291553C600B6B042 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B387D291553C500B6B042 /* Extensions.swift */; };
 		BD9B388029155AB800B6B042 /* Index.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B387F29155AB800B6B042 /* Index.txt */; };
@@ -68,6 +123,8 @@
 		BDA77947291E659D0032EB52 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA77946291E659D0032EB52 /* CreateView.swift */; };
 		BDA7794929200FC40032EB52 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7794829200FC40032EB52 /* StatisticsView.swift */; };
 		BDA7794B292019810032EB52 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7794A292019810032EB52 /* SettingsView.swift */; };
+		BDB1367E2959CA8E00A7D9F8 /* WidgetInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1367D2959CA8E00A7D9F8 /* WidgetInstructionsView.swift */; };
+		BDB1367F2959CA8E00A7D9F8 /* WidgetInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1367D2959CA8E00A7D9F8 /* WidgetInstructionsView.swift */; };
 		BDE9E2082925427F008577DF /* Cooking.txt in Resources */ = {isa = PBXBuildFile; fileRef = BDE9E2072925427F008577DF /* Cooking.txt */; };
 		BDE9E20A2925511D008577DF /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE9E2092925511D008577DF /* EmailManager.swift */; };
 		BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F94291975A900DD65B2 /* TopBarView.swift */; };
@@ -79,11 +136,51 @@
 		BDEE3FA3291BB01B00DD65B2 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3FA2291BB01B00DD65B2 /* Progress.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD8461E32937E43700451323 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD8575F629144789003D4D47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD8461D02937E43400451323;
+			remoteInfo = DomingoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BD8461E92937E43700451323 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BD8461E52937E43700451323 /* DomingoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BD36CB9B2926577800BC93E2 /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
 		BD36CB9E29265A8C00BC93E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BD36CBA0292675F600BC93E2 /* FullUnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUnlockView.swift; sourceTree = "<group>"; };
 		BD36CBA22926768300BC93E2 /* InAppPurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseView.swift; sourceTree = "<group>"; };
+		BD44D89A29317D0D009130D3 /* ThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksView.swift; sourceTree = "<group>"; };
+		BD44D89C2932629D009130D3 /* StoredInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredInteger.swift; sourceTree = "<group>"; };
+		BD44D89E293262B4009130D3 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		BD44D8A0293262C3009130D3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BD8461C72937832700451323 /* SharePuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePuzzleView.swift; sourceTree = "<group>"; };
+		BD8461CB2937AD3100451323 /* SharePuzzleViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePuzzleViewPreview.swift; sourceTree = "<group>"; };
+		BD8461D12937E43400451323 /* DomingoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DomingoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8461D22937E43400451323 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BD8461D42937E43400451323 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BD8461D72937E43400451323 /* DomingoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomingoWidgetBundle.swift; sourceTree = "<group>"; };
+		BD8461D92937E43400451323 /* DomingoWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomingoWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		BD8461DB2937E43400451323 /* DomingoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomingoWidget.swift; sourceTree = "<group>"; };
+		BD8461DD2937E43500451323 /* DomingoWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = DomingoWidget.intentdefinition; sourceTree = "<group>"; };
+		BD8461DE2937E43700451323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD8461E02937E43700451323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8461EC2937E70D00451323 /* Domingo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domingo.swift; sourceTree = "<group>"; };
 		BD8575FE29144789003D4D47 /* Wordout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD85760129144789003D4D47 /* WordoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordoutApp.swift; sourceTree = "<group>"; };
 		BD85760329144789003D4D47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,10 +226,10 @@
 		BD9B384B2915537F00B6B042 /* Time Periods.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Time Periods.txt"; sourceTree = "<group>"; };
 		BD9B384C2915537F00B6B042 /* Tools.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tools.txt; sourceTree = "<group>"; };
 		BD9B384D2915537F00B6B042 /* Weather.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.txt; sourceTree = "<group>"; };
-		BD9B384E2915537F00B6B042 /* Furniture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Furniture.txt; sourceTree = "<group>"; };
+		BD9B384E2915537F00B6B042 /* Home Items.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Home Items.txt"; sourceTree = "<group>"; };
 		BD9B384F2915537F00B6B042 /* Body Parts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Body Parts.txt"; sourceTree = "<group>"; };
 		BD9B38512915537F00B6B042 /* Stationery.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stationery.txt; sourceTree = "<group>"; };
-		BD9B38522915537F00B6B042 /* Board Games.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Board Games.txt"; sourceTree = "<group>"; };
+		BD9B38522915537F00B6B042 /* Games.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Games.txt; sourceTree = "<group>"; };
 		BD9B38532915537F00B6B042 /* Romance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Romance.txt; sourceTree = "<group>"; };
 		BD9B387D291553C500B6B042 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BD9B387F29155AB800B6B042 /* Index.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Index.txt; sourceTree = "<group>"; };
@@ -143,6 +240,7 @@
 		BDA7794829200FC40032EB52 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		BDA7794A292019810032EB52 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BDA8FED8292D1B02003F2336 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BDB1367D2959CA8E00A7D9F8 /* WidgetInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetInstructionsView.swift; sourceTree = "<group>"; };
 		BDE9E2072925427F008577DF /* Cooking.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cooking.txt; sourceTree = "<group>"; };
 		BDE9E2092925511D008577DF /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
 		BDEE3F94291975A900DD65B2 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
@@ -155,6 +253,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD8461CE2937E43400451323 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8461D52937E43400451323 /* SwiftUI.framework in Frameworks */,
+				BD8461D32937E43400451323 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD8575FB29144789003D4D47 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,14 +277,30 @@
 			isa = PBXGroup;
 			children = (
 				BD36CB9E29265A8C00BC93E2 /* StoreKit.framework */,
+				BD8461D22937E43400451323 /* WidgetKit.framework */,
+				BD8461D42937E43400451323 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD8461D62937E43400451323 /* DomingoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BD8461D72937E43400451323 /* DomingoWidgetBundle.swift */,
+				BD8461D92937E43400451323 /* DomingoWidgetLiveActivity.swift */,
+				BD8461DB2937E43400451323 /* DomingoWidget.swift */,
+				BD8461DD2937E43500451323 /* DomingoWidget.intentdefinition */,
+				BD8461DE2937E43700451323 /* Assets.xcassets */,
+				BD8461E02937E43700451323 /* Info.plist */,
+			);
+			path = DomingoWidget;
 			sourceTree = "<group>";
 		};
 		BD8575F529144789003D4D47 = {
 			isa = PBXGroup;
 			children = (
 				BD85760029144789003D4D47 /* Wordout */,
+				BD8461D62937E43400451323 /* DomingoWidget */,
 				BD8575FF29144789003D4D47 /* Products */,
 				BD36CB9D29265A8C00BC93E2 /* Frameworks */,
 			);
@@ -187,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				BD8575FE29144789003D4D47 /* Wordout.app */,
+				BD8461D12937E43400451323 /* DomingoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +320,7 @@
 			children = (
 				BDA8FED8292D1B02003F2336 /* Info.plist */,
 				BD85760129144789003D4D47 /* WordoutApp.swift */,
+				BD8461EC2937E70D00451323 /* Domingo.swift */,
 				BD36CB9B2926577800BC93E2 /* UnlockManager.swift */,
 				BD85760329144789003D4D47 /* ContentView.swift */,
 				BD85760F291447D0003D4D47 /* MainMenuView.swift */,
@@ -210,9 +335,13 @@
 				BD9B387D291553C500B6B042 /* Extensions.swift */,
 				BDEE3FA02919C56100DD65B2 /* Modifiers.swift */,
 				BDA7794A292019810032EB52 /* SettingsView.swift */,
+				BD44D89A29317D0D009130D3 /* ThanksView.swift */,
 				BDE9E2092925511D008577DF /* EmailManager.swift */,
 				BD9B382829152D1500B6B042 /* Structure.swift */,
 				BDEE3FA2291BB01B00DD65B2 /* Progress.swift */,
+				BD44D89E293262B4009130D3 /* Statistics.swift */,
+				BD44D8A0293262C3009130D3 /* Settings.swift */,
+				BD44D89C2932629D009130D3 /* StoredInteger.swift */,
 				BD9B382A29154DFC00B6B042 /* Puzzle Data */,
 				BD8576052914478B003D4D47 /* Assets.xcassets */,
 				BD8576072914478B003D4D47 /* Preview Content */,
@@ -232,11 +361,14 @@
 			isa = PBXGroup;
 			children = (
 				BDEE3F982919778900DD65B2 /* PuzzleView.swift */,
-				BDEE3F9C29198EF600DD65B2 /* PuzzleOptionsButton.swift */,
 				BDEE3F94291975A900DD65B2 /* TopBarView.swift */,
+				BD8461C72937832700451323 /* SharePuzzleView.swift */,
+				BD8461CB2937AD3100451323 /* SharePuzzleViewPreview.swift */,
+				BDEE3F9C29198EF600DD65B2 /* PuzzleOptionsButton.swift */,
 				BD857611291447FA003D4D47 /* WelcomeView.swift */,
 				BD9B38812915A7E400B6B042 /* QuestionView.swift */,
 				BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */,
+				BDB1367D2959CA8E00A7D9F8 /* WidgetInstructionsView.swift */,
 				BDEE3F9E2919929800DD65B2 /* YesterdayAnswersView.swift */,
 				BD85761529144818003D4D47 /* CompleteView.swift */,
 			);
@@ -250,7 +382,7 @@
 				BD9B387F29155AB800B6B042 /* Index.txt */,
 				BD9B382E2915537E00B6B042 /* Animals.txt */,
 				BDE9E2072925427F008577DF /* Cooking.txt */,
-				BD9B38522915537F00B6B042 /* Board Games.txt */,
+				BD9B38522915537F00B6B042 /* Games.txt */,
 				BD9B38342915537E00B6B042 /* Water.txt */,
 				BD9B384F2915537F00B6B042 /* Body Parts.txt */,
 				BD9B38302915537E00B6B042 /* Books.txt */,
@@ -266,7 +398,7 @@
 				BD9B382D2915537E00B6B042 /* Drinks.txt */,
 				BD9B38412915537E00B6B042 /* Family.txt */,
 				BD9B382F2915537E00B6B042 /* Food.txt */,
-				BD9B384E2915537F00B6B042 /* Furniture.txt */,
+				BD9B384E2915537F00B6B042 /* Home Items.txt */,
 				BD9B38322915537E00B6B042 /* Units.txt */,
 				BD9B384A2915537F00B6B042 /* Materials.txt */,
 				BD9B383D2915537E00B6B042 /* Music.txt */,
@@ -311,6 +443,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD8461D02937E43400451323 /* DomingoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD8461E62937E43700451323 /* Build configuration list for PBXNativeTarget "DomingoWidgetExtension" */;
+			buildPhases = (
+				BD8461CD2937E43400451323 /* Sources */,
+				BD8461CE2937E43400451323 /* Frameworks */,
+				BD8461CF2937E43400451323 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DomingoWidgetExtension;
+			productName = DomingoWidgetExtension;
+			productReference = BD8461D12937E43400451323 /* DomingoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		BD8575FD29144789003D4D47 /* Wordout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD85760C2914478B003D4D47 /* Build configuration list for PBXNativeTarget "Wordout" */;
@@ -318,10 +467,12 @@
 				BD8575FA29144789003D4D47 /* Sources */,
 				BD8575FB29144789003D4D47 /* Frameworks */,
 				BD8575FC29144789003D4D47 /* Resources */,
+				BD8461E92937E43700451323 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BD8461E42937E43700451323 /* PBXTargetDependency */,
 			);
 			name = Wordout;
 			productName = Wordout;
@@ -338,6 +489,9 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					BD8461D02937E43400451323 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					BD8575FD29144789003D4D47 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -357,11 +511,54 @@
 			projectRoot = "";
 			targets = (
 				BD8575FD29144789003D4D47 /* Wordout */,
+				BD8461D02937E43400451323 /* DomingoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BD8461CF2937E43400451323 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD84620C2937E7D600451323 /* Books.txt in Resources */,
+				BD8461F12937E7D600451323 /* Tools.txt in Resources */,
+				BD8462092937E7D600451323 /* Christmas.txt in Resources */,
+				BD84620B2937E7D600451323 /* Animals.txt in Resources */,
+				BD8462102937E81C00451323 /* Assets.xcassets in Resources */,
+				BD8461FF2937E7D600451323 /* Nature.txt in Resources */,
+				BD8461F22937E7D600451323 /* Titles.txt in Resources */,
+				BD8461F72937E7D600451323 /* Units.txt in Resources */,
+				BD8461F52937E7D600451323 /* Family.txt in Resources */,
+				BD8461F82937E7D600451323 /* Clothing.txt in Resources */,
+				BD8461FA2937E7D600451323 /* Countries.txt in Resources */,
+				BD8461FC2937E7D600451323 /* Cities.txt in Resources */,
+				BD8462082937E7D600451323 /* Space.txt in Resources */,
+				BD84620E2937E7D600451323 /* Buildings.txt in Resources */,
+				BD8461F02937E7D600451323 /* Music.txt in Resources */,
+				BD84620F2937E7D600451323 /* Body Parts.txt in Resources */,
+				BD8461EF2937E7D600451323 /* Containers.txt in Resources */,
+				BD8462012937E7D600451323 /* Food.txt in Resources */,
+				BD8462022937E7D600451323 /* Sport.txt in Resources */,
+				BD8461F62937E7D600451323 /* Colours.txt in Resources */,
+				BD8462002937E7D600451323 /* Trees.txt in Resources */,
+				BD84620D2937E7D600451323 /* Games.txt in Resources */,
+				BD8461F42937E7D600451323 /* Materials.txt in Resources */,
+				BD8462072937E7D600451323 /* Index.txt in Resources */,
+				BD8462042937E7D600451323 /* Vehicles.txt in Resources */,
+				BD8461F32937E7D600451323 /* Maths.txt in Resources */,
+				BD84620A2937E7D600451323 /* Weather.txt in Resources */,
+				BD8461DF2937E43700451323 /* Assets.xcassets in Resources */,
+				BD8461FE2937E7D600451323 /* Companies.txt in Resources */,
+				BD8462052937E7D600451323 /* Drinks.txt in Resources */,
+				BD8461FB2937E7D600451323 /* Romance.txt in Resources */,
+				BD8462032937E7D600451323 /* Cooking.txt in Resources */,
+				BD8461F92937E7D600451323 /* Chemistry.txt in Resources */,
+				BD8462062937E7D600451323 /* Water.txt in Resources */,
+				BD8461FD2937E7D600451323 /* Home Items.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD8575FC29144789003D4D47 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,12 +569,12 @@
 				BD8576062914478B003D4D47 /* Assets.xcassets in Resources */,
 				BD9B38572915537F00B6B042 /* Animals.txt in Resources */,
 				BD9B38552915537F00B6B042 /* Containers.txt in Resources */,
-				BD9B38772915537F00B6B042 /* Furniture.txt in Resources */,
+				BD9B38772915537F00B6B042 /* Home Items.txt in Resources */,
 				BD9B38682915537F00B6B042 /* Nature.txt in Resources */,
 				BD9B387C2915537F00B6B042 /* Romance.txt in Resources */,
 				BD9B38622915537F00B6B042 /* Buildings.txt in Resources */,
 				BD9B38582915537F00B6B042 /* Food.txt in Resources */,
-				BD9B387B2915537F00B6B042 /* Board Games.txt in Resources */,
+				BD9B387B2915537F00B6B042 /* Games.txt in Resources */,
 				BD9B38712915537F00B6B042 /* Christmas.txt in Resources */,
 				BD9B38612915537F00B6B042 /* Maths.txt in Resources */,
 				BD9B385A2915537F00B6B042 /* Colours.txt in Resources */,
@@ -413,33 +610,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD8461CD2937E43400451323 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8461E12937E43700451323 /* DomingoWidget.intentdefinition in Sources */,
+				BDB1367F2959CA8E00A7D9F8 /* WidgetInstructionsView.swift in Sources */,
+				BD8461EB2937E58700451323 /* Extensions.swift in Sources */,
+				BD8461DC2937E43400451323 /* DomingoWidget.swift in Sources */,
+				BD8461EA2937E57D00451323 /* Structure.swift in Sources */,
+				BD8461DA2937E43400451323 /* DomingoWidgetLiveActivity.swift in Sources */,
+				BD8462122937EC2A00451323 /* StoredInteger.swift in Sources */,
+				BD8461EE2937E71800451323 /* Domingo.swift in Sources */,
+				BD8462112937EBF400451323 /* Progress.swift in Sources */,
+				BD8461D82937E43400451323 /* DomingoWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD8575FA29144789003D4D47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD36CBA32926768300BC93E2 /* InAppPurchaseView.swift in Sources */,
+				BD8461CC2937AD3100451323 /* SharePuzzleViewPreview.swift in Sources */,
 				BD9B38822915A7E400B6B042 /* QuestionView.swift in Sources */,
 				BDA7794B292019810032EB52 /* SettingsView.swift in Sources */,
 				BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */,
 				BDA7794929200FC40032EB52 /* StatisticsView.swift in Sources */,
 				BD85762229144E1C003D4D47 /* PlayModes.swift in Sources */,
+				BD8461E22937E43700451323 /* DomingoWidget.intentdefinition in Sources */,
 				BD36CB9C2926577900BC93E2 /* UnlockManager.swift in Sources */,
 				BD857610291447D0003D4D47 /* MainMenuView.swift in Sources */,
 				BD8576242914554E003D4D47 /* DailyView.swift in Sources */,
 				BDEE3FA3291BB01B00DD65B2 /* Progress.swift in Sources */,
 				BD9B382929152D1500B6B042 /* Structure.swift in Sources */,
 				BDEE3F9D29198EF600DD65B2 /* PuzzleOptionsButton.swift in Sources */,
+				BD44D89F293262B4009130D3 /* Statistics.swift in Sources */,
 				BDEE3FA12919C56100DD65B2 /* Modifiers.swift in Sources */,
 				BDEE3F9F2919929800DD65B2 /* YesterdayAnswersView.swift in Sources */,
 				BDEE3F992919778900DD65B2 /* PuzzleView.swift in Sources */,
+				BD44D89B29317D0D009130D3 /* ThanksView.swift in Sources */,
 				BD85761829144828003D4D47 /* CategoriesView.swift in Sources */,
 				BD85760429144789003D4D47 /* ContentView.swift in Sources */,
+				BD8461ED2937E70D00451323 /* Domingo.swift in Sources */,
+				BDB1367E2959CA8E00A7D9F8 /* WidgetInstructionsView.swift in Sources */,
 				BD85760229144789003D4D47 /* WordoutApp.swift in Sources */,
 				BDA77945291D93770032EB52 /* NewCategoryViews.swift in Sources */,
+				BD44D89D2932629E009130D3 /* StoredInteger.swift in Sources */,
 				BD36CBA1292675F600BC93E2 /* FullUnlockView.swift in Sources */,
 				BD9B387E291553C600B6B042 /* Extensions.swift in Sources */,
 				BDA77947291E659D0032EB52 /* CreateView.swift in Sources */,
 				BD85761629144818003D4D47 /* CompleteView.swift in Sources */,
+				BD44D8A1293262C3009130D3 /* Settings.swift in Sources */,
+				BD8461C82937832700451323 /* SharePuzzleView.swift in Sources */,
 				BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */,
 				BD857612291447FA003D4D47 /* WelcomeView.swift in Sources */,
 				BD85761A2914482F003D4D47 /* CategoryView.swift in Sources */,
@@ -450,7 +673,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BD8461E42937E43700451323 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD8461D02937E43400451323 /* DomingoWidgetExtension */;
+			targetProxy = BD8461E32937E43700451323 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		BD8461E72937E43700451323 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XW35Y79U2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DomingoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DomingoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout.DomingoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD8461E82937E43700451323 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9XW35Y79U2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DomingoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DomingoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout.DomingoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BD85760A2914478B003D4D47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -568,6 +855,7 @@
 		BD85760D2914478B003D4D47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -582,14 +870,15 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -604,6 +893,7 @@
 		BD85760E2914478B003D4D47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,14 +908,15 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -640,6 +931,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD8461E62937E43700451323 /* Build configuration list for PBXNativeTarget "DomingoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD8461E72937E43700451323 /* Debug */,
+				BD8461E82937E43700451323 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BD8575F929144789003D4D47 /* Build configuration list for PBXProject "Wordout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

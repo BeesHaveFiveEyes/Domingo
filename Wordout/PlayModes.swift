@@ -34,7 +34,7 @@ struct PlayMode: Equatable {
         completeViewTitleExtension: "Complete!",
         completeViewCaption: "Congratulations! You've completed today's daily puzzle. Check back tomorrow for a new one!",
         completeViewPrimaryButtonText: "Done",
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: true)
     
     static let categories = PlayMode(
@@ -42,7 +42,7 @@ struct PlayMode: Equatable {
         menuTitle: "Categories",
         symbolName: "books.vertical.fill",
         menuAccent: false,
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: false)
     
     static let archive = PlayMode(
@@ -56,7 +56,7 @@ struct PlayMode: Equatable {
         completeViewTitleExtension: "Complete!",
         completeViewCaption: "Congratulations! You've finished this puzzle.",
         completeViewPrimaryButtonText: "Done",
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: true)
     
     static let createPuzzle = PlayMode(
@@ -67,7 +67,7 @@ struct PlayMode: Equatable {
         welcomeViewCaption: ["Want to create your own puzzle?"],
         welcomeViewPrimaryButtonText: ["Begin"],
         welcomeViewSecondaryButtonText: "Quit",
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: false)
     
     static let importPuzzle = PlayMode(
@@ -75,7 +75,7 @@ struct PlayMode: Equatable {
         menuTitle: "Import Puzzle",
         symbolName: "square.and.arrow.down.fill",
         menuAccent: false,
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: false)
     
     static let statistics = PlayMode(
@@ -83,7 +83,7 @@ struct PlayMode: Equatable {
         menuTitle: "Statistics",
         symbolName: "trophy.fill",
         menuAccent: false,
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: false)
     
     static let settings = PlayMode(
@@ -91,6 +91,6 @@ struct PlayMode: Equatable {
         menuTitle: "Settings",
         symbolName: "gearshape.fill",
         menuAccent: false,
-        color: WordoutApp.themeColor,
+        color: Domingo.themeColor,
         showTopBar: false)
 }
