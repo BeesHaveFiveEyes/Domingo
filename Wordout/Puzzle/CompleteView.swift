@@ -56,10 +56,15 @@ struct CompleteView: View {
                 ForEach(puzzle.questions) { question in
                     HStack {
                         Text(question.left.capitalized)
+                            .speechSpellsOutCharacters()
                         + Text(question.left == "" ? "" : "")
+                            .accessibility(hidden: true)
                         + Text(question.formattedInsert).font(.body.weight(.bold))
+                            .speechSpellsOutCharacters()
                         + Text(question.right == "" ? "" : "")
+                            .accessibility(hidden: true)
                         + Text(question.right)
+                            .speechSpellsOutCharacters()
                         Spacer()
                         Image(systemName: "checkmark.circle")
                     }

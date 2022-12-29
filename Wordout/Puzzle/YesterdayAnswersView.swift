@@ -23,14 +23,20 @@ struct YesterdayAnswersView: View {
                     ForEach(puzzle.questions) { question in
                         HStack {
                             Text(question.left.capitalized)
+                                .speechSpellsOutCharacters()
                             + Text(question.left == "" ? "" : "")
+                                .accessibility(hidden: true)
                             + Text(question.formattedInsert)
                                 .font(.body.weight(.bold))
                                 .foregroundColor(.accentColor)
+                                .speechSpellsOutCharacters()
                             + Text(question.right == "" ? "" : "")
+                                .accessibility(hidden: true)
                             + Text(question.right)
+                                .speechSpellsOutCharacters()
                             Spacer()
                             Text(question.clue)
+                                .speechSpellsOutCharacters()
                                 .foregroundColor(.secondary)
                         }
                         .padding(.vertical, 10)

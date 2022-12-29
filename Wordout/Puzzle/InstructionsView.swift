@@ -88,11 +88,15 @@ struct InstructionsExamplesView: View {
                 Spacer()
                 Text(question.clue)
                     .frame(width: 100)
+                    .speechSpellsOutCharacters()
                 Text("  ↔︎  ").foregroundColor(.accentColor)
+                    .accessibilityLabel("corresponds to")
                 (Text(question.left.capitalized)
                 + Text(question.formattedInsert)
                     .fontWeight(.bold)
                 + Text(question.right)).frame(width: 100)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(question.container)
                 Spacer()
             }
         }
