@@ -39,8 +39,10 @@ struct ContentView: View {
         
         let key = "HASSEENWIDGETINTRO"
         if !UserDefaults.standard.bool(forKey: key) && Statistics.dailyPuzzlesAttempted.value > 3 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                showingWidgetInstructionsView = true
+            if !(UIDevice.current.userInterfaceIdiom == .pad) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    showingWidgetInstructionsView = true
+                }
             }
             UserDefaults.standard.set(true, forKey: key)
         }

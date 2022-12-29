@@ -270,11 +270,6 @@ struct PuzzleView: View {
                 }
                 UserDefaults.standard.set(true, forKey: key)
             }
-            
-//            if #available(iOS 16.1, *) {
-//                sharingImage = generateSnapshot()
-//                print("Generated Snapshot")
-//            }
         }
         .sheet(isPresented: $showingInstructions) {
             InstructionsView()
