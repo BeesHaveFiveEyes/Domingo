@@ -22,22 +22,19 @@ struct YesterdayAnswersView: View {
                 VStack {
                     ForEach(puzzle.questions) { question in
                         HStack {
-                            Text(question.left.capitalized)
-                                .speechSpellsOutCharacters()
+                            (Text(question.left.capitalized)
                             + Text(question.left == "" ? "" : "")
-                                .accessibility(hidden: true)
                             + Text(question.formattedInsert)
                                 .font(.body.weight(.bold))
                                 .foregroundColor(.accentColor)
-                                .speechSpellsOutCharacters()
                             + Text(question.right == "" ? "" : "")
-                                .accessibility(hidden: true)
-                            + Text(question.right)
-                                .speechSpellsOutCharacters()
+                            + Text(question.right))
+                            .speechSpellsOutCharacters()
+
                             Spacer()
                             Text(question.clue)
-                                .speechSpellsOutCharacters()
                                 .foregroundColor(.secondary)
+                                .speechSpellsOutCharacters()
                         }
                         .padding(.vertical, 10)
                         .padding(.horizontal)
