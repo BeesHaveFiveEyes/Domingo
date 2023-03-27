@@ -93,4 +93,26 @@ struct PlayMode: Equatable {
         menuAccent: false,
         color: Domingo.themeColor,
         showTopBar: false)
+    
+    static let sharePuzzle = PlayMode(
+        name: "Share Puzzle",
+        menuTitle: "Share Puzzle",
+        symbolName: "camera.fill",
+        menuAccent: false,
+        color: Domingo.themeColor,
+        showTopBar: false)
+    
+    static let randomPuzzle = PlayMode(
+        name: "Random Puzzle",
+        menuTitle: "Random Puzzle",
+        symbolName: "dice.fill",
+        menuAccent: false,
+        welcomeViewCaption: ["Can't get enough of these puzzles? Generate as many as you like!"],
+        welcomeViewPrimaryButtonText: ["Generate"],
+        welcomeViewSecondaryButtonText: "Quit",
+        completeViewTitleExtension: "Complete!",
+        completeViewCaption: "Congratulations! You've completed this puzzle.",
+        completeViewPrimaryButtonText: "Done",
+        color: Domingo.themeColor,
+        showTopBar: true)
 }

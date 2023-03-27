@@ -15,7 +15,7 @@ struct MainMenuView: View {
     var enterDailyView: () -> ()
     var enterArchiveView: () -> ()
     var enterCategoryView: () -> ()
-    var enterCreateView: () -> ()
+    var enterRandomView: () -> ()
     var showPurchaseView: () -> ()
     var onReturnToMenu: () -> ()
     
@@ -129,6 +129,21 @@ struct MainMenuView: View {
                 }
             }
             .fadeInAfter(offset: 4, withDelay: animationDelay)
+            
+//            // Random Puzzle
+//            
+//            Button(action: enterRandomView) {
+//                MenuItemView(playMode: .randomPuzzle)
+//            }
+//            .fadeInAfter(offset: 5, withDelay: animationDelay)
+//            
+//            // Share preview
+//            
+//            NavigationLink(destination: SharePuzzleView(puzzle: Puzzle.dailyPuzzle)){
+//                MenuItemView(playMode: .sharePuzzle)
+//            }
+//            .fadeInAfter(offset: 6, withDelay: animationDelay)
+            
         }
     }
     
@@ -175,7 +190,7 @@ struct MainMenuView: View {
 
 struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView(enterDailyView: {}, enterArchiveView: {}, enterCategoryView: {}, enterCreateView: {}, showPurchaseView: {}, onReturnToMenu: {}, showingStreak: true, dailyPuzzle: Puzzle.dailyPuzzle)
+        MainMenuView(enterDailyView: {}, enterArchiveView: {}, enterCategoryView: {}, enterRandomView: {}, showPurchaseView: {}, onReturnToMenu: {}, showingStreak: true, dailyPuzzle: Puzzle.dailyPuzzle)
             .accentColor(Domingo.themeColor)
     }
 }

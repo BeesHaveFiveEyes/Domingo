@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct Category: Identifiable {
+struct Category: Identifiable, Equatable {
+    
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        return lhs.name == rhs.name
+    }
     
     let id: UUID = UUID()
     let name: String
@@ -68,12 +72,19 @@ class Puzzle {
         return Date().seed
     }
     
-    private static func categoryForSeed(_ seed: Int) -> Category {
+    public static func categoryForSeed(_ seed: Int) -> Category {
         return SeededRandomnessEngine.seededChoice(Category.premadeCategories.filter({$0.questions.count > 0}), seed: seed)!
     }
     
     static var dailyPuzzle: Puzzle {
         return puzzleForDate(Date())
+    }
+    
+    static func randomPuzzle() -> Puzzle {
+        let category = Category.premadeCategories.randomElement()!
+        let shuffledOptions = category.questions.shuffled()
+        let questions = Question.fixIDs(questions: Array(shuffledOptions.prefix(dailyPuzzleLength)))
+        return Puzzle(name: category.name, description: category.description, questions: questions, symbolName: category.symbolName, emoji: category.emoji, dailyStyle: true)
     }
     
     static func puzzleForDate(_ date: Date) -> Puzzle {

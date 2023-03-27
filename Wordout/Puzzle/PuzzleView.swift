@@ -262,14 +262,13 @@ struct PuzzleView: View {
             .opacity(!allQuestionsGuessed && (textFieldFocused || input != "" || playMode.showTopBar) ? 1 : 0)
         }
         .onAppear {
-            let key = "SEENBEFORE"
+            var key = "SEENBEFORE"
             if !UserDefaults.standard.bool(forKey: key) {
-                Settings.streaksEnabled = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     showingInstructions = true
                 }
                 UserDefaults.standard.set(true, forKey: key)
-            }
+            }            
         }
         .sheet(isPresented: $showingInstructions) {
             InstructionsView()

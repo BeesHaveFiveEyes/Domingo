@@ -77,6 +77,7 @@
 		BD85761A2914482F003D4D47 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8576192914482F003D4D47 /* CategoryView.swift */; };
 		BD85762229144E1C003D4D47 /* PlayModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85762129144E1C003D4D47 /* PlayModes.swift */; };
 		BD8576242914554E003D4D47 /* DailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8576232914554E003D4D47 /* DailyView.swift */; };
+		BD8A63692961D4F100BCDE18 /* CategoriesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8A63682961D4F100BCDE18 /* CategoriesExporter.swift */; };
 		BD9B382929152D1500B6B042 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B382829152D1500B6B042 /* Structure.swift */; };
 		BD9B38542915537F00B6B042 /* Vehicles.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382B2915537E00B6B042 /* Vehicles.txt */; };
 		BD9B38552915537F00B6B042 /* Containers.txt in Resources */ = {isa = PBXBuildFile; fileRef = BD9B382C2915537E00B6B042 /* Containers.txt */; };
@@ -127,6 +128,7 @@
 		BDB1367F2959CA8E00A7D9F8 /* WidgetInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB1367D2959CA8E00A7D9F8 /* WidgetInstructionsView.swift */; };
 		BDE9E2082925427F008577DF /* Cooking.txt in Resources */ = {isa = PBXBuildFile; fileRef = BDE9E2072925427F008577DF /* Cooking.txt */; };
 		BDE9E20A2925511D008577DF /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE9E2092925511D008577DF /* EmailManager.swift */; };
+		BDEA9E942968694A0071468C /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEA9E932968694A0071468C /* RandomView.swift */; };
 		BDEE3F95291975A900DD65B2 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F94291975A900DD65B2 /* TopBarView.swift */; };
 		BDEE3F992919778900DD65B2 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F982919778900DD65B2 /* PuzzleView.swift */; };
 		BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */; };
@@ -193,6 +195,7 @@
 		BD8576192914482F003D4D47 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		BD85762129144E1C003D4D47 /* PlayModes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayModes.swift; sourceTree = "<group>"; };
 		BD8576232914554E003D4D47 /* DailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyView.swift; sourceTree = "<group>"; };
+		BD8A63682961D4F100BCDE18 /* CategoriesExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesExporter.swift; sourceTree = "<group>"; };
 		BD9B382829152D1500B6B042 /* Structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
 		BD9B382B2915537E00B6B042 /* Vehicles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Vehicles.txt; sourceTree = "<group>"; };
 		BD9B382C2915537E00B6B042 /* Containers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Containers.txt; sourceTree = "<group>"; };
@@ -243,6 +246,7 @@
 		BDB1367D2959CA8E00A7D9F8 /* WidgetInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetInstructionsView.swift; sourceTree = "<group>"; };
 		BDE9E2072925427F008577DF /* Cooking.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cooking.txt; sourceTree = "<group>"; };
 		BDE9E2092925511D008577DF /* EmailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
+		BDEA9E932968694A0071468C /* RandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomView.swift; sourceTree = "<group>"; };
 		BDEE3F94291975A900DD65B2 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		BDEE3F982919778900DD65B2 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		BDEE3F9A2919870200DD65B2 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 				BD8576192914482F003D4D47 /* CategoryView.swift */,
 				BD36CBA0292675F600BC93E2 /* FullUnlockView.swift */,
 				BD36CBA22926768300BC93E2 /* InAppPurchaseView.swift */,
+				BD8A63682961D4F100BCDE18 /* CategoriesExporter.swift */,
 				BD9B38852917132600B6B042 /* Play Modes */,
 				BD85762529145554003D4D47 /* Puzzle */,
 				BD85762129144E1C003D4D47 /* PlayModes.swift */,
@@ -423,6 +428,7 @@
 				BDA77944291D93770032EB52 /* NewCategoryViews.swift */,
 				BDA77946291E659D0032EB52 /* CreateView.swift */,
 				BD9B38832915B41700B6B042 /* ArchiveView.swift */,
+				BDEA9E932968694A0071468C /* RandomView.swift */,
 			);
 			path = "Play Modes";
 			sourceTree = "<group>";
@@ -637,7 +643,9 @@
 				BDA7794B292019810032EB52 /* SettingsView.swift in Sources */,
 				BDEE3F9B2919870200DD65B2 /* InstructionsView.swift in Sources */,
 				BDA7794929200FC40032EB52 /* StatisticsView.swift in Sources */,
+				BDEA9E942968694A0071468C /* RandomView.swift in Sources */,
 				BD85762229144E1C003D4D47 /* PlayModes.swift in Sources */,
+				BD8A63692961D4F100BCDE18 /* CategoriesExporter.swift in Sources */,
 				BD8461E22937E43700451323 /* DomingoWidget.intentdefinition in Sources */,
 				BD36CB9C2926577900BC93E2 /* UnlockManager.swift in Sources */,
 				BD857610291447D0003D4D47 /* MainMenuView.swift in Sources */,
@@ -878,7 +886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -916,7 +924,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = casperd.Wordout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

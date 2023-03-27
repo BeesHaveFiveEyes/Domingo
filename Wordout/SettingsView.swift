@@ -87,6 +87,9 @@ struct SettingsView: View {
                 }
                 .icon("lightbulb")
                 
+                Link("Website", destination: URL(string: "https://domingo-app.com")!)
+                .icon("link")
+                
                 Button("Acknowledgements") {
                     showingAcknowledgements.toggle()
                 }

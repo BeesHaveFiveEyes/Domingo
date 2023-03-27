@@ -11,6 +11,8 @@ struct YesterdayAnswersView: View {
     
     @Environment(\.presentationMode)  var presentationMode
     
+    
+    // TODO: Change this to accept today's puzzle from the PuzzleView so that it still works after midnight
     private var puzzle: Puzzle {
         return Puzzle.puzzleForDate(Date().addingTimeInterval(-24*60*60))
     }

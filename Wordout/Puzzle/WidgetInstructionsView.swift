@@ -23,24 +23,21 @@ struct WidgetInstructionsView: View {
                     Spacer()
                     
                     HStack{
-                        
-                        GeometryReader { reader in
-                            Spacer()
-                            Image("DomingoWidget")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: reader.size.width * 0.7, height: reader.size.width * 0.7)
-                                .clipped()
-                                .clipShape(Circle())
-                                .shadow(radius: 20)
-                                .background {
-                                    Rectangle()
-                                        .frame(width: reader.size.width * 0.6, height: reader.size.width * 0.6)
-                                        .rotationEffect(.degrees(45))
-                                        .foregroundColor(Domingo.themeColor)
-                                }
-                            Spacer()
-                        }
+                        Spacer()
+                        Image("DomingoWidget")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: UIScreen.screenWidth * 0.7, height: UIScreen.screenWidth * 0.7)
+                            .clipped()
+                            .clipShape(Circle())
+                            .shadow(radius: 20)
+                            .background {
+                                Rectangle()
+                                    .frame(width: UIScreen.screenWidth * 0.6, height: UIScreen.screenWidth * 0.6)
+                                    .rotationEffect(.degrees(45))
+                                    .foregroundColor(Domingo.themeColor)
+                            }
+                        Spacer()
                     }
                     
                 }

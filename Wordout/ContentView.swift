@@ -15,7 +15,7 @@ struct ContentView: View {
     @State private var showingDailyView: Bool = false
     @State private var showingCategoriesView: Bool = false
     @State private var showingArchiveView: Bool = false
-    @State private var showingCreateView: Bool = false
+    @State private var showingRandomView: Bool = false
     @State private var showingImportView: Bool = false
     @State private var showingInAppPurchaseView: Bool = false
     @State private var showingWidgetInstructionsView: Bool = false
@@ -37,13 +37,18 @@ struct ContentView: View {
         Statistics.checkStreak()
         showingStreak = Settings.streaksEnabled
         
-        let key = "HASSEENWIDGETINTRO"
+        var key = "HASSEENWIDGETINTRO"
         if !UserDefaults.standard.bool(forKey: key) && Statistics.dailyPuzzlesAttempted.value > 3 {
             if !(UIDevice.current.userInterfaceIdiom == .pad) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                     showingWidgetInstructionsView = true
                 }
             }
+            UserDefaults.standard.set(true, forKey: key)
+        }
+        key = "CONFIGUREDSTREAKSETTING"
+        if !UserDefaults.standard.bool(forKey: key) {
+            Settings.streaksEnabled = true
             UserDefaults.standard.set(true, forKey: key)
         }
         
@@ -57,8 +62,8 @@ struct ContentView: View {
         showingArchiveView = true
     }
     
-    func enterCreateView() {
-        showingCreateView = true
+    func enterRandomView() {
+        showingRandomView = true
     }
     
     func showPurchaseView() {
@@ -66,7 +71,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        MainMenuView(enterDailyView: enterDailyView, enterArchiveView: enterArchiveView, enterCategoryView: {}, enterCreateView: enterCreateView, showPurchaseView: showPurchaseView, onReturnToMenu: onReturnToMenu, showingStreak: showingStreak, dailyPuzzle: dailyPuzzle)
+        MainMenuView(enterDailyView: enterDailyView, enterArchiveView: enterArchiveView, enterCategoryView: {}, enterRandomView: enterRandomView, showPurchaseView: showPurchaseView, onReturnToMenu: onReturnToMenu, showingStreak: showingStreak, dailyPuzzle: dailyPuzzle)
             .fullScreenCover(isPresented: $showingDailyView, onDismiss: onReturnToMenu) {
                 DailyView()
                     .accentColor(PlayMode.dailyPuzzle.color)
@@ -75,8 +80,8 @@ struct ContentView: View {
                 ArchiveView()
                     .accentColor(PlayMode.archive.color)
             }
-            .fullScreenCover(isPresented: $showingCreateView, onDismiss: onReturnToMenu) {
-                CreateView()
+            .fullScreenCover(isPresented: $showingRandomView, onDismiss: onReturnToMenu) {
+                RandomView()
                     .accentColor(PlayMode.archive.color)
             }
             .sheet(isPresented: $showingInAppPurchaseView) {
