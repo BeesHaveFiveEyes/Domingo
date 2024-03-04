@@ -44,54 +44,55 @@ struct DomingoWidgetEntryView : View {
     var entry: Provider.Entry
 
     var puzzle: Puzzle {
-        return Progress.loadStoredPuzzle(for: Puzzle.dailyPuzzle)
+        return DomingoEngine.loadTodaysPuzzle()
     }
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("Daily Puzzle")
-                    .font(.body.weight(.bold))
-                    .foregroundColor(Domingo.themeColor)
-                Text(Date().formatted(.dateTime.day().month(.wide)))
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                Spacer()
-                VStack(alignment: .leading, spacing: 0) {
-                    if puzzle.completed {
-                        Text("Congratulations! You've already finished today's puzzle.")
-                    }
-                    else {
-                        
-                        ForEach(puzzle.questions) { question in
-                            HStack {
-                                if question.guessed {
-                                    Text(question.left.capitalized)
-                                    + Text(question.formattedInsert)
-                                    + Text(question.right)
-                                }
-                                else {
-                                    if question.left != "" {
-                                        Text(question.left.capitalized)
-                                    }
-                                    Text(Domingo.placeholder)
-                                        .foregroundColor(Domingo.themeColor)
-                                    Text(question.right)
-                                }
-                            }
-                            .padding(.vertical, 2)
-                            .font(.caption.weight(.semibold))
-                            if question.id != Puzzle.dailyPuzzleLength - 1 {
-                                Divider()
-                            }
-                        }
-                    }
-                }
-            }
-            .padding()
-            Spacer()
-        }
-        .foregroundColor(.primary)
+        Text("Work in Progress")
+//        HStack {
+//            VStack(alignment: .leading) {
+//                Text("Daily Puzzle")
+//                    .font(.body.weight(.bold))
+//                    .foregroundColor(Domingo.themeColor)
+//                Text(Date().formatted(.dateTime.day().month(.wide)))
+//                    .font(.caption)
+//                    .foregroundColor(.secondary)
+//                Spacer()
+//                VStack(alignment: .leading, spacing: 0) {
+//                    if puzzle.completed {
+//                        Text("Congratulations! You've already finished today's puzzle.")
+//                    }
+//                    else {
+//                        
+//                        ForEach(puzzle.activeQuestions, id: \.id) { activeQuestion in
+//                            HStack {
+//                                if activeQuestion.guessed {
+//                                    Text(activeQuestion.question.left.capitalized)
+//                                    + Text(activeQuestion.question.formattedInsert)
+//                                    + Text(activeQuestion.question.right)
+//                                }
+//                                else {
+//                                    if activeQuestion.question.left != "" {
+//                                        Text(activeQuestion.question.left.capitalized)
+//                                    }
+//                                    Text(Domingo.placeholder)
+//                                        .foregroundColor(Domingo.themeColor)
+//                                    Text(activeQuestion.question.right)
+//                                }
+//                            }
+//                            .padding(.vertical, 2)
+//                            .font(.caption.weight(.semibold))
+//                            if activeQuestion.question.id != Domingo.dailyPuzzleLength - 1 {
+//                                Divider()
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//            .padding()
+//            Spacer()
+//        }
+//        .foregroundColor(.primary)
     }
 }
 

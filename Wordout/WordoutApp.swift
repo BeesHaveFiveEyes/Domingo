@@ -16,12 +16,14 @@ struct WordoutApp: App {
     }
     
     @StateObject var unlockManager: UnlockManager
+    @StateObject var mainMenuModel = MainMenuModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .accentColor(Domingo.themeColor)
+                .accentColor(DomingoEngine.themeColor)
                 .environmentObject(unlockManager)
-        }
+                .environmentObject(mainMenuModel)                
+        }        
     }
 }
