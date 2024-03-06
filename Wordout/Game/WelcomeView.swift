@@ -18,16 +18,21 @@ struct WelcomeView: View {
             
             Spacer()
             
+            // Symbol
+            
             Image(systemName: gameModel.gameModeSymbolName)
                 .foregroundColor(.white)
                 .font(.system(size: 60))
                 .padding(.bottom, 1)
-                        
+                     
+            // Title
             
             Text(gameModel.gameModeName)
                 .font(.largeTitle.weight(.bold))
                 .foregroundColor(.white)
                 .matchedGeometryEffect(id: "title", in: namespace)
+            
+            // Caption
             
             Text(gameModel.welcomeViewCaption)
                 .foregroundColor(.white)
