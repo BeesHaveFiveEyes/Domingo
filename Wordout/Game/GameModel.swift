@@ -124,13 +124,17 @@ class GameModel: ObservableObject {
             }
         }
         
-        DomingoEngine.storeDailyPuzzle(puzzle)
+        if (gameMode == .dailyPuzzle) {
+            DomingoEngine.storeDailyPuzzle(puzzle)
+        }
     }
     
     // Reset the progress on the current puzzle
     func resetPuzzle() {
         puzzle.reset()
-        DomingoEngine.storeDailyPuzzle(puzzle)
+        if (gameMode == .dailyPuzzle) {
+            DomingoEngine.storeDailyPuzzle(puzzle)
+        }
     }
     
     // -------------------
